@@ -583,7 +583,19 @@ export default function RecruiterCV() {
   const [tab, setTab] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [modal, setModal] = useState(null);
+  const [containerH, setContainerH] = useState("auto");
+  const panelRefs = [useRef(null), useRef(null), useRef(null)];
   useEffect(() => { setLoaded(true); }, []);
+  useEffect(() => {
+    const el = panelRefs[tab]?.current;
+    if (el) {
+      const update = () => setContainerH(el.scrollHeight);
+      update();
+      const ro = new ResizeObserver(update);
+      ro.observe(el);
+      return () => ro.disconnect();
+    }
+  }, [tab]);
   return (
     <div style={{ background: "#E8E4DE", color: T.text, minHeight: "100vh", fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", overflowX: "hidden", position: "relative", padding: "40px 24px" }}>
 
@@ -594,7 +606,7 @@ export default function RecruiterCV() {
         border: `1px solid ${T.cardBorder}`,
         boxShadow: "0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04)",
         padding: "0 40px 32px",
-        minHeight: "calc(100vh - 80px)",
+        minHeight: 0,
       }}>
         {/* Subtle warm radial glow behind header */}
         <div style={{ position: "absolute", top: -60, right: -60, width: 400, height: 400, borderRadius: "50%", background: `radial-gradient(circle, ${T.accentBg} 0%, transparent 70%)`, opacity: 0.4, pointerEvents: "none" }} />
@@ -618,7 +630,7 @@ export default function RecruiterCV() {
               zIndex: 0,
             }} />
             {TABS.map((t, i) => (
-              <button key={t} onClick={() => { setTab(i); }}
+              <button key={t} onClick={() => { setTab(i); window.scrollTo({ top: 0, behavior: "smooth" }); }}
               onMouseEnter={e => { if (tab !== i) { e.currentTarget.style.color = T.text; e.currentTarget.style.fontWeight = "700"; e.currentTarget.style.letterSpacing = "0.3px"; } }}
               onMouseLeave={e => { if (tab !== i) { e.currentTarget.style.color = T.textLight; e.currentTarget.style.fontWeight = "500"; e.currentTarget.style.letterSpacing = "0px"; } }}
               style={{
@@ -659,15 +671,15 @@ export default function RecruiterCV() {
           </div>
         </header>
         {/* ===== TAB CONTENT SLIDER ===== */}
-        <div style={{ overflow: "hidden" }}>
+        <div style={{ overflow: "hidden", height: containerH !== "auto" ? containerH : "auto", transition: "height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1)" }}>
           <div style={{
-            display: "flex", width: "300%",
+            display: "flex", width: "300%", alignItems: "flex-start",
             transform: `translateX(-${tab * (100 / 3)}%)`,
             transition: "transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1)",
           }}>
 
         {/* ===== Tab 0: MY CAREER ===== */}
-        <div style={{ width: `${100 / 3}%`, flexShrink: 0, padding: "0 0 56px" }}>
+        <div ref={panelRefs[0]} style={{ width: `${100 / 3}%`, flexShrink: 0, padding: "0 0 20px" }}>
             <p style={{ fontSize: 14, color: T.textMid, lineHeight: 1.75, margin: "0 0 8px" }}>
               8 years in recruitment. Started in high-volume agency, moved into embedded RPO across VC-backed startups,
               then went in-house at a £4.5bn fintech hiring 75 engineers with zero agency spend. Currently Head of TA
@@ -746,7 +758,7 @@ export default function RecruiterCV() {
         </div>
 
         {/* ===== Tab 1: MY PROJECTS ===== */}
-        <div style={{ width: `${100 / 3}%`, flexShrink: 0, padding: "0 0 56px" }}>
+        <div ref={panelRefs[1]} style={{ width: `${100 / 3}%`, flexShrink: 0, padding: "0 0 20px" }}>
             {["Agents", "Builds & Automation", "Articles"].map(cat => {
               const tiles = BUILD_TILES.filter(b => b.category === cat);
               if (!tiles.length) return null;
@@ -762,7 +774,7 @@ export default function RecruiterCV() {
         </div>
 
         {/* ===== Tab 2: MY PERSONAL LIFE ===== */}
-        <div style={{ width: `${100 / 3}%`, flexShrink: 0, padding: "0 0 56px" }}>
+        <div ref={panelRefs[2]} style={{ width: `${100 / 3}%`, flexShrink: 0, padding: "0 0 20px" }}>
             <div style={{ marginBottom: 24 }}>
               <h3 style={{ display: "block", fontSize: 15, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.text, letterSpacing: 0, textTransform: "none", marginBottom: 8, fontWeight: 700, padding: "0 0 0 12px", background: "none", borderRadius: 0, borderBottom: "none", borderLeft: `3px solid ${T.accent}` }}>A bit about me</h3>
               <p style={{ fontSize: 14, color: T.textMid, lineHeight: 1.65, marginBottom: 16 }}>Ideal spot for an intro video, but if you're enjoying my content, check out how we're helping teams manage application volume in this product breakdown of First!</p>
