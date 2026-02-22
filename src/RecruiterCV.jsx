@@ -624,8 +624,8 @@ export default function RecruiterCV() {
             <div style={{
               position: "absolute", top: 4, bottom: 4, borderRadius: 10,
               background: T.card, boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
-              width: `calc(${100 / TABS.length}% - ${(TABS.length + 1) * 3 / TABS.length}px)`,
-              left: `calc(${tab * (100 / TABS.length)}% + ${4 + tab * 1}px)`,
+              width: `calc((100% - ${4 * 2 + (TABS.length - 1) * 3}px) / ${TABS.length})`,
+              left: `calc(4px + ${tab} * (100% - ${2 * 4 - 3}px) / ${TABS.length})`,
               transition: "left 0.35s cubic-bezier(0.25, 0.1, 0.25, 1)",
               zIndex: 0,
             }} />
