@@ -710,7 +710,7 @@ export default function RecruiterCV() {
             <div style={{ height: 1, background: `linear-gradient(90deg, transparent, ${T.cardBorder}, transparent)`, margin: "28px 0" }} />
             {/* Education */}
             <div style={{ marginBottom: 24 }}>
-              <h3 style={{ display: "block", fontSize: 15, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.text, letterSpacing: 0, textTransform: "none", marginBottom: 12, fontWeight: 700, padding: "0 0 0 12px", background: "none", borderRadius: 0, borderBottom: "none", borderLeft: `3px solid ${T.accent}` }}>Education</h3>
+              <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>Education</p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10 }}>
                 <div style={{ padding: "14px 16px", background: T.card, borderRadius: 10, border: `1px solid ${T.cardBorder}`, boxShadow: "0 2px 8px rgba(0,0,0,0.02)" }}>
                   <div style={{ fontSize: 13, color: T.text, fontWeight: 600 }}>BA (Hons) Business Management</div>
@@ -728,7 +728,7 @@ export default function RecruiterCV() {
             </div>
             {/* Skills */}
             <div style={{ marginBottom: 36 }}>
-              <h3 style={{ display: "block", fontSize: 15, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.text, letterSpacing: 0, textTransform: "none", marginBottom: 14, fontWeight: 700, padding: "0 0 0 12px", background: "none", borderRadius: 0, borderBottom: "none", borderLeft: `3px solid ${T.accent}` }}>Skills</h3>
+              <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>Skills</p>
               <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                 {[
                   { category: "Recruitment", color: T.blue, skills: ["Direct Sourcing", "Stakeholder Management", "Offer Negotiation", "Candidate Experience", "Interview Process Design", "Employer Branding", "Agency Management", "Referral Programmes", "Hiring Manager Coaching"] },
@@ -749,7 +749,7 @@ export default function RecruiterCV() {
             <div style={{ height: 1, background: `linear-gradient(90deg, transparent, ${T.cardBorder}, transparent)`, marginBottom: 28 }} />
             {/* Recommendations */}
             <div>
-              <h3 style={{ display: "block", fontSize: 15, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.text, letterSpacing: 0, textTransform: "none", marginBottom: 4, fontWeight: 700, padding: "0 0 0 12px", background: "none", borderRadius: 0, borderBottom: "none", borderLeft: `3px solid ${T.accent}` }}>LinkedIn Recommendations</h3>
+              <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>LinkedIn Recommendations</p>
               <p style={{ fontSize: 12, color: T.textFaint, marginBottom: 16, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>What people say about my work</p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 12 }}>
                 {RECOMMENDATIONS.map((rec, i) => <RecCard key={i} rec={rec} index={i} />)}
@@ -776,7 +776,7 @@ export default function RecruiterCV() {
         {/* ===== Tab 2: MY PERSONAL LIFE ===== */}
         <div ref={panelRefs[2]} style={{ width: `${100 / 3}%`, flexShrink: 0, padding: "0 0 20px" }}>
             <div style={{ marginBottom: 24 }}>
-              <h3 style={{ display: "block", fontSize: 15, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.text, letterSpacing: 0, textTransform: "none", marginBottom: 8, fontWeight: 700, padding: "0 0 0 12px", background: "none", borderRadius: 0, borderBottom: "none", borderLeft: `3px solid ${T.accent}` }}>A bit about me</h3>
+              <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>A bit about me</p>
               <p style={{ fontSize: 14, color: T.textMid, lineHeight: 1.65, marginBottom: 16 }}>Ideal spot for an intro video, but if you're enjoying my content, check out how we're helping teams manage application volume in this product breakdown of First!</p>
               <div style={{
                 width: "60%", aspectRatio: "16/9", borderRadius: 10, margin: "0 auto",
@@ -793,7 +793,7 @@ export default function RecruiterCV() {
               </div>
             </div>
             <div style={{ marginBottom: 36 }}>
-              <h3 style={{ display: "block", fontSize: 15, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.text, letterSpacing: 0, textTransform: "none", marginBottom: 16, fontWeight: 700, padding: "0 0 0 12px", background: "none", borderRadius: 0, borderBottom: "none", borderLeft: `3px solid ${T.accent}` }}>A few things about me</h3>
+              <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>A few things about me</p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 10 }}>
                 {[
                   { label: "Football", text: "Lifelong Crystal Palace fan. Yes, I know. No, I can't explain it either. Season ticket holder. The highs are rare but they're worth it." },
@@ -814,7 +814,7 @@ export default function RecruiterCV() {
               </div>
             </div>
             <div>
-              <h3 style={{ display: "block", fontSize: 15, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.text, letterSpacing: 0, textTransform: "none", marginBottom: 16, fontWeight: 700, padding: "0 0 0 12px", background: "none", borderRadius: 0, borderBottom: "none", borderLeft: `3px solid ${T.accent}` }}>What I value</h3>
+              <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>What I value</p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 10 }}>
                 {[
                   { label: "Honesty over polish", text: "I'd rather someone tell me I'm wrong than agree with me to be polite. That goes both ways." },
