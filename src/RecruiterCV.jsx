@@ -752,7 +752,7 @@ export default function RecruiterCV() {
               if (!tiles.length) return null;
               return (
                 <div key={cat} style={{ marginBottom: 28 }}>
-                  <h3 style={{ display: "block", fontSize: 15, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.text, letterSpacing: 0, textTransform: "none", marginBottom: 12, fontWeight: 700, padding: "0 0 0 12px", background: "none", borderRadius: 0, borderBottom: "none", borderLeft: `3px solid ${T.accent}` }}>{cat}</h3>
+                  <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>{cat}</p>
                   <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 14 }}>
                     {tiles.map((build, i) => <BuildTile key={i} build={build} index={i} onModalOpen={setModal} />)}
                   </div>
