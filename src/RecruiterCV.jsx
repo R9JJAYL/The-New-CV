@@ -819,7 +819,6 @@ export default function RecruiterCV() {
                 {[
                   { label: "Honesty over polish", text: "I'd rather someone tell me I'm wrong than agree with me to be polite. That goes both ways." },
                   { label: "Doing the work", text: "I've never been the smartest person in the room, but I'll be the one who actually followed up." },
-                  { label: "Don't take yourself too seriously", text: "Recruitment is important but nobody's performing brain surgery. Have a laugh." },
                   { label: "Loyalty to people", text: "Every company I've left, I've stayed close with the people. That matters more to me than a brand on my CV." },
                 ].map((t, i) => (
                   <div key={i} style={{
