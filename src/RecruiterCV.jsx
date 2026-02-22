@@ -599,7 +599,7 @@ export default function RecruiterCV() {
         background: T.bg, borderRadius: 16,
         border: `1px solid ${T.cardBorder}`,
         boxShadow: "0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04)",
-        padding: "32px 40px",
+        padding: "0 40px 32px",
         minHeight: "calc(100vh - 80px)",
       }}>
         {/* Subtle warm radial glow behind header */}
@@ -612,13 +612,39 @@ export default function RecruiterCV() {
           opacity: loaded ? 1 : 0, transform: loaded ? "translateY(0)" : "translateY(20px)",
           transition: "all 0.7s ease", position: "relative",
         }}>
+          {/* Tabs — flush at top of card */}
+          <div style={{ display: "flex", background: T.tagBg, borderRadius: "15px 15px 0 0", padding: 0, margin: "0 -40px", position: "relative" }}>
+            {/* Sliding pill background */}
+            <div style={{
+              position: "absolute", top: 0, bottom: 0,
+              borderRadius: tab === 0 ? "15px 0 0 0" : tab === TABS.length - 1 ? "0 15px 0 0" : 0,
+              background: T.card, boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
+              width: `${100 / TABS.length}%`,
+              left: `${tab * (100 / TABS.length)}%`,
+              transition: "left 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), border-radius 0.35s ease",
+              zIndex: 0,
+            }} />
+            {TABS.map((t, i) => (
+              <button key={t} onClick={() => { setTab(i); }}
+              onMouseEnter={e => { if (tab !== i) { e.currentTarget.style.color = T.text; e.currentTarget.style.fontWeight = "700"; e.currentTarget.style.letterSpacing = "0.3px"; } }}
+              onMouseLeave={e => { if (tab !== i) { e.currentTarget.style.color = T.textLight; e.currentTarget.style.fontWeight = "500"; e.currentTarget.style.letterSpacing = "0px"; } }}
+              style={{
+                flex: 1, padding: "12px 14px", borderRadius: 0, border: "none",
+                background: "transparent",
+                color: tab === i ? T.accent : T.textLight,
+                fontSize: 13, fontWeight: tab === i ? 700 : 500,
+                fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", cursor: "pointer",
+                transition: "color 0.2s ease, font-weight 0.2s ease, letter-spacing 0.2s ease",
+                position: "relative", zIndex: 1,
+                letterSpacing: "0px",
+              }}>{t}</button>
+            ))}
+          </div>
           {/* Name + Title + Icons */}
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 14 }}>
-            <div>
-              <h1 style={{ fontSize: 24, fontWeight: 800, margin: "0 0 4px", lineHeight: 1, letterSpacing: "-1px", color: T.text }}>Phil Role</h1>
-              <p style={{ fontSize: 24, fontWeight: 800, margin: 0, lineHeight: 1, letterSpacing: "-1px", color: T.accent }}>Head of Talent Acquisition</p>
-            </div>
-            <div style={{ display: "flex", gap: 8, paddingTop: 4 }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14, marginTop: 20 }}>
+            <h1 style={{ fontSize: 24, fontWeight: 800, margin: 0, lineHeight: 1, letterSpacing: "-1px", color: T.text, flex: "0 0 auto" }}>Phil Role</h1>
+            <p style={{ fontSize: 24, fontWeight: 800, margin: 0, lineHeight: 1, letterSpacing: "-1px", color: T.accent, textAlign: "center", flex: "1 1 auto" }}>Head of Talent Acquisition</p>
+            <div style={{ display: "flex", gap: 8, flex: "0 0 auto" }}>
             {[
               { href: "https://www.linkedin.com/in/jamiejaylyons/", label: "LinkedIn", svg: <svg width="16" height="16" viewBox="0 0 24 24" fill={T.accent}><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> },
               { href: "mailto:phil@example.com", label: "Email", svg: <svg width="16" height="16" viewBox="0 0 24 24" fill={T.accent}><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> },
@@ -637,33 +663,6 @@ export default function RecruiterCV() {
               >{item.svg}</a>
             ))}
             </div>
-          </div>
-          {/* Tabs */}
-          <div style={{ display: "flex", gap: 3, background: T.tagBg, borderRadius: 10, padding: 4, border: `1px solid ${T.cardBorder}`, marginBottom: 22, position: "relative" }}>
-            {/* Sliding pill background */}
-            <div style={{
-              position: "absolute", top: 4, bottom: 4, borderRadius: 10,
-              background: T.card, boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
-              width: `calc(${100 / TABS.length}% - ${(TABS.length + 1) * 3 / TABS.length}px)`,
-              left: `calc(${tab * (100 / TABS.length)}% + ${4 + tab * 1}px)`,
-              transition: "left 0.35s cubic-bezier(0.25, 0.1, 0.25, 1)",
-              zIndex: 0,
-            }} />
-            {TABS.map((t, i) => (
-              <button key={t} onClick={() => { setTab(i); }}
-              onMouseEnter={e => { if (tab !== i) { e.currentTarget.style.color = T.text; e.currentTarget.style.fontWeight = "700"; e.currentTarget.style.letterSpacing = "0.3px"; } }}
-              onMouseLeave={e => { if (tab !== i) { e.currentTarget.style.color = T.textLight; e.currentTarget.style.fontWeight = "500"; e.currentTarget.style.letterSpacing = "0px"; } }}
-              style={{
-                flex: 1, padding: "10px 14px", borderRadius: 10, border: "none",
-                background: "transparent",
-                color: tab === i ? T.accent : T.textLight,
-                fontSize: 13, fontWeight: tab === i ? 700 : 500,
-                fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", cursor: "pointer",
-                transition: "color 0.2s ease, font-weight 0.2s ease, letter-spacing 0.2s ease",
-                position: "relative", zIndex: 1,
-                letterSpacing: "0px",
-              }}>{t}</button>
-            ))}
           </div>
         </header>
         {/* ===== TAB CONTENT SLIDER ===== */}
