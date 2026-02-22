@@ -591,17 +591,24 @@ export default function RecruiterCV() {
   const [modal, setModal] = useState(null);
   useEffect(() => { setLoaded(true); }, []);
   return (
-    <div style={{ background: T.bg, color: T.text, minHeight: "100vh", fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", overflowX: "hidden", position: "relative" }}>
+    <div style={{ background: "#E8E4DE", color: T.text, minHeight: "100vh", fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", overflowX: "hidden", position: "relative", padding: "40px 24px" }}>
 
-      {/* Top spacer */}
-      <div style={{ paddingTop: 24 }} />
-      {/* Subtle warm radial glow behind header */}
-      <div style={{ position: "absolute", top: -100, right: -100, width: 500, height: 500, borderRadius: "50%", background: `radial-gradient(circle, ${T.accentBg} 0%, transparent 70%)`, opacity: 0.5, pointerEvents: "none" }} />
-      <div style={{ position: "absolute", top: 200, left: -200, width: 400, height: 400, borderRadius: "50%", background: `radial-gradient(circle, ${T.warm1}40 0%, transparent 70%)`, opacity: 0.4, pointerEvents: "none" }} />
-      <div style={{ position: "relative", zIndex: 2, maxWidth: 960, margin: "0 auto", padding: "0 24px" }}>
+      {/* CV Paper Container */}
+      <div style={{
+        position: "relative", maxWidth: 960, margin: "0 auto",
+        background: T.bg, borderRadius: 16,
+        border: `1px solid ${T.cardBorder}`,
+        boxShadow: "0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04)",
+        padding: "32px 40px",
+        minHeight: "calc(100vh - 80px)",
+      }}>
+        {/* Subtle warm radial glow behind header */}
+        <div style={{ position: "absolute", top: -60, right: -60, width: 400, height: 400, borderRadius: "50%", background: `radial-gradient(circle, ${T.accentBg} 0%, transparent 70%)`, opacity: 0.4, pointerEvents: "none" }} />
+        <div style={{ position: "absolute", top: 200, left: -100, width: 300, height: 300, borderRadius: "50%", background: `radial-gradient(circle, ${T.warm1}40 0%, transparent 70%)`, opacity: 0.3, pointerEvents: "none" }} />
+        <div style={{ position: "relative", zIndex: 2 }}>
         {/* HEADER */}
         <header style={{
-          paddingTop: 16, paddingBottom: 0,
+          paddingTop: 0, paddingBottom: 0,
           opacity: loaded ? 1 : 0, transform: loaded ? "translateY(0)" : "translateY(20px)",
           transition: "all 0.7s ease", position: "relative",
         }}>
@@ -842,13 +849,14 @@ export default function RecruiterCV() {
             >Book a time to talk</a>
           </div>
         </footer>
+        </div>
       </div>
       <style>{`
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes shimmer { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
         * { box-sizing: border-box; margin: 0; }
         html { scroll-behavior: smooth; }
-        body { background: ${T.bg}; }
+        body { background: #E8E4DE; }
         ::selection { background: ${T.accentBg}; color: ${T.accent}; }
         button:hover { opacity: 0.92; }
       `}</style>
