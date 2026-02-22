@@ -550,12 +550,6 @@ function BuildTile({ build, index, onModalOpen }) {
           ))}
         </div>
       )}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "auto" }}>
-        <div style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", fontWeight: 600, color: build.color, display: "inline-flex", alignItems: "center", gap: 5 }}>
-          {build.linkLabel}
-        </div>
-        <span style={{ fontSize: 18, color: T.textFaint, transition: "transform 0.2s" }}>→</span>
-      </div>
     </Tag>
   );
 }
@@ -613,31 +607,30 @@ export default function RecruiterCV() {
           transition: "all 0.7s ease", position: "relative",
         }}>
           {/* Tabs — flush at top of card */}
-          <div style={{ display: "flex", background: T.tagBg, borderRadius: "15px 15px 0 0", padding: 0, margin: "0 -40px", position: "relative" }}>
-            {/* Sliding pill background */}
-            <div style={{
-              position: "absolute", top: 0, bottom: 0,
-              borderRadius: tab === 0 ? "15px 0 0 0" : tab === TABS.length - 1 ? "0 15px 0 0" : 0,
-              background: T.card, boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
-              width: `${100 / TABS.length}%`,
-              left: `${tab * (100 / TABS.length)}%`,
-              transition: "left 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), border-radius 0.35s ease",
-              zIndex: 0,
-            }} />
+          <div style={{ display: "flex", background: "transparent", padding: "16px 0 0", margin: "0 -40px", position: "relative" }}>
             {TABS.map((t, i) => (
               <button key={t} onClick={() => { setTab(i); }}
-              onMouseEnter={e => { if (tab !== i) { e.currentTarget.style.color = T.text; e.currentTarget.style.fontWeight = "700"; e.currentTarget.style.letterSpacing = "0.3px"; } }}
-              onMouseLeave={e => { if (tab !== i) { e.currentTarget.style.color = T.textLight; e.currentTarget.style.fontWeight = "500"; e.currentTarget.style.letterSpacing = "0px"; } }}
+              onMouseEnter={e => { if (tab !== i) { e.currentTarget.style.color = T.text; } }}
+              onMouseLeave={e => { if (tab !== i) { e.currentTarget.style.color = T.textLight; } }}
               style={{
-                flex: 1, padding: "12px 14px", borderRadius: 0, border: "none",
+                flex: 1, padding: "10px 14px 14px", borderRadius: 0,
+                border: "none",
                 background: "transparent",
                 color: tab === i ? T.accent : T.textLight,
                 fontSize: 13, fontWeight: tab === i ? 700 : 500,
                 fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", cursor: "pointer",
-                transition: "color 0.2s ease, font-weight 0.2s ease, letter-spacing 0.2s ease",
-                position: "relative", zIndex: 1,
+                transition: "all 0.3s ease",
                 letterSpacing: "0px",
-              }}>{t}</button>
+                display: "flex", flexDirection: "column", alignItems: "center", gap: 6,
+              }}>
+                {t}
+                <span style={{
+                  width: tab === i ? 6 : 0, height: 6, borderRadius: "50%",
+                  background: T.accent,
+                  transition: "all 0.3s ease",
+                  opacity: tab === i ? 1 : 0,
+                }} />
+              </button>
             ))}
           </div>
           {/* Name + Title + Icons */}
