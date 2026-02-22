@@ -650,7 +650,7 @@ export default function RecruiterCV() {
               zIndex: 0,
             }} />
             {TABS.map((t, i) => (
-              <button key={t} onClick={() => { setTab(i); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+              <button key={t} onClick={() => { setTab(i); }}
               onMouseEnter={e => { if (tab !== i) { e.currentTarget.style.color = T.text; e.currentTarget.style.fontWeight = "700"; e.currentTarget.style.letterSpacing = "0.3px"; } }}
               onMouseLeave={e => { if (tab !== i) { e.currentTarget.style.color = T.textLight; e.currentTarget.style.fontWeight = "500"; e.currentTarget.style.letterSpacing = "0px"; } }}
               style={{
@@ -666,74 +666,16 @@ export default function RecruiterCV() {
             ))}
           </div>
         </header>
-        {/* ===== ABOUT ME ===== */}
-        {tab === 2 && (
-          <div style={{ padding: "0 0 56px", animation: "fadeIn 0.35s ease" }}>
-            <div style={{ marginBottom: 24 }}>
-              <h3 style={{ display: "block", fontSize: 15, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.text, letterSpacing: 0, textTransform: "none", marginBottom: 8, fontWeight: 700, padding: "0 0 0 12px", background: "none", borderRadius: 0, borderBottom: "none", borderLeft: `3px solid ${T.accent}` }}>A bit about me</h3>
-              <p style={{ fontSize: 14, color: T.textMid, lineHeight: 1.65, marginBottom: 16 }}>Ideal spot for an intro video, but if you're enjoying my content, check out how we're helping teams manage application volume in this product breakdown of First!</p>
-              <div style={{
-                width: "60%", aspectRatio: "16/9", borderRadius: 10, margin: "0 auto",
-                overflow: "hidden", border: `1px solid ${T.cardBorder}`,
-                marginBottom: 8,
-              }}>
-                <iframe
-                  src="https://www.youtube.com/embed/rkenwB12R-o"
-                  style={{ width: "100%", height: "100%", border: "none" }}
-                  title="6-Min Demo of First"
-                  allowFullScreen
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                />
-              </div>
-            </div>
-            <div style={{ marginBottom: 36 }}>
-              <h3 style={{ display: "block", fontSize: 15, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.text, letterSpacing: 0, textTransform: "none", marginBottom: 16, fontWeight: 700, padding: "0 0 0 12px", background: "none", borderRadius: 0, borderBottom: "none", borderLeft: `3px solid ${T.accent}` }}>A few things about me</h3>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 10 }}>
-                {[
-                  { label: "Football", text: "Lifelong Crystal Palace fan. Yes, I know. No, I can't explain it either. Season ticket holder. The highs are rare but they're worth it." },
-                  { label: "Running", text: "5k most mornings around Brockwell Park. I'm slow but consistent, which is also how I'd describe my sourcing." },
-                  { label: "Cooking", text: "I make everything from scratch. Current obsession is getting the perfect crispy chilli oil. My mates say I should start a food account. I won't." },
-                  { label: "Mabel", text: "One-year-old cockapoo. Has 1,200 Instagram followers. I have 800. She's better at personal branding than most recruiters." },
-                  { label: "Reading", text: "Mostly non-fiction. Thinking Fast and Slow changed how I interview. Currently reading Range by David Epstein. It's basically about why generalists win." },
-                  { label: "Travel", text: "Spent 3 months in Southeast Asia between jobs. Best decision I ever made. Worst sunburn I ever got. Both in Thailand." },
-                ].map((item, i) => (
-                  <div key={i} style={{
-                    padding: "16px 18px", background: T.card, border: `1px solid ${T.cardBorder}`,
-                    borderRadius: 10, boxShadow: "0 2px 8px rgba(0,0,0,0.02)",
-                    animation: `fadeIn 0.4s ease ${i * 60}ms both`,
-                  }}>
-                    <div style={{ fontSize: 10, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent, textTransform: "uppercase", letterSpacing: 0.8, marginBottom: 6, fontWeight: 600 }}>{item.label}</div>
-                    <div style={{ fontSize: 13, color: T.textMid, lineHeight: 1.65 }}>{item.text}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div>
-              <h3 style={{ display: "block", fontSize: 15, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.text, letterSpacing: 0, textTransform: "none", marginBottom: 16, fontWeight: 700, padding: "0 0 0 12px", background: "none", borderRadius: 0, borderBottom: "none", borderLeft: `3px solid ${T.accent}` }}>What I value</h3>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 10 }}>
-                {[
-                  { label: "Honesty over polish", text: "I'd rather someone tell me I'm wrong than agree with me to be polite. That goes both ways." },
-                  { label: "Doing the work", text: "I've never been the smartest person in the room, but I'll be the one who actually followed up." },
-                  { label: "Don't take yourself too seriously", text: "Recruitment is important but nobody's performing brain surgery. Have a laugh." },
-                  { label: "Loyalty to people", text: "Every company I've left, I've stayed close with the people. That matters more to me than a brand on my CV." },
-                ].map((t, i) => (
-                  <div key={i} style={{
-                    padding: "16px 18px", background: T.card, border: `1px solid ${T.cardBorder}`,
-                    borderRadius: 10,
-                    boxShadow: "0 2px 8px rgba(0,0,0,0.02)",
-                    borderLeft: `3px solid ${T.accentBorder}`,
-                  }}>
-                    <div style={{ fontSize: 13, fontWeight: 700, color: T.text, marginBottom: 4 }}>{t.label}</div>
-                    <div style={{ fontSize: 13, color: T.textMid, lineHeight: 1.65 }}>{t.text}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-        {/* ===== WORK EXPERIENCE ===== */}
-        {tab === 0 && (
-          <div style={{ padding: "0 0 56px", animation: "fadeIn 0.35s ease" }}>
+        {/* ===== TAB CONTENT SLIDER ===== */}
+        <div style={{ overflow: "hidden" }}>
+          <div style={{
+            display: "flex", width: "300%",
+            transform: `translateX(-${tab * (100 / 3)}%)`,
+            transition: "transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1)",
+          }}>
+
+        {/* ===== Tab 0: MY CAREER ===== */}
+        <div style={{ width: `${100 / 3}%`, flexShrink: 0, padding: "0 0 56px" }}>
             <p style={{ fontSize: 14, color: T.textMid, lineHeight: 1.75, margin: "0 0 8px" }}>
               8 years in recruitment. Started in high-volume agency, moved into embedded RPO across VC-backed startups,
               then went in-house at a £4.5bn fintech hiring 75 engineers with zero agency spend. Currently Head of TA
@@ -809,11 +751,10 @@ export default function RecruiterCV() {
                 {RECOMMENDATIONS.map((rec, i) => <RecCard key={i} rec={rec} index={i} />)}
               </div>
             </div>
-          </div>
-        )}
-        {/* ===== AI BUILDS ===== */}
-        {tab === 1 && (
-          <div style={{ padding: "0 0 56px", animation: "fadeIn 0.35s ease" }}>
+        </div>
+
+        {/* ===== Tab 1: MY PROJECTS ===== */}
+        <div style={{ width: `${100 / 3}%`, flexShrink: 0, padding: "0 0 56px" }}>
             {["Agents", "Builds & Automation", "Articles"].map(cat => {
               const tiles = BUILD_TILES.filter(b => b.category === cat);
               if (!tiles.length) return null;
@@ -826,8 +767,73 @@ export default function RecruiterCV() {
                 </div>
               );
             })}
-          </div>
-        )}
+        </div>
+
+        {/* ===== Tab 2: MY PERSONAL LIFE ===== */}
+        <div style={{ width: `${100 / 3}%`, flexShrink: 0, padding: "0 0 56px" }}>
+            <div style={{ marginBottom: 24 }}>
+              <h3 style={{ display: "block", fontSize: 15, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.text, letterSpacing: 0, textTransform: "none", marginBottom: 8, fontWeight: 700, padding: "0 0 0 12px", background: "none", borderRadius: 0, borderBottom: "none", borderLeft: `3px solid ${T.accent}` }}>A bit about me</h3>
+              <p style={{ fontSize: 14, color: T.textMid, lineHeight: 1.65, marginBottom: 16 }}>Ideal spot for an intro video, but if you're enjoying my content, check out how we're helping teams manage application volume in this product breakdown of First!</p>
+              <div style={{
+                width: "60%", aspectRatio: "16/9", borderRadius: 10, margin: "0 auto",
+                overflow: "hidden", border: `1px solid ${T.cardBorder}`,
+                marginBottom: 8,
+              }}>
+                <iframe
+                  src="https://www.youtube.com/embed/rkenwB12R-o"
+                  style={{ width: "100%", height: "100%", border: "none" }}
+                  title="6-Min Demo of First"
+                  allowFullScreen
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                />
+              </div>
+            </div>
+            <div style={{ marginBottom: 36 }}>
+              <h3 style={{ display: "block", fontSize: 15, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.text, letterSpacing: 0, textTransform: "none", marginBottom: 16, fontWeight: 700, padding: "0 0 0 12px", background: "none", borderRadius: 0, borderBottom: "none", borderLeft: `3px solid ${T.accent}` }}>A few things about me</h3>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 10 }}>
+                {[
+                  { label: "Football", text: "Lifelong Crystal Palace fan. Yes, I know. No, I can't explain it either. Season ticket holder. The highs are rare but they're worth it." },
+                  { label: "Running", text: "5k most mornings around Brockwell Park. I'm slow but consistent, which is also how I'd describe my sourcing." },
+                  { label: "Cooking", text: "I make everything from scratch. Current obsession is getting the perfect crispy chilli oil. My mates say I should start a food account. I won't." },
+                  { label: "Mabel", text: "One-year-old cockapoo. Has 1,200 Instagram followers. I have 800. She's better at personal branding than most recruiters." },
+                  { label: "Reading", text: "Mostly non-fiction. Thinking Fast and Slow changed how I interview. Currently reading Range by David Epstein. It's basically about why generalists win." },
+                  { label: "Travel", text: "Spent 3 months in Southeast Asia between jobs. Best decision I ever made. Worst sunburn I ever got. Both in Thailand." },
+                ].map((item, i) => (
+                  <div key={i} style={{
+                    padding: "16px 18px", background: T.card, border: `1px solid ${T.cardBorder}`,
+                    borderRadius: 10, boxShadow: "0 2px 8px rgba(0,0,0,0.02)",
+                  }}>
+                    <div style={{ fontSize: 10, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent, textTransform: "uppercase", letterSpacing: 0.8, marginBottom: 6, fontWeight: 600 }}>{item.label}</div>
+                    <div style={{ fontSize: 13, color: T.textMid, lineHeight: 1.65 }}>{item.text}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 style={{ display: "block", fontSize: 15, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.text, letterSpacing: 0, textTransform: "none", marginBottom: 16, fontWeight: 700, padding: "0 0 0 12px", background: "none", borderRadius: 0, borderBottom: "none", borderLeft: `3px solid ${T.accent}` }}>What I value</h3>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 10 }}>
+                {[
+                  { label: "Honesty over polish", text: "I'd rather someone tell me I'm wrong than agree with me to be polite. That goes both ways." },
+                  { label: "Doing the work", text: "I've never been the smartest person in the room, but I'll be the one who actually followed up." },
+                  { label: "Don't take yourself too seriously", text: "Recruitment is important but nobody's performing brain surgery. Have a laugh." },
+                  { label: "Loyalty to people", text: "Every company I've left, I've stayed close with the people. That matters more to me than a brand on my CV." },
+                ].map((t, i) => (
+                  <div key={i} style={{
+                    padding: "16px 18px", background: T.card, border: `1px solid ${T.cardBorder}`,
+                    borderRadius: 10,
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.02)",
+                    borderLeft: `3px solid ${T.accentBorder}`,
+                  }}>
+                    <div style={{ fontSize: 13, fontWeight: 700, color: T.text, marginBottom: 4 }}>{t.label}</div>
+                    <div style={{ fontSize: 13, color: T.textMid, lineHeight: 1.65 }}>{t.text}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+        </div>
+
+          </div>{/* end flex track */}
+        </div>{/* end overflow hidden */}
         {/* Sheets Modal */}
         {modal === "sheets" && <SheetsModal onClose={() => setModal(null)} />}
         {modal === "sql" && <SQLModal onClose={() => setModal(null)} />}
