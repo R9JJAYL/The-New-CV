@@ -641,7 +641,7 @@ export default function RecruiterCV() {
             ))}
           </div>
           {/* Name + Title + Icons */}
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14, marginTop: 20 }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 20, marginBottom: 14 }}>
             <h1 style={{ fontSize: 24, fontWeight: 800, margin: 0, lineHeight: 1, letterSpacing: "-1px", color: T.text, flex: "0 0 auto" }}>Phil Role</h1>
             <p style={{ fontSize: 24, fontWeight: 800, margin: 0, lineHeight: 1, letterSpacing: "-1px", color: T.accent, textAlign: "center", flex: "1 1 auto" }}>Head of Talent Acquisition</p>
             <div style={{ display: "flex", gap: 8, flex: "0 0 auto" }}>
