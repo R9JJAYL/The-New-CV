@@ -25,11 +25,11 @@ const ROLES = [
   {
     title: "Head of Talent Acquisition",
     company: "Vantage Health",
-    companyDesc: "Series B health-tech. \u00a345m raise, 140 employees at hire. Operating in the \u00a3350bn global digital health market. Hiring across engineering, product, design, and commercial.",
-    companyPills: ["\u00a345m Series B", "Health-Tech", "140 Employees"],
+    companyDesc: "Series B health-tech. £45m raise, 140 employees at hire. Operating in the £350bn global digital health market. Hiring across engineering, product, design, and commercial.",
+    companyPills: ["£45m Series B", "Health-Tech", "140 Employees"],
     roleContext: "Hired to build and own the TA function from scratch, reporting directly to the CPO. Inherited zero processes, one agency relationship, and a hiring plan of 80+ roles across engineering, product, design, and GTM. Built the full recruitment infrastructure including ATS setup, interview frameworks, scorecards, and hiring manager training. Promoted to Head of TA after 10 months.",
     duration: "1y 5m",
-    period: "Sep 2023 \u2014 Present",
+    period: "Sep 2023 — Present",
     type: "In-House",
     color: T.blue,
     logo: "https://logo.clearbit.com/vantagehealth.com",
@@ -38,34 +38,34 @@ const ROLES = [
       "Scaled company from 140 to 310 employees in 18 months with a 3-person TA team.",
       "Reduced average time-to-offer from 38 days to 19 days by redesigning the interview framework.",
       "Personally sourced and closed 12 senior/staff-level engineers after 6+ months of failed agency searches.",
-      "Launched a referral programme generating 30% of all hires \u2014 highest in the company\u2019s history.",
-      "Introduced structured scorecards across 18 hiring managers \u2014 90% adoption within 6 weeks.",
-      "Built real-time hiring dashboards in Google Sheets, replacing \u00a316k/year in ATS analytics tooling.",
+      "Launched a referral programme generating 30% of all hires — highest in the company's history.",
+      "Introduced structured scorecards across 18 hiring managers — 90% adoption within 6 weeks.",
+      "Built real-time hiring dashboards in Google Sheets, replacing £16k/year in ATS analytics tooling.",
       "Negotiated 80+ offers with a 95% acceptance rate.",
     ],
-    progression: "Senior TA Partner \u2192 Head of Talent Acquisition (promoted after 10 months)",
+    progression: "Senior TA Partner → Head of Talent Acquisition (promoted after 10 months)",
   },
   {
     title: "Senior Talent Partner",
     company: "Nexus Bank",
-    companyDesc: "Series F digital bank. \u00a34.5bn valuation, 2,500+ employees. 70% of headcount in engineering. FCA-regulated, UK and European markets.",
-    companyPills: ["\u00a34.5bn Series F", "Fintech", "2,500 Employees"],
+    companyDesc: "Series F digital bank. £4.5bn valuation, 2,500+ employees. 70% of headcount in engineering. FCA-regulated, UK and European markets.",
+    companyPills: ["£4.5bn Series F", "Fintech", "2,500 Employees"],
     roleContext: "Embedded in the engineering org as the sole recruiter covering backend, platform, and infrastructure across 4 squads. Partnered with 11 hiring managers on role scoping, market mapping, and offer strategy. Managed the full cycle from sourcing through to close, with a focus on reducing time-to-offer and eliminating agency dependency entirely.",
     duration: "2y 8m",
-    period: "Jan 2021 \u2014 Aug 2023",
+    period: "Jan 2021 — Aug 2023",
     type: "In-House",
     color: T.green,
     logo: "https://logo.clearbit.com/nexusbank.com",
     logoFallback: "NB",
     highlights: [
-      "Hired 75 engineers in 2.5 years \u2014 65% sourced directly, zero through agencies.",
+      "Hired 75 engineers in 2.5 years — 65% sourced directly, zero through agencies.",
       "93% 12-month retention rate across all hires, beating the company average by 10 points.",
-      "Eliminated agency dependency for the engineering org \u2014 saving an estimated \u00a3350k+ in fees.",
-      "Designed and delivered the company\u2019s first internal sourcing bootcamp \u2014 trained 6 new recruiters.",
+      "Eliminated agency dependency for the engineering org — saving an estimated £350k+ in fees.",
+      "Designed and delivered the company's first internal sourcing bootcamp — trained 6 new recruiters.",
       "Led hiring for a brand new platform team from 0 to 14 engineers in 5 months.",
-      "Rebuilt the candidate experience survey \u2014 NPS jumped from 64 to 86 company-wide.",
+      "Rebuilt the candidate experience survey — NPS jumped from 64 to 86 company-wide.",
     ],
-    progression: "Talent Partner \u2192 Senior Talent Partner (promoted after 12 months)",
+    progression: "Talent Partner → Senior Talent Partner (promoted after 12 months)",
     leaving: "Headhunted by Vantage Health to build their TA function from scratch.",
   },
   {
@@ -75,57 +75,57 @@ const ROLES = [
     companyPills: ["Embedded RPO", "Series A-C Clients", "25 Employees"],
     roleContext: "Placed inside VC-backed startups as an extension of their internal TA teams, working on-site and operating as if in-house. Managed the full recruitment cycle for software engineering roles, from intake and sourcing through to offer negotiation. Built candidate pipelines, ran stakeholder calibration sessions, and trained junior consultants across multiple client accounts.",
     duration: "2y 10m",
-    period: "Mar 2018 \u2014 Dec 2020",
+    period: "Mar 2018 — Dec 2020",
     type: "Embedded RPO",
     color: T.amber,
     logo: "https://logo.clearbit.com/harmonsearch.com",
     logoFallback: "HS",
     highlights: [
-      "Billed \u00a3480k+ over 2.5 years \u2014 top biller 7 out of 10 quarters.",
+      "Billed £480k+ over 2.5 years — top biller 7 out of 10 quarters.",
       "Placed 105+ candidates with a 92% retention rate at 12 months.",
-      "Won 18 new client accounts through candidate referrals alone \u2014 zero cold outreach.",
-      "Ran a 12-hire embedded project for a Series A fintech \u2014 completed 2 weeks ahead of schedule.",
+      "Won 18 new client accounts through candidate referrals alone — zero cold outreach.",
+      "Ran a 12-hire embedded project for a Series A fintech — completed 2 weeks ahead of schedule.",
       "Built a candidate community of 2,000+ engineers through events, dinners, and content.",
-      "Mentored 3 junior consultants \u2014 all hit target within their first 6 months.",
+      "Mentored 3 junior consultants — all hit target within their first 6 months.",
     ],
-    progression: "Consultant \u2192 Senior Consultant \u2192 offered Team Lead (declined to move in-house)",
+    progression: "Consultant → Senior Consultant → offered Team Lead (declined to move in-house)",
     leaving: "Wanted to be part of the teams I was hiring for. Made the jump to in-house.",
   },
   {
     title: "Recruitment Consultant",
     company: "Sterling Recruitment",
-    companyDesc: "Global recruitment firm, \u00a31.5bn revenue. Technology division, London. 5,000+ employees across 30 countries.",
-    companyPills: ["\u00a31.5bn Revenue", "Global Agency", "5,000 Employees"],
+    companyDesc: "Global recruitment firm, £1.5bn revenue. Technology division, London. 5,000+ employees across 30 countries.",
+    companyPills: ["£1.5bn Revenue", "Global Agency", "5,000 Employees"],
     roleContext: "Graduate entry into high-volume agency recruitment, covering contract and permanent technology roles across the South East. 80+ calls a day from week one, managing the full cycle from business development and job qualification through to sourcing, interviewing, and closing. Learned the fundamentals of sales, negotiation, and candidate management at pace.",
     duration: "1y 8m",
-    period: "Jul 2016 \u2014 Feb 2018",
+    period: "Jul 2016 — Feb 2018",
     type: "Agency",
     color: T.red,
     logo: "https://logo.clearbit.com/sterlingrecruitment.com",
     logoFallback: "SR",
     highlights: [
-      "Billed \u00a3190k in second year \u2014 115% of target, up from 65% in year one.",
+      "Billed £190k in second year — 115% of target, up from 65% in year one.",
       "Fastest in the cohort to make a placement (19 days from desk start).",
       "Placed 45 candidates across contract and permanent roles.",
       "Built an early specialism in DevOps and cloud infrastructure before most agencies had a dedicated desk.",
     ],
-    progression: "Trainee \u2192 Recruitment Consultant (promoted in 11 months \u2014 fastest in the division)",
+    progression: "Trainee → Recruitment Consultant (promoted in 11 months — fastest in the division)",
     leaving: "Outgrew the big-firm model. Wanted a smaller team where I could own the full desk.",
   },
 ];
 const RECOMMENDATIONS = [
   { name: "Priya Sharma", role: "VP Engineering, Vantage Health", text: "Phil pushed back on my job specs and was right every time. Helped me figure out what I actually needed, then found exactly those people.", relation: "Hiring manager @ Vantage Health" },
-  { name: "Marcus Chen", role: "Staff Engineer, Nexus Bank", text: "Phil sent me two sentences about why I\u2019d be a good fit, both specific to things on my profile nobody else had noticed. Three years later I\u2019m still here.", relation: "Candidate @ Nexus Bank" },
-  { name: "Tom Okafor", role: "CPO, Vantage Health", text: "Phil built a function, not just a pipeline. Designed the processes, trained hiring managers, hired 170 people. When he\u2019s not here the system still runs.", relation: "Manager @ Vantage Health" },
-  { name: "Lucy Ward", role: "Recruitment Consultant, Harmon Search", text: "Phil trained me when I joined and he\u2019s the reason I\u2019m still in recruitment. I hit target in my first 6 months because of how he set me up.", relation: "Direct report @ Harmon Search" },
+  { name: "Marcus Chen", role: "Staff Engineer, Nexus Bank", text: "Phil sent me two sentences about why I'd be a good fit, both specific to things on my profile nobody else had noticed. Three years later I'm still here.", relation: "Candidate @ Nexus Bank" },
+  { name: "Tom Okafor", role: "CPO, Vantage Health", text: "Phil built a function, not just a pipeline. Designed the processes, trained hiring managers, hired 170 people. When he's not here the system still runs.", relation: "Manager @ Vantage Health" },
+  { name: "Lucy Ward", role: "Recruitment Consultant, Harmon Search", text: "Phil trained me when I joined and he's the reason I'm still in recruitment. I hit target in my first 6 months because of how he set me up.", relation: "Direct report @ Harmon Search" },
 ];
 const BUILD_TILES = [
-  { category: "Agents", title: "Prospect Research Agent", desc: "Feed it a company URL. It scrapes careers pages, detects the ATS, maps hiring patterns, and returns a structured outreach brief.", type: "AI Agent", icon: "\ud83d\udd0d", color: T.blue, url: "#", linkLabel: "Coming soon", tags: ["Claude Code", "Web Scraping", "Supabase", "Vercel"] },
-  { category: "Agents", title: "CV Invaders", desc: "Agency vs in-house. 60 seconds. Protect the ATS from evil bots. Built for fun, shared for laughs.", type: "Arcade Game", icon: "\ud83d\udc7e", color: T.purple, url: "https://cv-invaders.vercel.app/", linkLabel: "Play", tags: ["Claude Code", "Supabase", "Vercel", "JavaScript", "React"] },
-  { category: "Builds & Automation", title: "Why I Build Things", desc: "I learn by making. Most of what\u2019s here started as a problem I had at work that no tool quite solved. This CV included.", type: "Manifesto", icon: "\ud83d\udee0\ufe0f", color: T.accent, url: "#", linkLabel: "", tags: ["Claude Code", "GitHub", "Vercel", "JavaScript"] },
-  { category: "Builds & Automation", title: "KPI Tracker Rebuild", desc: "Took a broken spreadsheet and turned it into a proper tracking system. Daily, weekly, and individual views. 40% faster data entry.", type: "Automation", icon: "\ud83d\udcca", color: T.green, modal: "sheets", linkLabel: "View project", tags: ["Process Redesign", "Google Sheets", "KPI Analysis", "Automation"] },
-  { category: "Articles", title: "Investor Data Pack", desc: "SQL analysis on traffic, conversions, and growth to arm the C-suite for a fundraise pitch.", type: "Data Analysis", icon: "\ud83e\uddee", color: T.amber, modal: "sql", linkLabel: "View project", tags: ["SQL", "Data Analysis", "Investor Reporting", "CTR / CVR"] },
-  { category: "Articles", title: "The Truth About D&I", desc: "What actually works in diversity hiring, what doesn\u2019t, and why most companies are getting it wrong.", type: "Long-form Article", icon: "\u270d\ufe0f", color: T.blue, url: "https://www.linkedin.com/pulse/truth-diversity-inclusion-jamie-lyons/", linkLabel: "Read", tags: ["D&I", "LinkedIn", "Recruitment", "Opinion"] },
+  { category: "Agents", title: "Prospect Research Agent", desc: "Feed it a company URL. It scrapes careers pages, detects the ATS, maps hiring patterns, and returns a structured outreach brief.", type: "AI Agent", icon: "🔍", color: T.blue, url: "#", linkLabel: "Coming soon", tags: ["Claude Code", "Web Scraping", "Supabase", "Vercel"] },
+  { category: "Agents", title: "CV Invaders", desc: "Agency vs in-house. 60 seconds. Protect the ATS from evil bots. Built for fun, shared for laughs.", type: "Arcade Game", icon: "👾", color: T.purple, url: "https://cv-invaders.vercel.app/", linkLabel: "Play", tags: ["Claude Code", "Supabase", "Vercel", "JavaScript", "React"] },
+  { category: "Builds & Automation", title: "Why I Build Things", desc: "I learn by making. Most of what's here started as a problem I had at work that no tool quite solved. This CV included.", type: "Manifesto", icon: "🛠️", color: T.accent, url: "#", linkLabel: "", tags: ["Claude Code", "GitHub", "Vercel", "JavaScript"] },
+  { category: "Builds & Automation", title: "KPI Tracker Rebuild", desc: "Took a broken spreadsheet and turned it into a proper tracking system. Daily, weekly, and individual views. 40% faster data entry.", type: "Automation", icon: "📊", color: T.green, modal: "sheets", linkLabel: "View project", tags: ["Process Redesign", "Google Sheets", "KPI Analysis", "Automation"] },
+  { category: "Articles", title: "Investor Data Pack", desc: "SQL analysis on traffic, conversions, and growth to arm the C-suite for a fundraise pitch.", type: "Data Analysis", icon: "🧮", color: T.amber, modal: "sql", linkLabel: "View project", tags: ["SQL", "Data Analysis", "Investor Reporting", "CTR / CVR"] },
+  { category: "Articles", title: "The Truth About D&I", desc: "What actually works in diversity hiring, what doesn't, and why most companies are getting it wrong.", type: "Long-form Article", icon: "✍️", color: T.blue, url: "https://www.linkedin.com/pulse/truth-diversity-inclusion-jamie-lyons/", linkLabel: "Read", tags: ["D&I", "LinkedIn", "Recruitment", "Opinion"] },
 ];
 const STATS = [
   { value: 300, suffix: "+", label: "Career Hires", prefix: "" },
@@ -296,7 +296,7 @@ function SheetsModal({ onClose }) {
     {
       num: "01",
       title: "The Problem",
-      body: "KPI tracking was scattered across disconnected sheets with no consistency. Senior leads were spending 45+ minutes a week on admin just keeping numbers up to date. The team didn\u2019t fully understand how their KPIs were calculated, and there was no easy way to analyse individual or team performance at review time.",
+      body: "KPI tracking was scattered across disconnected sheets with no consistency. Senior leads were spending 45+ minutes a week on admin just keeping numbers up to date. The team didn't fully understand how their KPIs were calculated, and there was no easy way to analyse individual or team performance at review time.",
       color: T.red,
     },
     {
@@ -316,7 +316,7 @@ function SheetsModal({ onClose }) {
     {
       num: "04",
       title: "Sheet 3: Individual Performance",
-      body: "A personal tracker for each team member showing their own numbers, targets, and progress. Built so 1:1s could focus on coaching, not \u2018let me find your stats\u2019. Also used to support people during annual reviews with clear, data-backed performance summaries.",
+      body: "A personal tracker for each team member showing their own numbers, targets, and progress. Built so 1:1s could focus on coaching, not 'let me find your stats'. Also used to support people during annual reviews with clear, data-backed performance summaries.",
       color: T.amber,
       embed: "https://docs.google.com/spreadsheets/d/1rfP_tJNh8LbF-j1aH9_0qBCXw05aR7iilbucGfGgMgM/preview?gid=1413052365",
     },
@@ -342,17 +342,17 @@ function SheetsModal({ onClose }) {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 20 }}>
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
-              <span style={{ fontSize: 24 }}>\ud83d\udcca</span>
+              <span style={{ fontSize: 24 }}>📊</span>
               <span style={{ fontSize: 9, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "3px 8px", background: T.green + "12", color: T.green, borderRadius: 6, letterSpacing: "0.5px", textTransform: "uppercase", fontWeight: 600 }}>Process Improvement</span>
             </div>
             <h2 style={{ fontSize: 22, fontWeight: 800, color: T.text, margin: 0, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>Google Sheets KPI Redesign</h2>
-            <p style={{ fontSize: 12, color: T.textLight, marginTop: 4, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>TalentLoop \u00b7 2021</p>
+            <p style={{ fontSize: 12, color: T.textLight, marginTop: 4, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>TalentLoop · 2021</p>
           </div>
           <button onClick={onClose} style={{
             width: 32, height: 32, borderRadius: 10, border: `1px solid ${T.cardBorder}`,
             background: T.card, color: T.textLight, fontSize: 16, cursor: "pointer",
             display: "flex", alignItems: "center", justifyContent: "center",
-          }}>\u00d7</button>
+          }}>×</button>
         </div>
         {/* Result stats */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 8, marginBottom: 20 }}>
@@ -402,7 +402,7 @@ function SheetsModal({ onClose }) {
           <a href="https://github.com/R9JJAYL/Google-Sheets-Process-Improvement" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()} style={{
             fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.green, fontWeight: 600, textDecoration: "none",
           }}>
-            Full breakdown on GitHub \u2192
+            Full breakdown on GitHub →
           </a>
         </div>
       </div>
@@ -414,13 +414,13 @@ function SQLModal({ onClose }) {
     {
       num: "01",
       title: "The Brief",
-      body: "The business was preparing for a round of fundraising and needed a clear picture of how the online side had performed over time. The C-suite needed data they could put in front of investors \u2014 not raw tables, but a story backed by numbers.",
+      body: "The business was preparing for a round of fundraising and needed a clear picture of how the online side had performed over time. The C-suite needed data they could put in front of investors — not raw tables, but a story backed by numbers.",
       color: T.red,
     },
     {
       num: "02",
       title: "Traffic & Source Analysis",
-      body: "Broke down website traffic by source (organic, paid, direct, referral) across multiple years to show growth trends. Used CASE pivots to restructure the data so each traffic source sat in its own column \u2014 much easier for leadership to scan than stacked rows.",
+      body: "Broke down website traffic by source (organic, paid, direct, referral) across multiple years to show growth trends. Used CASE pivots to restructure the data so each traffic source sat in its own column — much easier for leadership to scan than stacked rows.",
       color: T.blue,
       code: "SELECT\n  year,\n  SUM(CASE WHEN source = 'organic' THEN sessions END) AS organic,\n  SUM(CASE WHEN source = 'paid' THEN sessions END) AS paid\nFROM traffic\nGROUP BY year",
     },
@@ -454,17 +454,17 @@ function SQLModal({ onClose }) {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 20 }}>
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
-              <span style={{ fontSize: 24 }}>\ud83e\uddee</span>
+              <span style={{ fontSize: 24 }}>🧮</span>
               <span style={{ fontSize: 9, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "3px 8px", background: T.amber + "12", color: T.amber, borderRadius: 6, letterSpacing: "0.5px", textTransform: "uppercase", fontWeight: 600 }}>SQL & Data Analysis</span>
             </div>
             <h2 style={{ fontSize: 22, fontWeight: 800, color: T.text, margin: 0, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>SQL Analysis for Fund Raise</h2>
-            <p style={{ fontSize: 12, color: T.textLight, marginTop: 4, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>Investor preparation \u00b7 SQL \u00b7 PDF report</p>
+            <p style={{ fontSize: 12, color: T.textLight, marginTop: 4, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>Investor preparation · SQL · PDF report</p>
           </div>
           <button onClick={onClose} style={{
             width: 32, height: 32, borderRadius: 10, border: `1px solid ${T.cardBorder}`,
             background: T.card, color: T.textLight, fontSize: 16, cursor: "pointer",
             display: "flex", alignItems: "center", justifyContent: "center",
-          }}>\u00d7</button>
+          }}>×</button>
         </div>
         {/* Steps */}
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
@@ -504,12 +504,12 @@ function SQLModal({ onClose }) {
           <a href="https://github.com/R9JJAYL/SQLAnalysisForFundRaise/blob/main/FundRaiseAnalysisReport.pdf" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()} style={{
             fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.amber, fontWeight: 600, textDecoration: "none",
           }}>
-            View full report (PDF) \u2192
+            View full report (PDF) →
           </a>
           <a href="https://github.com/R9JJAYL/SQLAnalysisForFundRaise/blob/main/FundRaiseAnalysisCode.sql" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()} style={{
             fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, fontWeight: 600, textDecoration: "none",
           }}>
-            View SQL code \u2192
+            View SQL code →
           </a>
         </div>
       </div>
@@ -554,7 +554,7 @@ function BuildTile({ build, index, onModalOpen }) {
         <div style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", fontWeight: 600, color: build.color, display: "inline-flex", alignItems: "center", gap: 5 }}>
           {build.linkLabel}
         </div>
-        <span style={{ fontSize: 18, color: T.textFaint, transition: "transform 0.2s" }}>\u2192</span>
+        <span style={{ fontSize: 18, color: T.textFaint, transition: "transform 0.2s" }}>→</span>
       </div>
     </Tag>
   );
@@ -729,7 +729,7 @@ export default function RecruiterCV() {
           <div style={{ padding: "0 0 56px", animation: "fadeIn 0.35s ease" }}>
             <p style={{ fontSize: 14, color: T.textMid, lineHeight: 1.75, margin: "0 0 8px" }}>
               8 years in recruitment. Started in high-volume agency, moved into embedded RPO across VC-backed startups,
-              then went in-house at a \u00a34.5bn fintech hiring 75 engineers with zero agency spend. Currently Head of TA
+              then went in-house at a £4.5bn fintech hiring 75 engineers with zero agency spend. Currently Head of TA
               at a Series B health-tech, where I scaled the company from 140 to 310 people. Promoted at every company.
             </p>
             <p style={{ fontSize: 14, color: T.textMid, lineHeight: 1.75, margin: "0 0 22px" }}>
@@ -761,7 +761,7 @@ export default function RecruiterCV() {
               <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10 }}>
                 <div style={{ padding: "14px 16px", background: T.card, borderRadius: 10, border: `1px solid ${T.cardBorder}`, boxShadow: "0 2px 8px rgba(0,0,0,0.02)" }}>
                   <div style={{ fontSize: 13, color: T.text, fontWeight: 600 }}>BA (Hons) Business Management</div>
-                  <div style={{ fontSize: 11, color: T.textLight, marginTop: 4 }}>University of Leeds \u00b7 2:1</div>
+                  <div style={{ fontSize: 11, color: T.textLight, marginTop: 4 }}>University of Leeds · 2:1</div>
                 </div>
                 <div style={{ padding: "14px 16px", background: T.card, borderRadius: 10, border: `1px solid ${T.cardBorder}`, boxShadow: "0 2px 8px rgba(0,0,0,0.02)" }}>
                   <div style={{ fontSize: 13, color: T.text, fontWeight: 600 }}>AIRS Certified</div>
