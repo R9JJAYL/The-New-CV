@@ -24,7 +24,7 @@ const T = {
 const ROLES = [
   {
     title: "Head of Talent Acquisition",
-    company: "Vantage Health",
+    company: "First",
     companyDesc: "Series B health-tech. £45m raise, 140 employees at hire. Operating in the £350bn global digital health market. Hiring across engineering, product, design, and commercial.",
     companyPills: ["£45m Series B", "Health-Tech", "140 Employees"],
     roleContext: "Hired to build and own the TA function from scratch, reporting directly to the CPO. Inherited zero processes, one agency relationship, and a hiring plan of 80+ roles across engineering, product, design, and GTM. Built the full recruitment infrastructure including ATS setup, interview frameworks, scorecards, and hiring manager training. Promoted to Head of TA after 10 months.",
@@ -32,8 +32,8 @@ const ROLES = [
     period: "Sep 2023 — Present",
     type: "In-House",
     color: T.blue,
-    logo: "https://logo.clearbit.com/vantagehealth.com",
-    logoFallback: "VH",
+    logo: "/first-logo.png",
+    logoFallback: "F",
     highlights: [
       "Scaled company from 140 to 310 employees in 18 months with a 3-person TA team.",
       "Reduced average time-to-offer from 38 days to 19 days by redesigning the interview framework.",
@@ -43,7 +43,7 @@ const ROLES = [
       "Built real-time hiring dashboards in Google Sheets, replacing £16k/year in ATS analytics tooling.",
       "Negotiated 80+ offers with a 95% acceptance rate.",
     ],
-    progression: "Senior TA Partner → Head of Talent Acquisition (promoted after 10 months)",
+    progression: { count: 1, path: "Senior TA Partner (10 months) → Head of Talent Acquisition (7 months)" },
   },
   {
     title: "Senior Talent Partner",
@@ -55,7 +55,7 @@ const ROLES = [
     period: "Jan 2021 — Aug 2023",
     type: "In-House",
     color: T.green,
-    logo: "https://logo.clearbit.com/nexusbank.com",
+    logo: "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="14" fill="#0C2416"/><circle cx="38" cy="50" r="22" fill="#27775A"/><circle cx="62" cy="50" r="22" fill="#4ADE80" opacity="0.55"/></svg>'),
     logoFallback: "NB",
     highlights: [
       "Hired 75 engineers in 2.5 years — 65% sourced directly, zero through agencies.",
@@ -65,8 +65,8 @@ const ROLES = [
       "Led hiring for a brand new platform team from 0 to 14 engineers in 5 months.",
       "Rebuilt the candidate experience survey — NPS jumped from 64 to 86 company-wide.",
     ],
-    progression: "Talent Partner → Senior Talent Partner (promoted after 12 months)",
-    leaving: "Headhunted by Vantage Health to build their TA function from scratch.",
+    progression: { count: 1, path: "Talent Partner (12 months) → Senior Talent Partner (20 months)" },
+    leaving: "Headhunted by First to build their TA function from scratch.",
   },
   {
     title: "Embedded Senior Recruiter",
@@ -78,7 +78,7 @@ const ROLES = [
     period: "Mar 2018 — Dec 2020",
     type: "Embedded RPO",
     color: T.amber,
-    logo: "https://logo.clearbit.com/harmonsearch.com",
+    logo: "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="14" fill="#2E1A06"/><circle cx="44" cy="44" r="20" fill="none" stroke="#D4A04A" stroke-width="6"/><circle cx="44" cy="44" r="7" fill="#D4A04A"/><line x1="59" y1="59" x2="78" y2="78" stroke="#F5DEB3" stroke-width="8" stroke-linecap="round"/></svg>'),
     logoFallback: "HS",
     highlights: [
       "Billed £480k+ over 2.5 years — top biller 7 out of 10 quarters.",
@@ -88,7 +88,7 @@ const ROLES = [
       "Built a candidate community of 2,000+ engineers through events, dinners, and content.",
       "Mentored 3 junior consultants — all hit target within their first 6 months.",
     ],
-    progression: "Consultant → Senior Consultant → offered Team Lead (declined to move in-house)",
+    progression: { count: 1, path: "Consultant (14 months) → Senior Consultant (20 months)" },
     leaving: "Wanted to be part of the teams I was hiring for. Made the jump to in-house.",
   },
   {
@@ -101,7 +101,7 @@ const ROLES = [
     period: "Jul 2016 — Feb 2018",
     type: "Agency",
     color: T.red,
-    logo: "https://logo.clearbit.com/sterlingrecruitment.com",
+    logo: "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="14" fill="#2E1010"/><path d="M30 60L50 38L70 60" fill="none" stroke="#E88888" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 76L50 54L70 76" fill="none" stroke="#F5C4C4" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>'),
     logoFallback: "SR",
     highlights: [
       "Billed £190k in second year — 115% of target, up from 65% in year one.",
@@ -109,14 +109,14 @@ const ROLES = [
       "Placed 45 candidates across contract and permanent roles.",
       "Built an early specialism in DevOps and cloud infrastructure before most agencies had a dedicated desk.",
     ],
-    progression: "Trainee → Recruitment Consultant (promoted in 11 months — fastest in the division)",
+    progression: { count: 1, path: "Trainee (11 months) → Recruitment Consultant (9 months)" },
     leaving: "Outgrew the big-firm model. Wanted a smaller team where I could own the full desk.",
   },
 ];
 const RECOMMENDATIONS = [
-  { name: "Priya Sharma", role: "VP Engineering, Vantage Health", text: "Phil pushed back on my job specs and was right every time. Helped me figure out what I actually needed, then found exactly those people.", relation: "Hiring manager @ Vantage Health" },
+  { name: "Priya Sharma", role: "VP Engineering, First", text: "Phil pushed back on my job specs and was right every time. Helped me figure out what I actually needed, then found exactly those people.", relation: "Hiring manager @ First" },
   { name: "Marcus Chen", role: "Staff Engineer, Nexus Bank", text: "Phil sent me two sentences about why I'd be a good fit, both specific to things on my profile nobody else had noticed. Three years later I'm still here.", relation: "Candidate @ Nexus Bank" },
-  { name: "Tom Okafor", role: "CPO, Vantage Health", text: "Phil built a function, not just a pipeline. Designed the processes, trained hiring managers, hired 170 people. When he's not here the system still runs.", relation: "Manager @ Vantage Health" },
+  { name: "Tom Okafor", role: "CPO, First", text: "Phil built a function, not just a pipeline. Designed the processes, trained hiring managers, hired 170 people. When he's not here the system still runs.", relation: "Manager @ First" },
   { name: "Lucy Ward", role: "Recruitment Consultant, Harmon Search", text: "Phil trained me when I joined and he's the reason I'm still in recruitment. I hit target in my first 6 months because of how he set me up.", relation: "Direct report @ Harmon Search" },
 ];
 const BUILD_TILES = [
@@ -216,21 +216,8 @@ function RoleCard({ role, index, isLast }) {
         {/* White body */}
         <div style={{ background: T.card, padding: "14px 22px 14px", position: "relative" }}>
           {role.roleContext && <p style={{ fontSize: 13, color: T.textMid, margin: "0 0 0", lineHeight: 1.6 }}><span style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", fontSize: 10, color: T.accent, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.5px" }}>My role: </span>{role.roleContext}</p>}
-          {/* Logo, pills, and see more row */}
+          {/* Pills and chevron row */}
           <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 10 }}>
-            <div style={{
-              width: 28, height: 28, borderRadius: 10,
-              background: role.color + "08", border: `1px solid ${role.color}12`,
-              display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: 9, fontWeight: 800, color: role.color, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-              overflow: "hidden", opacity: 0.7, flexShrink: 0,
-            }}>
-              <img src={role.logo} alt={role.company}
-                style={{ width: "100%", height: "100%", objectFit: "contain", padding: 3 }}
-                onError={e => { e.target.style.display = "none"; e.target.nextSibling.style.display = "flex"; }}
-              />
-              <span style={{ display: "none", alignItems: "center", justifyContent: "center", width: "100%", height: "100%" }}>{role.logoFallback}</span>
-            </div>
             {role.companyPills && (
               <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
                 {role.companyPills.map((pill, i) => (
@@ -260,7 +247,7 @@ function RoleCard({ role, index, isLast }) {
               {role.progression && (
                 <div style={{ fontSize: 13, color: T.textMid, lineHeight: 1.65, marginBottom: 8, paddingLeft: 14, position: "relative" }}>
                   <span style={{ position: "absolute", left: 0, top: 9, width: 5, height: 5, borderRadius: "50%", background: role.color, opacity: 0.45 }} />
-                  {role.progression}
+                  <span style={{ fontWeight: 700, color: T.text }}>{role.progression.count}x promotion{role.progression.count > 1 ? "s" : ""}:</span> {role.progression.path}
                 </div>
               )}
               {role.leaving && (
