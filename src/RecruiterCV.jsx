@@ -680,6 +680,7 @@ export default function RecruiterCV() {
 
         {/* ===== Tab 0: MY CAREER ===== */}
         <div ref={panelRefs[0]} style={{ width: `${100 / 3}%`, flexShrink: 0, padding: "0 0 20px" }}>
+            <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>Summary</p>
             <p style={{ fontSize: 14, color: T.textMid, lineHeight: 1.75, margin: "0 0 8px" }}>
               8 years in recruitment. Started in high-volume agency, moved into embedded RPO across VC-backed startups,
               then went in-house at a £4.5bn fintech hiring 75 engineers with zero agency spend. Currently Head of TA
@@ -706,6 +707,7 @@ export default function RecruiterCV() {
                 </div>
               ))}
             </div>
+            <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>Work experience</p>
             {ROLES.map((role, i) => <RoleCard key={i} role={role} index={i} isLast={i === ROLES.length - 1} />)}
             <div style={{ height: 1, background: `linear-gradient(90deg, transparent, ${T.cardBorder}, transparent)`, margin: "28px 0" }} />
             {/* Education */}
@@ -731,12 +733,11 @@ export default function RecruiterCV() {
               <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>Skills</p>
               <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                 {[
-                  { category: "Recruitment", color: T.blue, skills: ["Direct Sourcing", "Stakeholder Management", "Offer Negotiation", "Candidate Experience", "Interview Process Design", "Employer Branding", "Agency Management", "Referral Programmes", "Hiring Manager Coaching"] },
+                  { category: "Recruitment & Strategy", color: T.blue, skills: ["Direct Sourcing", "Stakeholder Management", "Offer Negotiation", "Candidate Experience", "Interview Process Design", "Employer Branding", "Agency Management", "Referral Programmes", "Hiring Manager Coaching", "Pipeline Forecasting", "Comp Benchmarking", "Reporting & Dashboards", "Budget Management", "Vendor Negotiation", "New Business Development"] },
                   { category: "Tech Stack", color: T.green, skills: ["Greenhouse", "LinkedIn Recruiter", "Google Sheets", "Python (basic)", "Slack API", "Zapier / Make.com / n8n", "Boolean Search", "Claude / GPT-4"] },
-                  { category: "Commercial", color: T.amber, skills: ["Pipeline Forecasting", "Comp Benchmarking", "Reporting & Dashboards", "Budget Management", "Vendor Negotiation", "New Business Development"] },
                 ].map((group) => (
                   <div key={group.category} style={{ display: "flex", gap: 12, alignItems: "baseline", flexWrap: "wrap" }}>
-                    <span style={{ fontSize: 10, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: group.color, textTransform: "uppercase", letterSpacing: 0.5, fontWeight: 600, minWidth: 95, flexShrink: 0 }}>{group.category}</span>
+                    <span style={{ fontSize: 10, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: group.color, textTransform: "uppercase", letterSpacing: 0.5, fontWeight: 600, minWidth: 140, flexShrink: 0 }}>{group.category}</span>
                     <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
                       {group.skills.map((skill) => (
                         <span key={skill} style={{ padding: "5px 12px", borderRadius: 10, fontSize: 12, background: T.card, color: T.textMid, border: `1px solid ${T.cardBorder}`, boxShadow: "0 1px 3px rgba(0,0,0,0.02)" }}>{skill}</span>
