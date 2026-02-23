@@ -27,6 +27,7 @@ const ROLES = [
     company: "First",
     companyDesc: "Series B health-tech. £45m raise, 140 employees at hire. Operating in the £350bn global digital health market. Hiring across engineering, product, design, and commercial.",
     companyPills: ["£45m Series B", "Health-Tech", "140 Employees"],
+    skillPills: ["Volume Hiring", "Tech Hiring", "TA Build", "Process Design"],
     roleContext: "Hired to build and own the TA function from scratch, reporting directly to the CPO. Inherited zero processes, one agency relationship, and a hiring plan of 80+ roles across engineering, product, design, and GTM. Built the full recruitment infrastructure including ATS setup, interview frameworks, scorecards, and hiring manager training. Promoted to Head of TA after 10 months.",
     duration: "1y 5m",
     period: "Sep 2023 — Present",
@@ -50,6 +51,7 @@ const ROLES = [
     company: "Nexus Bank",
     companyDesc: "Series F digital bank. £4.5bn valuation, 2,500+ employees. 70% of headcount in engineering. FCA-regulated, UK and European markets.",
     companyPills: ["£4.5bn Series F", "Fintech", "2,500 Employees"],
+    skillPills: ["Tech Hiring", "Direct Sourcing", "Stakeholder Management"],
     roleContext: "Embedded in the engineering org as the sole recruiter covering backend, platform, and infrastructure across 4 squads. Partnered with 11 hiring managers on role scoping, market mapping, and offer strategy. Managed the full cycle from sourcing through to close, with a focus on reducing time-to-offer and eliminating agency dependency entirely.",
     duration: "2y 8m",
     period: "Jan 2021 — Aug 2023",
@@ -73,6 +75,7 @@ const ROLES = [
     company: "Harmon Search",
     companyDesc: "Boutique RPO and embedded recruitment provider, Shoreditch. 25 consultants. Series A to Series C clients across London. Engineering and product placements.",
     companyPills: ["Embedded RPO", "Series A-C Clients", "25 Employees"],
+    skillPills: ["Tech Hiring", "Client Management", "Pipeline Building"],
     roleContext: "Placed inside VC-backed startups as an extension of their internal TA teams, working on-site and operating as if in-house. Managed the full recruitment cycle for software engineering roles, from intake and sourcing through to offer negotiation. Built candidate pipelines, ran stakeholder calibration sessions, and trained junior consultants across multiple client accounts.",
     duration: "2y 10m",
     period: "Mar 2018 — Dec 2020",
@@ -96,6 +99,7 @@ const ROLES = [
     company: "Sterling Recruitment",
     companyDesc: "Global recruitment firm, £1.5bn revenue. Technology division, London. 5,000+ employees across 30 countries.",
     companyPills: ["£1.5bn Revenue", "Global Agency", "5,000 Employees"],
+    skillPills: ["High Volume", "Contract & Perm", "Business Development"],
     roleContext: "Graduate entry into high-volume agency recruitment, covering contract and permanent technology roles across the South East. 80+ calls a day from week one, managing the full cycle from business development and job qualification through to sourcing, interviewing, and closing. Learned the fundamentals of sales, negotiation, and candidate management at pace.",
     duration: "1y 8m",
     period: "Jul 2016 — Feb 2018",
@@ -215,16 +219,14 @@ function RoleCard({ role, index, isLast }) {
         </div>
         {/* White body */}
         <div style={{ background: T.card, padding: "14px 22px 14px", position: "relative" }}>
-          {role.roleContext && <p style={{ fontSize: 13, color: T.textMid, margin: "0 0 0", lineHeight: 1.6 }}><span style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", fontSize: 10, color: T.accent, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.5px" }}>My role: </span>{role.roleContext}</p>}
+          {role.roleContext && <p style={{ fontSize: 13, color: T.textMid, margin: "0 0 0", lineHeight: 1.6 }}><span style={{ fontSize: 13, color: T.accent, fontWeight: 700 }}>My role: </span>{role.roleContext}</p>}
           {/* Pills and chevron row */}
           <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 10 }}>
-            {role.companyPills && (
-              <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
-                {role.companyPills.map((pill, i) => (
-                  <span key={i} style={{ fontSize: 10, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "3px 7px", background: T.tagBg, color: T.textLight, borderRadius: 6, border: `1px solid ${T.cardBorder}`, whiteSpace: "nowrap" }}>{pill}</span>
-                ))}
-              </div>
-            )}
+            <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
+              {role.companyPills && role.companyPills.map((pill, i) => (
+                <span key={"c" + i} style={{ fontSize: 10, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "3px 7px", background: T.tagBg, color: T.textLight, borderRadius: 6, border: `1px solid ${T.cardBorder}`, whiteSpace: "nowrap" }}>{pill}</span>
+              ))}
+            </div>
             <svg width="16" height="10" viewBox="0 0 16 10" fill="none" style={{ marginLeft: "auto", flexShrink: 0, transform: open ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.3s ease, opacity 0.2s ease", opacity: hovered || open ? 1 : 0 }}>
               <path d="M1 1L8 8L15 1" stroke={T.accent} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
@@ -655,7 +657,7 @@ export default function RecruiterCV() {
 
         {/* ===== Tab 0: MY CAREER ===== */}
         <div ref={panelRefs[0]} style={{ width: `${100 / 3}%`, flexShrink: 0, padding: "0 0 20px" }}>
-            <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>Summary</p>
+            <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>Work summary</p>
             <p style={{ fontSize: 14, color: T.textMid, lineHeight: 1.75, margin: "0 0 8px" }}>
               8 years in recruitment. Started in high-volume agency, moved into embedded RPO across VC-backed startups,
               then went in-house at a £4.5bn fintech hiring 75 engineers with zero agency spend. Currently Head of TA
