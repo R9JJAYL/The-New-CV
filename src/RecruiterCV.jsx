@@ -215,7 +215,7 @@ function RoleCard({ role, index, isLast }) {
         </div>
         {/* White body */}
         <div style={{ background: T.card, padding: "14px 22px 14px", position: "relative" }}>
-          {role.roleContext && <p style={{ fontSize: 12, color: T.textMid, margin: "0 0 0", lineHeight: 1.55 }}><span style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", fontSize: 10, color: T.accent, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.5px" }}>My role: </span>{role.roleContext}</p>}
+          {role.roleContext && <p style={{ fontSize: 13, color: T.textMid, margin: "0 0 0", lineHeight: 1.6 }}><span style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", fontSize: 10, color: T.accent, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.5px" }}>My role: </span>{role.roleContext}</p>}
           {/* Logo, pills, and see more row */}
           <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 10 }}>
             <div style={{
