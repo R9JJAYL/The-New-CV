@@ -202,7 +202,7 @@ function RoleCard({ role, index, isLast }) {
         border: `1px solid ${open ? T.accentBorder : hovered ? T.accent + "40" : T.cardBorder}`,
         transition: `all 0.4s ease ${index * 60}ms`,
         opacity: inView ? 1 : 0, transform: inView ? "translateY(0)" : "translateY(18px)",
-        boxShadow: open ? "0 4px 20px rgba(196,112,75,0.08)" : hovered ? "0 2px 12px rgba(0,0,0,0.06)" : "0 1px 4px rgba(0,0,0,0.03)",
+        boxShadow: open ? "0 4px 20px rgba(196,112,75,0.12)" : hovered ? "0 4px 18px rgba(196,112,75,0.12)" : "0 1px 4px rgba(0,0,0,0.03)",
       }}>
         {/* Grey header */}
         <div style={{ background: T.tagBg, padding: "12px 22px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
