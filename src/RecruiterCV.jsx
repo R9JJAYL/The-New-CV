@@ -198,86 +198,79 @@ function RoleCard({ role, index, isLast }) {
         onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
         style={{
         position: "relative", cursor: "pointer",
-        background: T.card,
+        borderRadius: 10, overflow: "hidden",
         border: `1px solid ${open ? T.accentBorder : hovered ? T.accent + "40" : T.cardBorder}`,
-        borderRadius: 10, padding: "18px 22px",
         transition: `all 0.4s ease ${index * 60}ms`,
         opacity: inView ? 1 : 0, transform: inView ? "translateY(0)" : "translateY(18px)",
         boxShadow: open ? "0 4px 20px rgba(196,112,75,0.08)" : hovered ? "0 2px 12px rgba(0,0,0,0.06)" : "0 1px 4px rgba(0,0,0,0.03)",
-
       }}>
-        {/* Header row */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12, flexWrap: "wrap" }}>
-          <div style={{ display: "flex", gap: 12, alignItems: "flex-start", flex: 1, minWidth: 200 }}>
-            {/* Title block */}
-            <div>
-              <h3 style={{ fontSize: 16, fontWeight: 700, margin: "0 0 1px", color: T.text, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{role.title} <span style={{ color: T.textLight, fontWeight: 500 }}>@</span> <span style={{ color: T.textMid, fontWeight: 600 }}>{role.company}</span></h3>
-              {role.companyPills && (
-                <div style={{ display: "flex", gap: 4, flexWrap: "wrap", marginTop: 5 }}>
-                  {role.companyPills.map((pill, i) => (
-                    <span key={i} style={{ fontSize: 10, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "3px 7px", background: T.tagBg, color: T.textLight, borderRadius: 6, border: `1px solid ${T.cardBorder}`, whiteSpace: "nowrap" }}>{pill}</span>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-          {/* Date */}
+        {/* Grey header */}
+        <div style={{ background: T.tagBg, padding: "12px 22px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
+          <h3 style={{ fontSize: 16, fontWeight: 700, margin: 0, color: T.text, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{role.title} <span style={{ color: T.textLight, fontWeight: 500 }}>@</span> <span style={{ color: T.textMid, fontWeight: 600 }}>{role.company}</span></h3>
           <div style={{ flexShrink: 0 }}>
-            <span style={{ fontSize: 11, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "4px 10px", background: T.tagBg, color: T.textLight, borderRadius: 10, border: `1px solid ${T.cardBorder}`, whiteSpace: "nowrap" }}>
+            <span style={{ fontSize: 11, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "4px 10px", background: T.card, color: T.textLight, borderRadius: 10, border: `1px solid ${T.cardBorder}`, whiteSpace: "nowrap" }}>
               {role.period}{role.duration && ` (${role.duration})`}
             </span>
           </div>
         </div>
-        {role.roleContext && <p style={{ fontSize: 12, color: T.textMid, margin: "10px 0 0", lineHeight: 1.55 }}><span style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", fontSize: 10, color: T.accent, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.5px" }}>My role: </span>{role.roleContext}</p>}
-        {/* Logo - bottom right */}
-        <div style={{
-          position: "absolute", bottom: 14, right: 18,
-          width: 28, height: 28, borderRadius: 10,
-          background: role.color + "08", border: `1px solid ${role.color}12`,
-          display: "flex", alignItems: "center", justifyContent: "center",
-          fontSize: 9, fontWeight: 800, color: role.color, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-          overflow: "hidden", opacity: 0.7,
-        }}>
-          <img src={role.logo} alt={role.company}
-            style={{ width: "100%", height: "100%", objectFit: "contain", padding: 3 }}
-            onError={e => { e.target.style.display = "none"; e.target.nextSibling.style.display = "flex"; }}
-          />
-          <span style={{ display: "none", alignItems: "center", justifyContent: "center", width: "100%", height: "100%" }}>{role.logoFallback}</span>
-        </div>
-        {/* Expand hint */}
-        <div style={{
-          display: "flex", alignItems: "center", justifyContent: "center", marginTop: 8,
-          opacity: hovered ? 1 : 0, transition: "opacity 0.2s ease",
-          color: T.accent,
-        }}>
-          <svg width="28" height="12" viewBox="0 0 28 12" fill="none" style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.3s ease" }}>
-            <path d="M2 2L14 10L26 2" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </div>
-        {/* Expanded content */}
-        <div style={{ maxHeight: open ? 800 : 0, overflow: "hidden", transition: "max-height 0.5s ease, opacity 0.35s ease", opacity: open ? 1 : 0 }}>
-          <div style={{ paddingTop: 6, marginTop: 6 }}>
-            <h4 style={{ fontSize: 10, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 10, fontWeight: 700 }}>Achievements</h4>
-            {role.highlights.map((h, i) => (
-              <div key={i} style={{ fontSize: 13, color: T.textMid, lineHeight: 1.65, marginBottom: 8, paddingLeft: 14, position: "relative" }}>
-                <span style={{ position: "absolute", left: 0, top: 9, width: 5, height: 5, borderRadius: "50%", background: role.color, opacity: 0.45 }} />
-                {h}
-              </div>
-            ))}
-            {role.clients && (
-              <div style={{ marginTop: 10, padding: "8px 12px", background: T.tagBg, borderRadius: 10, fontSize: 11, color: T.textLight }}>
-                <span style={{ color: T.textFaint, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", fontSize: 9, textTransform: "uppercase", letterSpacing: "0.5px" }}>Clients: </span>{role.clients}
+        {/* White body */}
+        <div style={{ background: T.card, padding: "14px 22px 14px", position: "relative" }}>
+          {role.roleContext && <p style={{ fontSize: 12, color: T.textMid, margin: "0 0 0", lineHeight: 1.55 }}><span style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", fontSize: 10, color: T.accent, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.5px" }}>My role: </span>{role.roleContext}</p>}
+          {/* Logo and pills row */}
+          <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 10 }}>
+            <div style={{
+              width: 28, height: 28, borderRadius: 10,
+              background: role.color + "08", border: `1px solid ${role.color}12`,
+              display: "flex", alignItems: "center", justifyContent: "center",
+              fontSize: 9, fontWeight: 800, color: role.color, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+              overflow: "hidden", opacity: 0.7, flexShrink: 0,
+            }}>
+              <img src={role.logo} alt={role.company}
+                style={{ width: "100%", height: "100%", objectFit: "contain", padding: 3 }}
+                onError={e => { e.target.style.display = "none"; e.target.nextSibling.style.display = "flex"; }}
+              />
+              <span style={{ display: "none", alignItems: "center", justifyContent: "center", width: "100%", height: "100%" }}>{role.logoFallback}</span>
+            </div>
+            {role.companyPills && (
+              <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
+                {role.companyPills.map((pill, i) => (
+                  <span key={i} style={{ fontSize: 10, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "3px 7px", background: T.tagBg, color: T.textLight, borderRadius: 6, border: `1px solid ${T.cardBorder}`, whiteSpace: "nowrap" }}>{pill}</span>
+                ))}
               </div>
             )}
-            {role.progression && (
-              <div style={{ fontSize: 13, color: T.textMid, lineHeight: 1.65, marginBottom: 8, paddingLeft: 14, position: "relative" }}>
-                <span style={{ position: "absolute", left: 0, top: 9, width: 5, height: 5, borderRadius: "50%", background: role.color, opacity: 0.45 }} />
-                {role.progression}
-              </div>
-            )}
-            {role.leaving && (
-              <div style={{ marginTop: 8, fontSize: 11, color: T.textFaint, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", fontStyle: "italic" }}>Reason for leaving: {role.leaving}</div>
-            )}
+          </div>
+          {/* Expand hint */}
+          <div style={{
+            display: "flex", alignItems: "center", justifyContent: "center", marginTop: 8,
+            opacity: hovered || open ? 1 : 0, transition: "opacity 0.2s ease",
+          }}>
+            <span style={{ fontSize: 10, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent, fontWeight: 600, letterSpacing: "0.3px" }}>{open ? "See less" : "See more"}</span>
+          </div>
+          {/* Expanded content */}
+          <div style={{ maxHeight: open ? 800 : 0, overflow: "hidden", transition: "max-height 0.5s ease, opacity 0.35s ease", opacity: open ? 1 : 0 }}>
+            <div style={{ paddingTop: 6, marginTop: 6 }}>
+              <h4 style={{ fontSize: 10, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 10, fontWeight: 700 }}>Achievements</h4>
+              {role.highlights.map((h, i) => (
+                <div key={i} style={{ fontSize: 13, color: T.textMid, lineHeight: 1.65, marginBottom: 8, paddingLeft: 14, position: "relative" }}>
+                  <span style={{ position: "absolute", left: 0, top: 9, width: 5, height: 5, borderRadius: "50%", background: role.color, opacity: 0.45 }} />
+                  {h}
+                </div>
+              ))}
+              {role.clients && (
+                <div style={{ marginTop: 10, padding: "8px 12px", background: T.tagBg, borderRadius: 10, fontSize: 11, color: T.textLight }}>
+                  <span style={{ color: T.textFaint, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", fontSize: 9, textTransform: "uppercase", letterSpacing: "0.5px" }}>Clients: </span>{role.clients}
+                </div>
+              )}
+              {role.progression && (
+                <div style={{ fontSize: 13, color: T.textMid, lineHeight: 1.65, marginBottom: 8, paddingLeft: 14, position: "relative" }}>
+                  <span style={{ position: "absolute", left: 0, top: 9, width: 5, height: 5, borderRadius: "50%", background: role.color, opacity: 0.45 }} />
+                  {role.progression}
+                </div>
+              )}
+              {role.leaving && (
+                <div style={{ marginTop: 8, fontSize: 11, color: T.textFaint, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", fontStyle: "italic" }}>Reason for leaving: {role.leaving}</div>
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -564,16 +557,16 @@ function RecCard({ rec, index }) {
       position: "relative",
     }}>
       <div style={{ fontSize: 13, color: T.textMid, lineHeight: 1.7, marginBottom: 14, fontStyle: "italic", position: "relative", zIndex: 1 }}>"{rec.text}"</div>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 6 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          {/* Avatar circle */}
-          <div style={{ width: 32, height: 32, borderRadius: "50%", background: `linear-gradient(135deg, ${T.warm1}, ${T.accentLight})`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, fontWeight: 700, color: T.accent }}>{rec.name.split(" ").map(n => n[0]).join("")}</div>
-          <div>
-            <div style={{ fontSize: 13, fontWeight: 700, color: T.text }}>{rec.name}</div>
-            <div style={{ fontSize: 11, color: T.textLight }}>{rec.role}</div>
-          </div>
+      <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        {/* Avatar circle */}
+        <div style={{ width: 32, height: 32, borderRadius: "50%", background: `linear-gradient(135deg, ${T.warm1}, ${T.accentLight})`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, fontWeight: 700, color: T.accent }}>{rec.name.split(" ").map(n => n[0]).join("")}</div>
+        <div>
+          <div style={{ fontSize: 13, fontWeight: 700, color: T.text }}>{rec.name}</div>
+          <div style={{ fontSize: 11, color: T.textLight }}>{rec.role}</div>
         </div>
-        <div style={{ fontSize: 9, color: T.textFaint, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", textTransform: "uppercase", letterSpacing: 0.5, padding: "2px 7px", background: T.tagBg, borderRadius: 6 }}>{rec.relation}</div>
+      </div>
+      <div style={{ marginTop: 8 }}>
+        <span style={{ fontSize: 9, color: T.textFaint, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", textTransform: "uppercase", letterSpacing: 0.5, padding: "2px 7px", background: T.tagBg, borderRadius: 6 }}>{rec.relation}</span>
       </div>
     </div>
   );
