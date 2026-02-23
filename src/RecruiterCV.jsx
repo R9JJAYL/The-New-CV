@@ -211,8 +211,7 @@ function RoleCard({ role, index, isLast }) {
           <div style={{ display: "flex", gap: 12, alignItems: "flex-start", flex: 1, minWidth: 200 }}>
             {/* Title block */}
             <div>
-              <h3 style={{ fontSize: 16, fontWeight: 700, margin: "0 0 1px", color: T.text, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{role.title}</h3>
-              <div style={{ fontSize: 14, color: T.textMid, fontWeight: 600 }}>{role.company}</div>
+              <h3 style={{ fontSize: 16, fontWeight: 700, margin: "0 0 1px", color: T.text, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{role.title} <span style={{ color: T.textLight, fontWeight: 500 }}>@</span> <span style={{ color: T.textMid, fontWeight: 600 }}>{role.company}</span></h3>
               {role.companyPills && (
                 <div style={{ display: "flex", gap: 4, flexWrap: "wrap", marginTop: 5 }}>
                   {role.companyPills.map((pill, i) => (
