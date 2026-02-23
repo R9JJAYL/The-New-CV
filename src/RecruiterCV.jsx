@@ -208,7 +208,7 @@ function RoleCard({ role, index, isLast }) {
         <div style={{ background: T.tagBg, padding: "12px 22px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
           <h3 style={{ fontSize: 16, fontWeight: 700, margin: 0, color: T.text, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{role.title} <span style={{ color: T.textLight, fontWeight: 500 }}>@</span> <span style={{ color: T.textMid, fontWeight: 600 }}>{role.company}</span></h3>
           <div style={{ flexShrink: 0 }}>
-            <span style={{ fontSize: 11, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "4px 10px", background: T.card, color: T.textLight, borderRadius: 10, border: `1px solid ${T.cardBorder}`, whiteSpace: "nowrap" }}>
+            <span style={{ fontSize: 11, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "4px 10px", background: T.card, color: T.textLight, borderRadius: 6, border: `1px solid ${T.cardBorder}`, whiteSpace: "nowrap" }}>
               {role.period}{role.duration && ` (${role.duration})`}
             </span>
           </div>
@@ -216,7 +216,7 @@ function RoleCard({ role, index, isLast }) {
         {/* White body */}
         <div style={{ background: T.card, padding: "14px 22px 14px", position: "relative" }}>
           {role.roleContext && <p style={{ fontSize: 12, color: T.textMid, margin: "0 0 0", lineHeight: 1.55 }}><span style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", fontSize: 10, color: T.accent, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.5px" }}>My role: </span>{role.roleContext}</p>}
-          {/* Logo and pills row */}
+          {/* Logo, pills, and see more row */}
           <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 10 }}>
             <div style={{
               width: 28, height: 28, borderRadius: 10,
@@ -238,13 +238,7 @@ function RoleCard({ role, index, isLast }) {
                 ))}
               </div>
             )}
-          </div>
-          {/* Expand hint */}
-          <div style={{
-            display: "flex", alignItems: "center", justifyContent: "center", marginTop: 8,
-            opacity: hovered || open ? 1 : 0, transition: "opacity 0.2s ease",
-          }}>
-            <span style={{ fontSize: 10, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent, fontWeight: 600, letterSpacing: "0.3px" }}>{open ? "See less" : "See more"}</span>
+            <span style={{ marginLeft: "auto", fontSize: 10, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent, fontWeight: 600, letterSpacing: "0.3px", padding: "3px 7px", opacity: hovered || open ? 1 : 0, transition: "opacity 0.2s ease", whiteSpace: "nowrap" }}>{open ? "See less" : "See more"}</span>
           </div>
           {/* Expanded content */}
           <div style={{ maxHeight: open ? 800 : 0, overflow: "hidden", transition: "max-height 0.5s ease, opacity 0.35s ease", opacity: open ? 1 : 0 }}>
