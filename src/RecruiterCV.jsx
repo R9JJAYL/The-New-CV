@@ -238,7 +238,9 @@ function RoleCard({ role, index, isLast }) {
                 ))}
               </div>
             )}
-            <span style={{ marginLeft: "auto", fontSize: 10, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent, fontWeight: 600, letterSpacing: "0.3px", padding: "3px 7px", opacity: hovered || open ? 1 : 0, transition: "opacity 0.2s ease", whiteSpace: "nowrap" }}>{open ? "See less" : "See more"}</span>
+            <svg width="16" height="10" viewBox="0 0 16 10" fill="none" style={{ marginLeft: "auto", flexShrink: 0, transform: open ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.3s ease, opacity 0.2s ease", opacity: hovered || open ? 1 : 0 }}>
+              <path d="M1 1L8 8L15 1" stroke={T.accent} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </div>
           {/* Expanded content */}
           <div style={{ maxHeight: open ? 800 : 0, overflow: "hidden", transition: "max-height 0.5s ease, opacity 0.35s ease", opacity: open ? 1 : 0 }}>
