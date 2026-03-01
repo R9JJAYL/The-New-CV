@@ -26,7 +26,7 @@ const ROLES = [
     title: "Head of Talent Acquisition",
     company: "First",
     companyDesc: "AI-powered recruitment technology start-up. 5 employees at hire. Building tools to help in-house teams manage application volume and improve hiring quality.",
-    companyPills: ["High Growth Start-up", "AI Recruitment Technology", "5 Employees"],
+    companyPills: ["High Growth Start-up", "AI CV Screening Tech", "5 Employees"],
     skillPills: ["Product Strategy", "Go-to-Market", "Founding Team", "AI Tooling"],
     roleContext: "Joined as the first non-technical hire in a 5-person founding team building AI recruitment software. Bridging the gap between product and market — shaping the product roadmap from a practitioner's perspective, leading early customer conversations, and building the go-to-market motion from scratch. Wearing every hat: sales, customer success, content, and hiring strategy.",
     duration: "1y 5m",
