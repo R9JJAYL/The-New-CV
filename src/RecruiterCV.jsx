@@ -725,7 +725,7 @@ function RecCard({ rec, index }) {
         </div>
       </div>
       <div style={{ marginTop: 8 }}>
-        <span style={{ fontSize: 9, color: T.textFaint, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", textTransform: "uppercase", letterSpacing: 0.5, padding: "2px 7px", background: T.tagBg, borderRadius: 6 }}>{rec.relation}</span>
+        <span style={{ fontSize: 10, color: T.textLight, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "3px 7px", background: T.tagBg, borderRadius: 6, border: `1px solid ${T.cardBorder}`, whiteSpace: "nowrap" }}>{rec.relation}</span>
       </div>
     </div>
   );
@@ -944,7 +944,7 @@ export default function RecruiterCV() {
                       transition: recSlide === "in" || recSlide.startsWith("out") ? "opacity 0.35s ease, transform 0.35s ease" : "none",
                       flex: 1, display: "flex", justifyContent: "flex-end", minWidth: 0, overflow: "hidden",
                     }}>
-                      <span style={{ fontSize: 9, color: T.textFaint, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", textTransform: "uppercase", letterSpacing: 0.5, padding: "2px 7px", background: T.tagBg, borderRadius: 6, whiteSpace: "nowrap" }}>{RECOMMENDATIONS[recIdx].relation}</span>
+                      <span style={{ fontSize: 10, color: T.textLight, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "3px 7px", background: T.tagBg, borderRadius: 6, border: `1px solid ${T.cardBorder}`, whiteSpace: "nowrap" }}>{RECOMMENDATIONS[recIdx].relation}</span>
                     </div>
                   </div>
                 </div>
