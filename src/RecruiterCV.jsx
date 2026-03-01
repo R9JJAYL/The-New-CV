@@ -201,37 +201,32 @@ function RoleCard({ role, index, isLast }) {
         onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
         style={{
         position: "relative", cursor: "pointer",
-        borderRadius: 10, overflow: "hidden",
+        borderRadius: 10,
         border: `1px solid ${open ? T.accentBorder : hovered ? T.accent + "40" : T.cardBorder}`,
         transition: `all 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease ${index * 60}ms, transform 0.4s ease ${index * 60}ms`,
         opacity: inView ? 1 : 0,
-        transform: inView ? (hovered && !open ? "translateY(-3px) scale(1.005)" : "translateY(0) scale(1)") : "translateY(18px) scale(1)",
-        boxShadow: open ? "0 6px 24px rgba(196,112,75,0.14)" : hovered ? "0 8px 28px rgba(196,112,75,0.13), 0 2px 8px rgba(0,0,0,0.04)" : "0 1px 4px rgba(0,0,0,0.03)",
+        transform: inView ? "translateY(0)" : "translateY(18px)",
+        boxShadow: open ? "0 4px 16px rgba(196,112,75,0.12)" : hovered ? "0 2px 8px rgba(196,112,75,0.1)" : "0 1px 4px rgba(0,0,0,0.03)",
       }}>
         {/* Grey header */}
-        <div style={{ background: hovered && !open ? T.warm1 + "80" : T.tagBg, padding: "12px 22px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap", transition: "background 0.3s ease" }}>
+        <div style={{ background: hovered && !open ? T.warm1 + "80" : T.tagBg, padding: "12px 22px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap", transition: "background 0.3s ease", borderRadius: "10px 10px 0 0" }}>
           <h3 style={{ fontSize: 16, fontWeight: 700, margin: 0, color: T.text, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{role.title} <span style={{ color: T.textLight, fontWeight: 500 }}>@</span> <span style={{ color: T.textMid, fontWeight: 600 }}>{role.company}</span></h3>
           <div style={{ flexShrink: 0 }}>
-            <span style={{ fontSize: 11, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "4px 10px", background: T.card, color: T.textLight, borderRadius: 6, border: `1px solid ${T.cardBorder}`, whiteSpace: "nowrap" }}>
-              {role.period}{role.duration && ` (${role.duration})`}
+            <span style={{ fontSize: 11, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, whiteSpace: "nowrap" }}>
+              {role.period}{role.duration && <span style={{ color: T.textFaint }}> ({role.duration})</span>}
             </span>
           </div>
         </div>
         {/* White body */}
-        <div style={{ background: T.card, padding: "14px 22px 14px", position: "relative" }}>
-          {role.roleContext && <p style={{ fontSize: 13, color: T.textMid, margin: "0 0 0", lineHeight: 1.6 }}><span style={{ fontSize: 13, color: T.accent, fontWeight: 700 }}>My role: </span>{role.roleContext}</p>}
-          {/* Pills and chevron row */}
-          <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 10 }}>
-            <div style={{ display: "flex", gap: 4, flexWrap: "wrap", alignItems: "center" }}>
-              {role.companyPills && <span style={{ fontSize: 10, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textFaint, whiteSpace: "nowrap" }}>Company tags:</span>}
-              {role.companyPills && role.companyPills.map((pill, i) => (
+        <div style={{ background: T.card, padding: "14px 22px 14px", position: "relative", borderRadius: "0 0 10px 10px" }}>
+          {role.companyPills && (
+            <div style={{ display: "flex", gap: 4, flexWrap: "wrap", alignItems: "center", marginBottom: 10 }}>
+              {role.companyPills.map((pill, i) => (
                 <span key={"c" + i} style={{ fontSize: 10, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "3px 7px", background: T.tagBg, color: T.textLight, borderRadius: 6, border: `1px solid ${T.cardBorder}`, whiteSpace: "nowrap" }}>{pill}</span>
               ))}
             </div>
-            <svg width="16" height="10" viewBox="0 0 16 10" fill="none" style={{ marginLeft: "auto", flexShrink: 0, transform: open ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.3s ease, opacity 0.2s ease", opacity: hovered || open ? 1 : 0 }}>
-              <path d="M1 1L8 8L15 1" stroke={T.accent} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
+          )}
+          {role.roleContext && <p style={{ fontSize: 13, color: T.textMid, margin: 0, lineHeight: 1.6 }}><span style={{ fontSize: 13, color: T.accent, fontWeight: 700 }}>My role: </span>{role.roleContext}</p>}
           {/* Expanded content */}
           <div style={{ maxHeight: open ? 800 : 0, overflow: "hidden", transition: "max-height 0.5s ease, opacity 0.35s ease", opacity: open ? 1 : 0 }}>
             <div style={{ paddingTop: 6, marginTop: 6 }}>
