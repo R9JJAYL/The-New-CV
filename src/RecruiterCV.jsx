@@ -1044,7 +1044,6 @@ export default function RecruiterCV() {
                   { emoji: "\uD83D\uDCAC", label: "Honesty over polish", text: "I'd rather someone tell me I'm wrong than agree with me to be polite. That goes both ways." },
                   { emoji: "\uD83D\uDCAA", label: "Doing the work", text: "I've never been the smartest person in the room, but I'll be the one who actually followed up." },
                   { emoji: "\uD83E\uDD1D", label: "Loyalty to people", text: "Every company I've left, I've stayed close with the people. That matters more to me than a brand on my CV." },
-                  { emoji: "\uD83E\uDD14", label: "Curiosity over comfort", text: "I'd rather ask a stupid question than pretend I understand. That's how I went from agency to building AI products." },
                 ].map((t, i) => (
                   <div key={i} style={{
                     padding: "16px 18px", background: T.card, border: `1px solid ${T.cardBorder}`,
