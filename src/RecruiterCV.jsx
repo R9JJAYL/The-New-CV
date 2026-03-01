@@ -989,7 +989,7 @@ export default function RecruiterCV() {
               </div>
             </div>
             <div>
-              <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>A few things about me</p>
+              <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>When I'm not recruiting</p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 10 }}>
                 {[
                   { emoji: "\u26BD", label: "Football", text: "Lifelong Crystal Palace fan. Yes, I know. No, I can't explain it either. Season ticket holder. The highs are rare but they're worth it." },
@@ -1013,7 +1013,7 @@ export default function RecruiterCV() {
               </div>
             </div>
             <div>
-              <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>What I value</p>
+              <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>My operating system</p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 10 }}>
                 {[
                   { emoji: "\uD83D\uDCAC", label: "Honesty over polish", text: "I'd rather someone tell me I'm wrong than agree with me to be polite. Directness builds trust faster than anything." },
@@ -1022,8 +1022,7 @@ export default function RecruiterCV() {
                 ].map((t, i) => (
                   <div key={i} style={{
                     padding: "16px 18px", background: T.card,
-                    borderTop: `1px solid ${T.cardBorder}`, borderRight: `1px solid ${T.cardBorder}`, borderBottom: `1px solid ${T.cardBorder}`,
-                    borderLeft: `3px solid ${T.accentBorder}`,
+                    border: `1px solid ${T.cardBorder}`,
                     borderRadius: 10,
                     boxShadow: "0 2px 8px rgba(0,0,0,0.02)",
                   }}>
