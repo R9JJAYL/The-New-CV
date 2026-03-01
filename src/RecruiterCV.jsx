@@ -125,7 +125,7 @@ const RECOMMENDATIONS = [
 const BUILD_TILES = [
   { category: "Agents & Builds", title: "Hiring Plan Agent", desc: "Feed it a headcount target, budget, and org structure. It generates a phased hiring plan with timelines, sourcing strategy, and recruiter capacity needs.", type: "AI Agent", icon: "🤖", color: T.blue, modal: "prospect", linkLabel: "View project", tags: ["Claude Code", "Claude API", "Node.js", "Vercel"] },
   { category: "Automation & Process Improvement", title: "Feedback Chaser Automation", desc: "Polls the ATS for outstanding hiring manager feedback. If none submitted after 48 hours, it auto-chases them on Slack with context and a direct link.", type: "Automation", icon: "⚡", color: T.green, modal: "sheets", linkLabel: "View project", tags: ["Zapier", "Greenhouse API", "Slack"] },
-  { category: "Agents & Builds", title: "CV Invaders", desc: "Vibe coded Space Invaders with a recruitment twist. Agency vs in-house leaderboard. Built for fun, shared for laughs.", type: "Arcade Game", icon: "👾", color: T.purple, url: "https://cv-invaders.vercel.app/", linkLabel: "Play", tags: ["Claude Code", "Supabase", "GitHub", "JavaScript"] },
+  { category: "Agents & Builds", title: "CV Invaders", desc: "Vibe coded Space Invaders with a recruitment twist. Agency vs in-house leaderboard. Built for fun, shared for laughs. This is a live real game — click to play!", type: "Arcade Game", icon: "👾", color: T.purple, url: "https://cv-invaders.vercel.app/", linkLabel: "Play", tags: ["Claude Code", "Supabase", "GitHub", "JavaScript"] },
   { category: "Automation & Process Improvement", title: "Recruiter Process Survey", desc: "Surveyed the recruiting team quarterly to surface process pain points. Used the data to prioritise fixes, remove bottlenecks, and drive measurable improvement in time-to-hire and recruiter satisfaction.", type: "RecOps", icon: "📋", color: T.accent, modal: "recops", linkLabel: "View project", tags: ["RecOps", "Google Forms", "Data Analysis"] },
   { category: "Content & Community", title: "Vibe-coded CV Guide", desc: "Click here to drop some love on the post to spread the word and get more recruiters vibe coding! The more likes, the more people see it.", type: "Shameless Plug", icon: "📄", color: T.accent, url: "https://www.linkedin.com/in/jamiejaylyons/", linkLabel: "Like the post", tags: ["Recruiter Training", "Vibe Coding", "Future of Work"] },
   { category: "Content & Community", title: "Weekly Recruitment Content", desc: "I post weekly hiring breakdowns. Hiring podcasts, hiring books, hiring events and much more, all recruitment related. Click to check out my content!", type: "Shameless Plug v2", icon: "✍️", color: T.blue, url: "https://www.linkedin.com/in/jamiejaylyons/recent-activity/all/", linkLabel: "See posts", tags: ["Recruitment Content", "Books", "Podcasts", "Events"] },
@@ -827,10 +827,10 @@ export default function RecruiterCV() {
             <p style={{ fontSize: 24, fontWeight: 800, margin: 0, lineHeight: 1, letterSpacing: "-1px", color: T.accent, textAlign: "center", flex: "1 1 auto" }}>Head of Talent Acquisition</p>
             <div style={{ display: "flex", gap: 8, flex: "0 0 auto" }}>
             {[
-              { href: "https://www.linkedin.com/in/jamiejaylyons/", label: "LinkedIn", svg: <svg width="16" height="16" viewBox="0 0 24 24" fill={T.accent}><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> },
-              { href: "mailto:jamie@firststage.co", label: "Email", svg: <svg width="16" height="16" viewBox="0 0 24 24" fill={T.accent}><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> },
-              { href: "tel:+447700000000", label: "Phone", svg: <svg width="16" height="16" viewBox="0 0 24 24" fill={T.accent}><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> },
-              { href: "https://calendly.com", label: "Book a meeting", svg: <svg width="16" height="16" viewBox="0 0 24 24" fill={T.accent}><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg> },
+              { href: "https://www.linkedin.com/in/jamiejaylyons/", label: "LinkedIn", svg: <svg width="16" height="16" viewBox="0 0 24 24" fill={T.text}><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> },
+              { href: "mailto:jamie@firststage.co", label: "Email", svg: <svg width="16" height="16" viewBox="0 0 24 24" fill={T.text}><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> },
+              { href: "tel:+447700000000", label: "Phone", svg: <svg width="16" height="16" viewBox="0 0 24 24" fill={T.text}><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> },
+              { href: "https://calendly.com", label: "Book a meeting", svg: <svg width="16" height="16" viewBox="0 0 24 24" fill={T.text}><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg> },
             ].map(item => (
               <a key={item.label} href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined} aria-label={item.label} style={{
                 width: 32, height: 32, borderRadius: 10,
@@ -856,13 +856,13 @@ export default function RecruiterCV() {
 
         {/* ===== Tab 0: MY CAREER ===== */}
         <div ref={panelRefs[0]} style={{ width: `${100 / 3}%`, flexShrink: 0, padding: 0 }}>
-            <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>Work summary</p>
+            <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent + "CC", letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 700 }}>Work summary</p>
             <p style={{ fontSize: 14, color: T.textMid, lineHeight: 1.75, margin: "0 0 8px" }}>
               8 years in recruitment. Started in high-volume agency, moved into embedded RPO across VC-backed startups,
               then went in-house at a £4.5bn fintech hiring 75 engineers with zero agency spend. Currently Head of TA
               at a Series B health-tech, where I scaled the company from 140 to 310 people. Promoted at every company.
             </p>
-            <p style={{ fontSize: 14, color: T.textMid, lineHeight: 1.75, margin: "0 0 22px" }}>
+            <p style={{ fontSize: 14, color: T.textMid, lineHeight: 1.75, margin: "0 0 8px" }}>
               Looking for my next role as first or early TA hire at a Series A/B company. Own the hiring plan, shape how the team scales.
             </p>
             {/* Stats */}
@@ -883,11 +883,11 @@ export default function RecruiterCV() {
                 </div>
               ))}
             </div>
-            <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>Work experience</p>
+            <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent + "CC", letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 700 }}>Work experience</p>
             {ROLES.map((role, i) => <RoleCard key={i} role={role} index={i} isLast={i === ROLES.length - 1} />)}
             {/* Education */}
             <div style={{ marginTop: 22, marginBottom: 24 }}>
-              <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>Education</p>
+              <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent + "CC", letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 700 }}>Education</p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10 }}>
                 <div style={{ padding: "14px 16px", background: T.card, borderRadius: 10, border: `1px solid ${T.cardBorder}`, boxShadow: "0 2px 8px rgba(0,0,0,0.02)" }}>
                   <div style={{ fontSize: 13, color: T.text, fontWeight: 600 }}>BA (Hons) Business Management</div>
@@ -905,8 +905,7 @@ export default function RecruiterCV() {
             </div>
             {/* Recommendations */}
             <div style={{ marginTop: 22 }}>
-              <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>LinkedIn Recommendations</p>
-              <p style={{ fontSize: 12, color: T.textFaint, marginBottom: 16, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>What people say about my work</p>
+              <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent + "CC", letterSpacing: "0.3px", margin: "0 0 16px 2px", fontWeight: 700 }}>What people say about my work</p>
               <div>
                 {/* Recommendation card */}
                 <div onMouseEnter={() => setRecPaused(true)} onMouseLeave={() => setRecPaused(false)} style={{ padding: "32px 36px 24px", background: T.card, border: `1px solid ${T.cardBorder}`, borderRadius: 10, boxShadow: "0 1px 6px rgba(0,0,0,0.02)", position: "relative", overflow: "hidden" }}>
@@ -960,7 +959,7 @@ export default function RecruiterCV() {
               if (!tiles.length) return null;
               return (
                 <div key={cat}>
-                  <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>{cat}</p>
+                  <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent + "CC", letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 700 }}>{cat}</p>
                   <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 14 }}>
                     {tiles.map((build, i) => <BuildTile key={i} build={build} index={i} onModalOpen={setModal} />)}
                   </div>
@@ -972,7 +971,7 @@ export default function RecruiterCV() {
         {/* ===== Tab 2: MY PERSONAL LIFE ===== */}
         <div ref={panelRefs[2]} style={{ width: `${100 / 3}%`, flexShrink: 0, padding: 0, display: "flex", flexDirection: "column", gap: 24 }}>
             <div>
-              <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>A bit about me</p>
+              <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent + "CC", letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 700 }}>A bit about me</p>
               <p style={{ fontSize: 14, color: T.textMid, lineHeight: 1.65, marginBottom: 16 }}>(Ideal spot for an intro video, but I'm going to be cheeky and slip in a video to show how we're helping teams manage application volume with First! :D)</p>
               <div style={{
                 width: "80%", aspectRatio: "16/9", borderRadius: 10, margin: "0 auto",
@@ -989,7 +988,7 @@ export default function RecruiterCV() {
               </div>
             </div>
             <div>
-              <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>When I'm not recruiting</p>
+              <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent + "CC", letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 700 }}>When I'm not recruiting</p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 10 }}>
                 {[
                   { emoji: "\u26BD", label: "Football", text: "Lifelong Crystal Palace fan. Yes, I know. No, I can't explain it either. Season ticket holder. The highs are rare but they're worth it." },
@@ -1013,7 +1012,7 @@ export default function RecruiterCV() {
               </div>
             </div>
             <div>
-              <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>My operating system</p>
+              <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent + "CC", letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 700 }}>My operating system</p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 10 }}>
                 {[
                   { emoji: "\uD83D\uDCAC", label: "Honesty over polish", text: "I'd rather someone tell me I'm wrong than agree with me to be polite. Directness builds trust faster than anything." },

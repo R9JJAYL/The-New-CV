@@ -14,7 +14,9 @@
       "Bash(open:*)",
       "WebFetch(domain:first.cx)",
       "WebFetch(domain:claude.ai)",
-      "WebFetch(domain:www.linkedin.com)"
+      "WebFetch(domain:www.linkedin.com)",
+      "Bash(npx vite build)",
+      "Bash(npm run build)"
     ]
   }
 }
