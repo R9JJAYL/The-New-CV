@@ -126,9 +126,9 @@ const BUILD_TILES = [
   { category: "Agents & Builds", title: "Hiring Plan Agent", desc: "Feed it a headcount target, budget, and org structure. It generates a phased hiring plan with timelines, sourcing strategy, and recruiter capacity needs.", type: "AI Agent", icon: "📋", color: T.blue, modal: "prospect", linkLabel: "View project", tags: ["Claude Code", "Claude API", "Node.js", "Vercel"] },
   { category: "Automation & Process Improvement", title: "Feedback Chaser Bot", desc: "Polls the ATS for outstanding hiring manager feedback. If none submitted after 48 hours, it auto-chases them on Slack with context and a direct link.", type: "Automation", icon: "⚡", color: T.green, modal: "sheets", linkLabel: "View project", tags: ["Zapier", "Greenhouse API", "Slack"] },
   { category: "Agents & Builds", title: "CV Invaders", desc: "Vibe coded Space Invaders with a recruitment twist. Agency vs in-house leaderboard. Built for fun, shared for laughs.", type: "Arcade Game", icon: "👾", color: T.purple, url: "https://cv-invaders.vercel.app/", linkLabel: "Play", tags: ["Claude Code", "Supabase", "GitHub", "JavaScript"] },
-  { category: "Automation & Process Improvement", title: "Recruiter Process Survey", desc: "Surveyed the recruiting team quarterly to surface process pain points. Used the data to prioritise fixes, remove bottlenecks, and drive measurable improvement in time-to-hire and recruiter satisfaction.", type: "RecOps", icon: "📋", color: T.accent, url: "https://www.linkedin.com/posts/jamiejaylyons_week-21-their-hiring-secrets-ugcPost-7430184709894090752-7D9k", linkLabel: "Read more", tags: ["RecOps", "Google Forms", "Data Analysis"] },
-  { category: "Content & Community", title: "Weekly LinkedIn Content", desc: "Weekly book breakdowns, podcast highlights, hiring event recaps, and honest takes on what's working in TA. Building in public, one post at a time.", type: "Content Series", icon: "✍️", color: T.blue, url: "https://www.linkedin.com/in/jamiejaylyons/recent-activity/all/", linkLabel: "See posts", tags: ["Books", "Podcasts", "Events", "Hiring"] },
-  { category: "Content & Community", title: "If You Found This Useful...", desc: "Then you'll probably like my LinkedIn. I write about hiring, RecOps, and the occasional hot take. No thought leadership fluff, promise.", type: "Easter Egg", icon: "😏", color: T.accent, url: "https://www.linkedin.com/in/jamiejaylyons/", linkLabel: "Follow me", tags: ["LinkedIn", "Hiring", "RecOps", "Hot Takes"] },
+  { category: "Automation & Process Improvement", title: "Recruiter Process Survey", desc: "Surveyed the recruiting team quarterly to surface process pain points. Used the data to prioritise fixes, remove bottlenecks, and drive measurable improvement in time-to-hire and recruiter satisfaction.", type: "RecOps", icon: "📋", color: T.accent, modal: "recops", linkLabel: "View project", tags: ["RecOps", "Google Forms", "Data Analysis"] },
+  { category: "Content & Community", title: "Vibe-coded CV Guide", desc: "If you found this guide useful, drop a like on the post to spread the word and get more recruiters vibe coding!", type: "Shameless Plug", icon: "😏", color: T.accent, url: "https://www.linkedin.com/in/jamiejaylyons/", linkLabel: "Like the post", tags: ["Recruiter Training", "Vibe Coding", "Future of Work"] },
+  { category: "Content & Community", title: "Weekly LinkedIn Content", desc: "I post weekly hiring breakdowns. Hiring podcasts, hiring books, hiring events and much more, all recruitment related. Click to check out my content!", type: "Shameless Plug v2", icon: "✍️", color: T.blue, url: "https://www.linkedin.com/in/jamiejaylyons/recent-activity/all/", linkLabel: "See posts", tags: ["Recruitment Content", "Books", "Podcasts", "Events"] },
 ];
 const STATS = [
   { value: 300, suffix: "+", label: "Career Hires", prefix: "" },
@@ -364,6 +364,110 @@ function SheetsModal({ onClose }) {
           <div style={{ fontSize: 9, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textFaint, textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: 6 }}>Skills used</div>
           <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
             {["Zapier", "Greenhouse Harvest API", "Slack", "Custom Fields", "Escalation Logic", "Process Automation"].map(s => (
+              <span key={s} style={{ padding: "3px 8px", borderRadius: 6, fontSize: 10, background: T.card, color: T.textMid, border: `1px solid ${T.cardBorder}` }}>{s}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+function RecOpsModal({ onClose }) {
+  const steps = [
+    {
+      num: "01",
+      title: "The Problem",
+      body: "Recruiters are closest to the process but rarely get asked what's broken. Pain points go unreported, workarounds become habits, and leadership makes decisions based on metrics alone — missing the context behind the numbers.",
+      color: T.red,
+    },
+    {
+      num: "02",
+      title: "The Survey",
+      body: "Built a quarterly anonymous survey sent to every recruiter and coordinator. Covered the full hiring lifecycle: intake quality, interviewer reliability, offer approval speed, ATS friction, and manager responsiveness. Simple scoring (1–5) with free-text follow-ups.",
+      color: T.blue,
+    },
+    {
+      num: "03",
+      title: "The Analysis",
+      body: "Aggregated scores by theme and tracked trends quarter-over-quarter. Highlighted the top 3 pain points each cycle and paired them with recruiter quotes to give leadership the full picture — not just a number, but the story behind it.",
+      color: T.green,
+    },
+    {
+      num: "04",
+      title: "The Action",
+      body: "Each quarter, picked the highest-impact issue and fixed it. One cycle it was intake quality — we rebuilt the kickoff template. Another it was interview no-shows — we added calendar holds and reminders. Small, targeted changes driven by the people doing the work.",
+      color: T.amber,
+    },
+    {
+      num: "05",
+      title: "The Impact",
+      body: "Recruiter satisfaction scores went from 3.1 to 4.4 within three cycles. Time-to-hire dropped as the biggest bottlenecks were systematically removed. The survey became the team's favourite feedback channel — they finally felt heard.",
+      color: T.purple,
+    },
+  ];
+  const results = [
+    { stat: "3.1→4.4", label: "recruiter satisfaction score" },
+    { stat: "12", label: "process improvements shipped" },
+    { stat: "100%", label: "team participation rate" },
+  ];
+  return (
+    <div onClick={onClose} style={{
+      position: "fixed", inset: 0, zIndex: 100,
+      background: "rgba(0,0,0,0.5)", backdropFilter: "blur(6px)",
+      display: "flex", alignItems: "center", justifyContent: "center",
+      padding: 20, animation: "fadeIn 0.2s ease",
+    }}>
+      <div onClick={e => e.stopPropagation()} style={{
+        background: T.bg, borderRadius: 10, maxWidth: 640, width: "100%",
+        maxHeight: "85vh", overflowY: "auto", padding: "32px 28px",
+        border: `1px solid ${T.cardBorder}`, boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
+      }}>
+        {/* Header */}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 20 }}>
+          <div>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+              <span style={{ fontSize: 24 }}>📋</span>
+              <span style={{ fontSize: 9, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "3px 8px", background: T.accent + "12", color: T.accent, borderRadius: 6, letterSpacing: "0.5px", textTransform: "uppercase", fontWeight: 600 }}>RecOps</span>
+            </div>
+            <h2 style={{ fontSize: 22, fontWeight: 800, color: T.text, margin: 0, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>Recruiter Process Survey</h2>
+            <p style={{ fontSize: 12, color: T.textLight, marginTop: 4, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>Quarterly Feedback Loop</p>
+          </div>
+          <button onClick={onClose} style={{
+            width: 32, height: 32, borderRadius: 10, border: `1px solid ${T.cardBorder}`,
+            background: T.card, color: T.textLight, fontSize: 16, cursor: "pointer",
+            display: "flex", alignItems: "center", justifyContent: "center",
+          }}>×</button>
+        </div>
+        {/* Result stats */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 8, marginBottom: 20 }}>
+          {results.map((r, i) => (
+            <div key={i} style={{ textAlign: "center", padding: "12px 8px", background: T.card, borderRadius: 10, border: `1px solid ${T.cardBorder}` }}>
+              <div style={{ fontSize: 20, fontWeight: 800, color: T.accent, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{r.stat}</div>
+              <div style={{ fontSize: 9, color: T.textLight, marginTop: 2, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", textTransform: "uppercase", letterSpacing: "0.3px", lineHeight: 1.3 }}>{r.label}</div>
+            </div>
+          ))}
+        </div>
+        {/* Steps */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          {steps.map((step, i) => (
+            <div key={i} style={{
+              padding: "16px 18px", background: T.card, border: `1px solid ${T.cardBorder}`,
+              borderRadius: 10, borderLeft: `3px solid ${step.color}`,
+              boxShadow: "0 1px 4px rgba(0,0,0,0.02)",
+            }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 5 }}>
+                <span style={{ fontSize: 11, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: step.color, fontWeight: 700 }}>{step.num}</span>
+                <span style={{ fontSize: 14, fontWeight: 700, color: T.text }}>{step.title}</span>
+              </div>
+              <p style={{ fontSize: 13, color: T.textMid, lineHeight: 1.65, margin: 0 }}>{step.body}</p>
+            </div>
+          ))}
+        </div>
+        {/* Skills */}
+        <div style={{ marginTop: 16, padding: "12px 16px", background: T.tagBg, borderRadius: 10 }}>
+          <div style={{ fontSize: 9, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textFaint, textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: 6 }}>Skills used</div>
+          <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
+            {["RecOps", "Google Forms", "Data Analysis", "Stakeholder Management", "Process Design", "Change Management"].map(s => (
               <span key={s} style={{ padding: "3px 8px", borderRadius: 6, fontSize: 10, background: T.card, color: T.textMid, border: `1px solid ${T.cardBorder}` }}>{s}</span>
             ))}
           </div>
@@ -923,6 +1027,7 @@ export default function RecruiterCV() {
         {modal === "sheets" && <SheetsModal onClose={() => setModal(null)} />}
         {modal === "sql" && <SQLModal onClose={() => setModal(null)} />}
         {modal === "prospect" && <ProspectModal onClose={() => setModal(null)} />}
+        {modal === "recops" && <RecOpsModal onClose={() => setModal(null)} />}
         {/* FOOTER */}
         <footer style={{ padding: "40px 0 48px", borderTop: `1px solid ${T.cardBorder}`, textAlign: "center", position: "relative" }}>
           <div style={{ position: "absolute", top: -1, left: "20%", right: "20%", height: 1, background: `linear-gradient(90deg, transparent, ${T.accent}30, transparent)` }} />
