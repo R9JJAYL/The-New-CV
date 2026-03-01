@@ -117,10 +117,10 @@ const ROLES = [
   },
 ];
 const RECOMMENDATIONS = [
-  { name: "Priya Sharma", role: "Head of TA", text: "Phil demo'd the product and within five minutes I knew he'd actually done the job. He wasn't selling - he was explaining how he'd solve problems I hadn't even told him about yet.", relation: "Customer" },
-  { name: "Marcus Chen", role: "Staff Engineer", text: "Phil sent me two sentences about why I'd be a good fit, both specific to things on my profile nobody else had noticed. Three years later I'm still here.", relation: "Candidate" },
-  { name: "Tom Okafor", role: "Engineering Director", text: "Phil hired 40 of my engineers and I'd trust every single one of them again. He understood what good looked like for my team better than most of the team did.", relation: "Hiring Manager" },
-  { name: "Lucy Ward", role: "Recruitment Consultant", text: "Phil trained me when I joined and he's the reason I'm still in recruitment. I hit target in my first 6 months because of how he set me up.", relation: "Direct Report" },
+  { name: "Priya Sharma", role: "Head of TA", text: "Phil demo'd the product and within five minutes I knew he'd actually done the job. He wasn't selling - he was explaining how he'd solve problems I hadn't even told him about yet.", relation: "Customer @ First" },
+  { name: "Marcus Chen", role: "Staff Engineer", text: "Phil sent me two sentences about why I'd be a good fit, both specific to things on my profile nobody else had noticed. Three years later I'm still here.", relation: "Candidate @ Nexus Bank" },
+  { name: "Tom Okafor", role: "Engineering Director", text: "Phil hired 40 of my engineers and I'd trust every single one of them again. He understood what good looked like for my team better than most of the team did.", relation: "Hiring Manager @ Nexus Bank" },
+  { name: "Lucy Ward", role: "Recruitment Consultant", text: "Phil trained me when I joined and he's the reason I'm still in recruitment. I hit target in my first 6 months because of how he set me up.", relation: "Direct Report @ Harmon Search" },
 ];
 const BUILD_TILES = [
   { category: "Agents & Builds", title: "Hiring Plan Agent", desc: "Feed it a headcount target, budget, and org structure. It generates a phased hiring plan with timelines, sourcing strategy, and recruiter capacity needs.", type: "AI Agent", icon: "🤖", color: T.blue, modal: "prospect", linkLabel: "View project", tags: ["Claude Code", "Claude API", "Node.js", "Vercel"] },
