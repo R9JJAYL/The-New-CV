@@ -876,7 +876,7 @@ export default function RecruiterCV() {
                   transition: `all 0.5s ease ${i * 100}ms`,
                   opacity: loaded ? 1 : 0, transform: loaded ? "translateY(0)" : "translateY(12px)",
                 }}>
-                  <div style={{ fontSize: 24, fontWeight: 800, color: T.accent, letterSpacing: "-0.5px", fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
+                  <div style={{ fontSize: 20, fontWeight: 800, color: T.accent, letterSpacing: "-0.5px", fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
                     {s.isText ? <SeriesAnim value={s.value} delay={i * 100} /> : <AnimNum {...s} delay={i * 100} />}
                   </div>
                   <div style={{ fontSize: 9, color: T.textLight, marginTop: 3, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", textTransform: "uppercase", letterSpacing: "0.3px" }}>{s.label}</div>
