@@ -224,9 +224,12 @@ function RoleCard({ role, index, isLast, isMobile }) {
         {/* Grey header */}
         <div style={{ background: hovered && !open ? "#ECEAE6" : T.tagBg, padding: isMobile ? "12px 14px" : "12px 22px", display: "flex", justifyContent: "space-between", alignItems: isMobile ? "flex-start" : "center", gap: isMobile ? 4 : 12, flexWrap: "wrap", transition: "background 0.3s ease", borderRadius: "10px 10px 0 0" }}>
           <h3 style={{ fontSize: 16, fontWeight: 700, margin: 0, color: T.text, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{role.title} <span style={{ color: T.textLight, fontWeight: 500 }}>@</span> <span style={{ color: T.textMid, fontWeight: 600 }}>{role.company}</span></h3>
-          <div style={{ flexShrink: 0 }}>
+          <div style={{ flexShrink: 0, display: "flex", alignItems: "center" }}>
             <span style={{ fontSize: 11, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textMid, whiteSpace: "nowrap" }}>
               {role.period}{role.duration && <span style={{ color: T.textLight }}> ({role.duration})</span>}
+            </span>
+            <span style={{ display: "inline-flex", alignItems: "center", marginLeft: 6, transition: "transform 0.3s ease", transform: open ? "rotate(180deg)" : "rotate(0deg)" }}>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke={T.textLight} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </span>
           </div>
         </div>
