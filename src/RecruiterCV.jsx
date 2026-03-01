@@ -972,7 +972,7 @@ export default function RecruiterCV() {
         <div ref={panelRefs[2]} style={{ width: `${100 / 3}%`, flexShrink: 0, padding: 0, display: "flex", flexDirection: "column", gap: 24 }}>
             <div>
               <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent + "CC", letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 700 }}>A bit about me</p>
-              <p style={{ fontSize: 14, color: T.textMid, lineHeight: 1.65, marginBottom: 16 }}>(Ideal spot for an intro video, but I'm going to be cheeky and slip in a video to show how we're helping teams manage application volume with First! :D)</p>
+              <p style={{ fontSize: 14, color: T.textMid, lineHeight: 1.65, marginBottom: 16 }}>(Ideal spot for an intro video, but I'm going to be cheeky and slip in a video breaking down how we're helping teams manage application volume with First! :D)</p>
               <div style={{
                 width: "80%", aspectRatio: "16/9", borderRadius: 10, margin: "0 auto",
                 overflow: "hidden", border: `1px solid ${T.cardBorder}`,
