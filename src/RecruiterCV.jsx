@@ -28,7 +28,7 @@ const ROLES = [
     companyDesc: "AI-powered recruitment technology start-up. 5 employees at hire. Building tools to help in-house teams manage application volume and improve hiring quality.",
     companyPills: ["High Growth Start-up", "AI CV Screening Tech", "5 Employees"],
     skillPills: ["Product Strategy", "Go-to-Market", "Founding Team", "AI Tooling"],
-    roleContext: "Joined as the first non-technical hire in a 5-person founding team building AI recruitment software. Bridging the gap between product and market — shaping the product roadmap from a practitioner's perspective, leading early customer conversations, and building the go-to-market motion from scratch. Wearing every hat: sales, customer success, content, and hiring strategy.",
+    roleContext: "First non-technical hire in a 5-person founding team building AI recruitment software. Owning both sides — shaping the product roadmap from a practitioner's perspective while building the go-to-market motion from scratch. Running customer discovery, leading sales conversations, creating content, and hiring the early commercial team.",
     duration: "1y 5m",
     period: "Sep 2023 — Present",
     type: "In-House",
@@ -36,14 +36,14 @@ const ROLES = [
     logo: "/first-logo.png",
     logoFallback: "F",
     highlights: [
-      "First non-technical hire — shaped product direction from a recruiter's perspective from day one.",
-      "Led early customer discovery with 40+ TA leaders to validate product-market fit.",
-      "Built the go-to-market strategy and sales playbook, converting 12 pilot customers in 6 months.",
+      "Shaped product direction from a recruiter's perspective — the only practitioner on the founding team.",
+      "Ran 40+ customer discovery calls with TA leaders to validate product-market fit.",
+      "Built the GTM strategy and sales playbook — converted 12 pilot customers in 6 months.",
       "Created all product content, demos, and sales collateral from scratch.",
-      "Designed the onboarding flow that reduced customer time-to-value from 2 weeks to 3 days.",
-      "Hired the first 3 commercial team members as the company grew from 5 to 15.",
+      "Designed the onboarding flow that cut customer time-to-value from 2 weeks to 3 days.",
+      "Hired the first 10 team members as the company grew from 5 to 15.",
     ],
-    progression: { count: 1, path: "Senior TA Partner (10 months) → Head of Talent Acquisition (7 months)" },
+    progression: { count: 1, path: "Founding Hire (10 months) → Head of Talent Acquisition (7 months)" },
   },
   {
     title: "Senior Talent Partner",
@@ -59,11 +59,11 @@ const ROLES = [
     logo: "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="14" fill="#0C2416"/><circle cx="38" cy="50" r="22" fill="#27775A"/><circle cx="62" cy="50" r="22" fill="#4ADE80" opacity="0.55"/></svg>'),
     logoFallback: "NB",
     highlights: [
-      "Hired 75 engineers in 2.5 years — 65% sourced directly, zero through agencies.",
+      "Hired 95 engineers in 2.5 years — 70% sourced directly, zero through agencies.",
       "93% 12-month retention rate across all hires, beating the company average by 10 points.",
-      "Eliminated agency dependency for the engineering org — saving an estimated £350k+ in fees.",
-      "Designed and delivered the company's first internal sourcing bootcamp — trained 6 new recruiters.",
-      "Led hiring for a brand new platform team from 0 to 14 engineers in 5 months.",
+      "Eliminated agency dependency for the engineering org — saving an estimated £450k+ in fees.",
+      "Designed and ran the company's first sourcing bootcamp — upskilled 6 new recruiters.",
+      "Built a brand new platform team from 0 to 14 engineers in 5 months.",
       "Rebuilt the candidate experience survey — NPS jumped from 64 to 86 company-wide.",
     ],
     progression: { count: 1, path: "Talent Partner (12 months) → Senior Talent Partner (20 months)" },
@@ -83,8 +83,8 @@ const ROLES = [
     logo: "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="14" fill="#2E1A06"/><circle cx="44" cy="44" r="20" fill="none" stroke="#D4A04A" stroke-width="6"/><circle cx="44" cy="44" r="7" fill="#D4A04A"/><line x1="59" y1="59" x2="78" y2="78" stroke="#F5DEB3" stroke-width="8" stroke-linecap="round"/></svg>'),
     logoFallback: "HS",
     highlights: [
-      "Billed £480k+ over 2.5 years — top biller 7 out of 10 quarters.",
-      "Placed 105+ candidates with a 92% retention rate at 12 months.",
+      "Billed £540k+ over 2.5 years — top biller 7 out of 10 quarters.",
+      "Placed 120+ candidates with a 92% retention rate at 12 months.",
       "Won 18 new client accounts through candidate referrals alone — zero cold outreach.",
       "Ran a 12-hire embedded project for a Series A fintech — completed 2 weeks ahead of schedule.",
       "Built a candidate community of 2,000+ engineers through events, dinners, and content.",
@@ -107,9 +107,9 @@ const ROLES = [
     logo: "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="14" fill="#2E1010"/><path d="M30 60L50 38L70 60" fill="none" stroke="#E88888" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 76L50 54L70 76" fill="none" stroke="#F5C4C4" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>'),
     logoFallback: "SR",
     highlights: [
-      "Billed £190k in second year — 115% of target, up from 65% in year one.",
+      "Billed £220k in second year — 120% of target, up from 65% in year one.",
       "Fastest in the cohort to make a placement (19 days from desk start).",
-      "Placed 45 candidates across contract and permanent roles.",
+      "Placed 55 candidates across contract and permanent roles.",
       "Built an early specialism in DevOps and cloud infrastructure before most agencies had a dedicated desk.",
     ],
     progression: { count: 1, path: "Trainee (11 months) → Recruitment Consultant (9 months)" },
@@ -117,9 +117,9 @@ const ROLES = [
   },
 ];
 const RECOMMENDATIONS = [
-  { name: "Priya Sharma", role: "VP Engineering, First", text: "Phil pushed back on my job specs and was right every time. Helped me figure out what I actually needed, then found exactly those people.", relation: "Hiring manager @ First" },
+  { name: "Priya Sharma", role: "Head of TA, Series B SaaS", text: "Phil demo'd the product and within five minutes I knew he'd actually done the job. He wasn't selling — he was explaining how he'd solve problems I hadn't even told him about yet.", relation: "Customer @ First" },
   { name: "Marcus Chen", role: "Staff Engineer, Nexus Bank", text: "Phil sent me two sentences about why I'd be a good fit, both specific to things on my profile nobody else had noticed. Three years later I'm still here.", relation: "Candidate @ Nexus Bank" },
-  { name: "Tom Okafor", role: "CPO, First", text: "Phil built a function, not just a pipeline. Designed the processes, trained hiring managers, hired 170 people. When he's not here the system still runs.", relation: "Manager @ First" },
+  { name: "Tom Okafor", role: "Engineering Director, Nexus Bank", text: "Phil hired 40 of my engineers and I'd trust every single one of them again. He understood what good looked like for my team better than most of the team did.", relation: "Hiring manager @ Nexus Bank" },
   { name: "Lucy Ward", role: "Recruitment Consultant, Harmon Search", text: "Phil trained me when I joined and he's the reason I'm still in recruitment. I hit target in my first 6 months because of how he set me up.", relation: "Direct report @ Harmon Search" },
 ];
 const BUILD_TILES = [
@@ -282,19 +282,19 @@ function SheetsModal({ onClose, isMobile }) {
     {
       num: "01",
       title: "The Problem",
-      body: "Hiring managers forget to submit interview feedback. Recruiters waste hours chasing scorecards manually — checking the ATS, sending Slack messages, following up again two days later. Meanwhile, candidates sit in limbo and time-to-hire creeps up.",
+      body: "Hiring managers forget to submit interview feedback. Recruiters waste hours chasing scorecards — checking the ATS, pinging on Slack, following up two days later. Candidates sit in limbo and time-to-hire creeps up.",
       color: T.red,
     },
     {
       num: "02",
       title: "The Automation",
-      body: "A Zapier workflow that runs every morning at 9am. It pulls recent interviews from Greenhouse via the Harvest API, checks whether each interviewer has submitted their scorecard, and cross-references a \"Last Chased\" custom field in Greenhouse to avoid double-messaging.",
+      body: "A Zapier workflow that runs every morning at 9am. Pulls recent interviews from Greenhouse via the Harvest API, checks whether each interviewer has submitted their scorecard, and cross-references a \"Last Chased\" custom field to avoid double-messaging.",
       color: T.blue,
     },
     {
       num: "03",
       title: "How It Works",
-      body: "For each missing scorecard, Zapier sends a friendly Slack DM to the hiring manager with the candidate name, role, interview date, and a direct link to submit feedback. It then stamps the \"Last Chased\" custom field in Greenhouse so the same person doesn't get chased again the next day.",
+      body: "For each missing scorecard, Zapier sends a Slack DM to the hiring manager with the candidate name, role, interview date, and a direct link to submit. It then stamps the \"Last Chased\" field so the same person doesn't get chased again the next day.",
       color: T.green,
     },
     {
@@ -306,7 +306,7 @@ function SheetsModal({ onClose, isMobile }) {
     {
       num: "05",
       title: "The Impact",
-      body: "Scorecard completion rates jumped from 64% to 95% within the first month. Recruiters reclaimed 3–4 hours per week previously spent on manual chasing. Average time from interview to decision dropped by 1.5 days across the business.",
+      body: "Scorecard completion jumped from 64% to 95% within the first month. Recruiters reclaimed 3–4 hours a week previously spent on manual chasing. Average time from interview to decision dropped by 1.5 days.",
       color: T.purple,
     },
   ];
@@ -386,13 +386,13 @@ function RecOpsModal({ onClose, isMobile }) {
     {
       num: "01",
       title: "The Problem",
-      body: "Recruiters are closest to the process but rarely get asked what's broken. Pain points go unreported, workarounds become habits, and leadership makes decisions based on metrics alone — missing the context behind the numbers.",
+      body: "Recruiters are closest to the process but rarely get asked what's broken. Pain points go unreported, workarounds become habits, and leadership makes decisions on metrics alone — missing the context behind the numbers.",
       color: T.red,
     },
     {
       num: "02",
       title: "The Survey",
-      body: "Built a quarterly anonymous survey sent to every recruiter and coordinator. Covered the full hiring lifecycle: intake quality, interviewer reliability, offer approval speed, ATS friction, and manager responsiveness. Simple scoring (1–5) with free-text follow-ups.",
+      body: "Built a quarterly anonymous survey sent to every recruiter and coordinator. Covered the full hiring lifecycle: intake quality, interviewer reliability, offer approval speed, ATS friction, and hiring manager responsiveness. Simple 1–5 scoring with free-text follow-ups.",
       color: T.blue,
     },
     {
@@ -410,7 +410,7 @@ function RecOpsModal({ onClose, isMobile }) {
     {
       num: "05",
       title: "The Impact",
-      body: "Recruiter satisfaction scores went from 3.1 to 4.4 within three cycles. Time-to-hire dropped as the biggest bottlenecks were systematically removed. The survey became the team's favourite feedback channel — they finally felt heard.",
+      body: "Recruiter satisfaction went from 3.1 to 4.4 within three cycles. Time-to-hire dropped as bottlenecks were systematically removed. The survey became the team's favourite feedback channel — they finally felt heard.",
       color: T.purple,
     },
   ];
@@ -485,143 +485,36 @@ function RecOpsModal({ onClose, isMobile }) {
     </div>
   );
 }
-function SQLModal({ onClose, isMobile }) {
-  const steps = [
-    {
-      num: "01",
-      title: "The Brief",
-      body: "The business was preparing for a round of fundraising and needed a clear picture of how the online side had performed over time. The C-suite needed data they could put in front of investors — not raw tables, but a story backed by numbers.",
-      color: T.red,
-    },
-    {
-      num: "02",
-      title: "Traffic & Source Analysis",
-      body: "Broke down website traffic by source (organic, paid, direct, referral) across multiple years to show growth trends. Used CASE pivots to restructure the data so each traffic source sat in its own column — much easier for leadership to scan than stacked rows.",
-      color: T.blue,
-      code: "SELECT\n  year,\n  SUM(CASE WHEN source = 'organic' THEN sessions END) AS organic,\n  SUM(CASE WHEN source = 'paid' THEN sessions END) AS paid\nFROM traffic\nGROUP BY year",
-    },
-    {
-      num: "03",
-      title: "Conversion & Click-Through Rates",
-      body: "Calculated conversion rates and CTRs across time periods, identifying when product changes and website updates had a measurable impact. Used subqueries and temporary tables to keep the logic clean and the output readable.",
-      color: T.green,
-      code: "SELECT\n  period,\n  ROUND(conversions * 100.0 / sessions, 2) AS conversion_rate,\n  ROUND(clicks * 100.0 / impressions, 2) AS ctr\nFROM metrics\nORDER BY period",
-    },
-    {
-      num: "04",
-      title: "Business Growth Over Time",
-      body: "Produced year-on-year comparisons showing how key metrics trended. Referenced known events (website redesigns, product launches) to explain the data rather than just presenting it. The final output was a PDF report combining queries with their results, ready for the investor deck.",
-      color: T.amber,
-    },
-  ];
-  return (
-    <div onClick={onClose} style={{
-      position: "fixed", inset: 0, zIndex: 100,
-      background: "rgba(0,0,0,0.5)", backdropFilter: "blur(6px)",
-      display: "flex", alignItems: "center", justifyContent: "center",
-      padding: 20, animation: "fadeIn 0.2s ease",
-    }}>
-      <div onClick={e => e.stopPropagation()} style={{
-        background: T.bg, borderRadius: 10, maxWidth: 640, width: "100%",
-        maxHeight: "85vh", overflowY: "auto", padding: isMobile ? "20px 16px" : "32px 28px",
-        border: `1px solid ${T.cardBorder}`, boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
-      }}>
-        {/* Header */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 20 }}>
-          <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
-              <span style={{ fontSize: 24 }}>🧮</span>
-              <span style={{ fontSize: 9, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "3px 8px", background: T.amber + "12", color: T.amber, borderRadius: 6, letterSpacing: "0.5px", textTransform: "uppercase", fontWeight: 600 }}>SQL & Data Analysis</span>
-            </div>
-            <h2 style={{ fontSize: 22, fontWeight: 800, color: T.text, margin: 0, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>SQL Analysis for Fund Raise</h2>
-            <p style={{ fontSize: 12, color: T.textLight, marginTop: 4, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>Investor preparation · SQL · PDF report</p>
-          </div>
-          <button onClick={onClose} style={{
-            width: 32, height: 32, borderRadius: 10, border: `1px solid ${T.cardBorder}`,
-            background: T.card, color: T.textLight, fontSize: 16, cursor: "pointer",
-            display: "flex", alignItems: "center", justifyContent: "center",
-          }}>×</button>
-        </div>
-        {/* Steps */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-          {steps.map((step, i) => (
-            <div key={i} style={{
-              padding: "16px 18px", background: T.card, border: `1px solid ${T.cardBorder}`,
-              borderRadius: 10, borderLeft: `3px solid ${step.color}`,
-              boxShadow: "0 1px 4px rgba(0,0,0,0.02)",
-            }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 5 }}>
-                <span style={{ fontSize: 11, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: step.color, fontWeight: 700 }}>{step.num}</span>
-                <span style={{ fontSize: 14, fontWeight: 700, color: T.text }}>{step.title}</span>
-              </div>
-              <p style={{ fontSize: 13, color: T.textMid, lineHeight: 1.65, margin: 0 }}>{step.body}</p>
-              {step.code && (
-                <pre style={{
-                  marginTop: 10, padding: "12px 14px", borderRadius: 10,
-                  background: "#1e1e1e", color: "#d4d4d4", fontSize: 11,
-                  fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", lineHeight: 1.5,
-                  overflowX: "auto", border: `1px solid ${T.cardBorder}`,
-                }}>{step.code}</pre>
-              )}
-            </div>
-          ))}
-        </div>
-        {/* Skills */}
-        <div style={{ marginTop: 16, padding: "12px 16px", background: T.tagBg, borderRadius: 10 }}>
-          <div style={{ fontSize: 9, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textFaint, textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: 6 }}>Skills used</div>
-          <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
-            {["SQL", "CASE Pivots", "Subqueries", "Temporary Tables", "JOINs", "Data Trends", "Stakeholder Reporting"].map(s => (
-              <span key={s} style={{ padding: "3px 8px", borderRadius: 6, fontSize: 10, background: T.card, color: T.textMid, border: `1px solid ${T.cardBorder}` }}>{s}</span>
-            ))}
-          </div>
-        </div>
-        {/* Footer links */}
-        <div style={{ marginTop: 16, display: "flex", justifyContent: "center", gap: 16 }}>
-          <a href="https://github.com/R9JJAYL/SQLAnalysisForFundRaise/blob/main/FundRaiseAnalysisReport.pdf" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()} style={{
-            fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.amber, fontWeight: 600, textDecoration: "none",
-          }}>
-            View full report (PDF) →
-          </a>
-          <a href="https://github.com/R9JJAYL/SQLAnalysisForFundRaise/blob/main/FundRaiseAnalysisCode.sql" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()} style={{
-            fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, fontWeight: 600, textDecoration: "none",
-          }}>
-            View SQL code →
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-}
 function ProspectModal({ onClose, isMobile }) {
   const steps = [
     {
       num: "01",
       title: "The Problem",
-      body: "Every quarter, the Head of TA gets asked the same question: how many people do we need to hire, when, and how? Building a hiring plan means pulling data from the ATS, finance, and hiring managers — then stitching it into a spreadsheet that's outdated the moment it's shared. It takes days, and it's never quite right.",
+      body: "Every quarter, the same question: how many people do we need to hire, when, and how? Building a plan means pulling data from the ATS, finance, and hiring managers — then stitching it into a spreadsheet that's outdated the moment it's shared. Takes days, never quite right.",
       color: T.red,
     },
     {
       num: "02",
       title: "The Agent",
-      body: "Built an AI agent that takes a headcount target, team structure, and budget — then generates a phased hiring plan. It calculates recruiter capacity, suggests sourcing mix (direct vs agency vs referral), sets realistic timelines per role type, and flags risks like competing offers or market scarcity.",
+      body: "An AI agent that takes a headcount target, team structure, and budget — then generates a phased hiring plan. Calculates recruiter capacity, suggests sourcing mix (direct vs agency vs referral), sets realistic timelines per role type, and flags risks like competing offers or market scarcity.",
       color: T.blue,
     },
     {
       num: "03",
       title: "How It Works",
-      body: "Feed the agent your inputs: target headcount, departments, seniority split, budget, and timeline. It models hiring velocity based on typical conversion rates (applications → screens → interviews → offers → hires), calculates how many recruiters you need at each phase, and produces a week-by-week plan with milestones.",
+      body: "Feed it your inputs: target headcount, departments, seniority split, budget, and timeline. It models hiring velocity based on typical conversion rates (applications → screens → onsites → offers → hires), calculates recruiter capacity at each phase, and produces a week-by-week plan with milestones.",
       color: T.green,
     },
     {
       num: "04",
       title: "What It Returns",
-      body: "A structured hiring plan broken down by department and quarter. Recruiter capacity model showing when you need to scale the team. Sourcing strategy per role type. Budget allocation across channels. Risk flags for hard-to-fill roles. Everything you'd normally spend a week building in a spreadsheet.",
+      body: "A structured hiring plan broken down by department and quarter. Recruiter capacity model showing when to scale the team. Sourcing strategy per role type. Budget allocation across channels. Risk flags for hard-to-fill roles. Everything you'd spend a week building in a spreadsheet.",
       color: T.amber,
     },
     {
       num: "05",
       title: "The Impact",
-      body: "What used to take 3-5 days of spreadsheet work now takes under 10 minutes. Plans are more consistent, more defensible in leadership meetings, and easier to update when priorities shift. The agent doesn't replace your judgement — it gives you a first draft worth editing instead of a blank sheet worth dreading.",
+      body: "What used to take 3–5 days now takes under 10 minutes. Plans are more consistent, more defensible in leadership meetings, and easier to update when priorities shift. It doesn't replace your judgement — it gives you a first draft worth editing instead of a blank sheet worth dreading.",
       color: T.accent,
     },
   ];
@@ -873,8 +766,8 @@ export default function RecruiterCV() {
             <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent + "CC", letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 700 }}>Work summary</p>
             <p style={{ fontSize: 14, color: T.textMid, lineHeight: 1.75, margin: "0 0 8px" }}>
               8 years in recruitment. Started in high-volume agency, moved into embedded RPO across VC-backed startups,
-              then went in-house at a £4.5bn fintech hiring 75 engineers with zero agency spend. Currently Head of TA
-              at a Series B health-tech, where I scaled the company from 140 to 310 people. Promoted at every company.
+              then went in-house at a £4.5bn fintech hiring 95 engineers with zero agency spend. Now at an early-stage
+              AI recruitment start-up as the first non-technical hire, shaping the product and go-to-market as a practitioner-turned-operator. Promoted at every company.
             </p>
             <p style={{ fontSize: 14, color: T.textMid, lineHeight: 1.75, margin: "0 0 8px" }}>
               Looking for my next role as first or early TA hire at a Series A/B company. Own the hiring plan, shape how the team scales.
@@ -1061,7 +954,6 @@ export default function RecruiterCV() {
         </div>{/* end overflow hidden */}
         {/* Sheets Modal */}
         {modal === "sheets" && <SheetsModal onClose={() => setModal(null)} isMobile={isMobile} />}
-        {modal === "sql" && <SQLModal onClose={() => setModal(null)} isMobile={isMobile} />}
         {modal === "prospect" && <ProspectModal onClose={() => setModal(null)} isMobile={isMobile} />}
         {modal === "recops" && <RecOpsModal onClose={() => setModal(null)} isMobile={isMobile} />}
         </div>
