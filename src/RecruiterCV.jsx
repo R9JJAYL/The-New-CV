@@ -222,7 +222,7 @@ function RoleCard({ role, index, isLast, isMobile }) {
         boxShadow: open ? "0 4px 16px rgba(196,112,75,0.12)" : hovered ? "0 2px 8px rgba(196,112,75,0.1)" : "0 1px 4px rgba(0,0,0,0.03)",
       }}>
         {/* Grey header */}
-        <div style={{ background: hovered && !open ? "#ECEAE6" : T.tagBg, padding: isMobile ? "12px 14px" : "12px 22px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap", transition: "background 0.3s ease", borderRadius: "10px 10px 0 0" }}>
+        <div style={{ background: hovered && !open ? "#ECEAE6" : T.tagBg, padding: isMobile ? "12px 14px" : "12px 22px", display: "flex", justifyContent: "space-between", alignItems: isMobile ? "flex-start" : "center", gap: isMobile ? 4 : 12, flexWrap: "wrap", transition: "background 0.3s ease", borderRadius: "10px 10px 0 0" }}>
           <h3 style={{ fontSize: 16, fontWeight: 700, margin: 0, color: T.text, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{role.title} <span style={{ color: T.textLight, fontWeight: 500 }}>@</span> <span style={{ color: T.textMid, fontWeight: 600 }}>{role.company}</span></h3>
           <div style={{ flexShrink: 0 }}>
             <span style={{ fontSize: 11, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textMid, whiteSpace: "nowrap" }}>
