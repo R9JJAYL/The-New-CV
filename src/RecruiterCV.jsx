@@ -1013,12 +1013,12 @@ export default function RecruiterCV() {
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 10 }}>
                 {[
                   { emoji: "\u26BD", label: "Football", text: "Lifelong Crystal Palace fan. Yes, I know. No, I can't explain it either. Season ticket holder. The highs are rare but they're worth it." },
-                  { emoji: "\uD83C\uDFC3", label: "Running", text: "5k most mornings around Brockwell Park. Slow but consistent. It's the best way to start the day and I'm genuinely unbearable without it." },
+                  { emoji: "\uD83C\uDFC3", label: "Running", text: "5k most mornings around Brockwell Park. Slow but consistent. It's the best way to start the day and I'm genuinely unbearable without it.", hideOnMobile: true },
                   { emoji: "\uD83C\uDF73", label: "Cooking", text: "I make everything from scratch. Current obsession is getting the perfect crispy chilli oil. My mates say I should start a food account. I won't." },
                   { emoji: "\uD83D\uDC36", label: "Mabel", text: "One-year-old cockapoo. Joins me on my 5k runs. She's the real influencer in the house." },
                   { emoji: "\uD83D\uDCDA", label: "Reading", text: "Mostly non-fiction. Thinking Fast and Slow changed how I interview. Currently enjoying Robot-Proof Recruiter, highly recommend." },
-                  { emoji: "\u2708\uFE0F", label: "Travel", text: "Spent 3 months in Southeast Asia between jobs. Best decision I ever made. Worst sunburn I ever got. Both in Thailand." },
-                ].map((item, i) => (
+                  { emoji: "\u2708\uFE0F", label: "Travel", text: "Spent 3 months in Southeast Asia between jobs. Best decision I ever made. Worst sunburn I ever got. Both in Thailand.", hideOnMobile: true },
+                ].filter(item => !isMobile || !item.hideOnMobile).map((item, i) => (
                   <div key={i} style={{
                     padding: isMobile ? "14px 14px" : "16px 18px", background: T.card, border: `1px solid ${T.cardBorder}`,
                     borderRadius: 10, boxShadow: "0 2px 8px rgba(0,0,0,0.02)",
