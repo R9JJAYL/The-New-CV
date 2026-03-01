@@ -840,7 +840,7 @@ export default function RecruiterCV() {
                         opacity: recSlide === "in" ? 1 : 0,
                         transform: recSlide === "in" ? "translateX(0)" : recSlide === "out-left" ? "translateX(-40px)" : recSlide === "out-right" ? "translateX(40px)" : recSlide === "enter-right" ? "translateX(40px)" : "translateX(-40px)",
                         transition: recSlide === "in" || recSlide.startsWith("out") ? "opacity 0.35s ease, transform 0.35s ease" : "none",
-                        display: "flex", alignItems: "center", gap: 10, minWidth: 0,
+                        display: "flex", alignItems: "center", gap: 10, minWidth: 0, flex: isMobile ? undefined : 1,
                       }}>
                         <div style={{ width: 32, height: 32, flexShrink: 0, borderRadius: "50%", background: `linear-gradient(135deg, ${T.warm1}, ${T.accentLight})`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, fontWeight: 700, color: T.accent }}>{RECOMMENDATIONS[recIdx].name.split(" ").map(n => n[0]).join("")}</div>
                         <div style={{ minWidth: 0 }}>
