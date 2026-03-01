@@ -1018,10 +1018,10 @@ export default function RecruiterCV() {
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 10 }}>
                 {[
                   { emoji: "\u26BD", label: "Football", text: "Lifelong Crystal Palace fan. Yes, I know. No, I can't explain it either. Season ticket holder. The highs are rare but they're worth it." },
-                  { emoji: "\uD83C\uDFC3", label: "Running", text: "5k most mornings around Brockwell Park. I'm slow but consistent, which is also how I'd describe my sourcing." },
+                  { emoji: "\uD83C\uDFC3", label: "Running", text: "5k most mornings around Brockwell Park. Slow but consistent. It's the best way to start the day and I'm genuinely unbearable without it." },
                   { emoji: "\uD83C\uDF73", label: "Cooking", text: "I make everything from scratch. Current obsession is getting the perfect crispy chilli oil. My mates say I should start a food account. I won't." },
-                  { emoji: "\uD83D\uDC36", label: "Mabel", text: "One-year-old cockapoo. Has 1,200 Instagram followers. I have 800. She's better at personal branding than most recruiters." },
-                  { emoji: "\uD83D\uDCDA", label: "Reading", text: "Mostly non-fiction. Thinking Fast and Slow changed how I interview. Currently reading Range by David Epstein. It's basically about why generalists win." },
+                  { emoji: "\uD83D\uDC36", label: "Mabel", text: "One-year-old cockapoo. Joins me on my 5k runs. She's the real influencer in the house." },
+                  { emoji: "\uD83D\uDCDA", label: "Reading", text: "Mostly non-fiction. Thinking Fast and Slow changed how I interview. Currently enjoying Robot-Proof Recruiter, highly recommend." },
                   { emoji: "\u2708\uFE0F", label: "Travel", text: "Spent 3 months in Southeast Asia between jobs. Best decision I ever made. Worst sunburn I ever got. Both in Thailand." },
                 ].map((item, i) => (
                   <div key={i} style={{
@@ -1041,9 +1041,9 @@ export default function RecruiterCV() {
               <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>What I value</p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 10 }}>
                 {[
-                  { emoji: "\uD83D\uDCAC", label: "Honesty over polish", text: "I'd rather someone tell me I'm wrong than agree with me to be polite. That goes both ways." },
-                  { emoji: "\uD83D\uDCAA", label: "Doing the work", text: "I've never been the smartest person in the room, but I'll be the one who actually followed up." },
-                  { emoji: "\uD83E\uDD1D", label: "Loyalty to people", text: "Every company I've left, I've stayed close with the people. That matters more to me than a brand on my CV." },
+                  { emoji: "\uD83D\uDCAC", label: "Honesty over polish", text: "I'd rather someone tell me I'm wrong than agree with me to be polite. Directness builds trust faster than anything." },
+                  { emoji: "\uD83D\uDCAA", label: "Doing the work", text: "I'll always be the person who actually followed up. Consistency and reliability compound over time." },
+                  { emoji: "\uD83C\uDF1F", label: "Generosity", text: "I share what I know, help where I can, and trust that it comes back around. Karma compounds." },
                 ].map((t, i) => (
                   <div key={i} style={{
                     padding: "16px 18px", background: T.card, border: `1px solid ${T.cardBorder}`,
