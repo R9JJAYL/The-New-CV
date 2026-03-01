@@ -146,6 +146,19 @@ function useInView(ref, threshold = 0.1) {
   }, [ref, threshold]);
   return inView;
 }
+function useIsMobile(breakpoint = 640) {
+  const [isMobile, setIsMobile] = useState(() =>
+    typeof window !== "undefined" ? window.innerWidth <= breakpoint : false
+  );
+  useEffect(() => {
+    const mql = window.matchMedia(`(max-width: ${breakpoint}px)`);
+    const handler = (e) => setIsMobile(e.matches);
+    setIsMobile(mql.matches);
+    mql.addEventListener("change", handler);
+    return () => mql.removeEventListener("change", handler);
+  }, [breakpoint]);
+  return isMobile;
+}
 function AnimNum({ value, suffix, prefix, delay }) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
@@ -189,7 +202,7 @@ function SeriesAnim({ value, delay }) {
   }, [inView, delay]);
   return <span ref={ref}>{done ? value : `Series ${letters[index]}`}</span>;
 }
-function RoleCard({ role, index, isLast }) {
+function RoleCard({ role, index, isLast, isMobile }) {
   const [open, setOpen] = useState(false);
   const [hovered, setHovered] = useState(false);
   const ref = useRef(null);
@@ -209,7 +222,7 @@ function RoleCard({ role, index, isLast }) {
         boxShadow: open ? "0 4px 16px rgba(196,112,75,0.12)" : hovered ? "0 2px 8px rgba(196,112,75,0.1)" : "0 1px 4px rgba(0,0,0,0.03)",
       }}>
         {/* Grey header */}
-        <div style={{ background: hovered && !open ? "#ECEAE6" : T.tagBg, padding: "12px 22px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap", transition: "background 0.3s ease", borderRadius: "10px 10px 0 0" }}>
+        <div style={{ background: hovered && !open ? "#ECEAE6" : T.tagBg, padding: isMobile ? "12px 14px" : "12px 22px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap", transition: "background 0.3s ease", borderRadius: "10px 10px 0 0" }}>
           <h3 style={{ fontSize: 16, fontWeight: 700, margin: 0, color: T.text, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{role.title} <span style={{ color: T.textLight, fontWeight: 500 }}>@</span> <span style={{ color: T.textMid, fontWeight: 600 }}>{role.company}</span></h3>
           <div style={{ flexShrink: 0 }}>
             <span style={{ fontSize: 11, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textMid, whiteSpace: "nowrap" }}>
@@ -218,7 +231,7 @@ function RoleCard({ role, index, isLast }) {
           </div>
         </div>
         {/* White body */}
-        <div style={{ background: hovered && !open ? "#F9F8F6" : T.card, padding: "14px 22px 14px", position: "relative", borderRadius: "0 0 10px 10px", transition: "background 0.3s ease" }}>
+        <div style={{ background: hovered && !open ? "#F9F8F6" : T.card, padding: isMobile ? "12px 14px 12px" : "14px 22px 14px", position: "relative", borderRadius: "0 0 10px 10px", transition: "background 0.3s ease" }}>
           {role.companyPills && (
             <div style={{ display: "flex", gap: 4, flexWrap: "wrap", alignItems: "center", marginBottom: 10 }}>
               {role.companyPills.map((pill, i) => (
@@ -264,7 +277,7 @@ function RoleCard({ role, index, isLast }) {
     </div>
   );
 }
-function SheetsModal({ onClose }) {
+function SheetsModal({ onClose, isMobile }) {
   const steps = [
     {
       num: "01",
@@ -311,7 +324,7 @@ function SheetsModal({ onClose }) {
     }}>
       <div onClick={e => e.stopPropagation()} style={{
         background: T.bg, borderRadius: 10, maxWidth: 640, width: "100%",
-        maxHeight: "85vh", overflowY: "auto", padding: "32px 28px",
+        maxHeight: "85vh", overflowY: "auto", padding: isMobile ? "20px 16px" : "32px 28px",
         border: `1px solid ${T.cardBorder}`, boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
       }}>
         {/* Header */}
@@ -331,7 +344,7 @@ function SheetsModal({ onClose }) {
           }}>×</button>
         </div>
         {/* Result stats */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 8, marginBottom: 20 }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: 8, marginBottom: 20 }}>
           {results.map((r, i) => (
             <div key={i} style={{ textAlign: "center", padding: "12px 8px", background: T.card, borderRadius: 10, border: `1px solid ${T.cardBorder}` }}>
               <div style={{ fontSize: 20, fontWeight: 800, color: T.accent, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{r.stat}</div>
@@ -368,7 +381,7 @@ function SheetsModal({ onClose }) {
     </div>
   );
 }
-function RecOpsModal({ onClose }) {
+function RecOpsModal({ onClose, isMobile }) {
   const steps = [
     {
       num: "01",
@@ -415,7 +428,7 @@ function RecOpsModal({ onClose }) {
     }}>
       <div onClick={e => e.stopPropagation()} style={{
         background: T.bg, borderRadius: 10, maxWidth: 640, width: "100%",
-        maxHeight: "85vh", overflowY: "auto", padding: "32px 28px",
+        maxHeight: "85vh", overflowY: "auto", padding: isMobile ? "20px 16px" : "32px 28px",
         border: `1px solid ${T.cardBorder}`, boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
       }}>
         {/* Header */}
@@ -435,7 +448,7 @@ function RecOpsModal({ onClose }) {
           }}>×</button>
         </div>
         {/* Result stats */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 8, marginBottom: 20 }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: 8, marginBottom: 20 }}>
           {results.map((r, i) => (
             <div key={i} style={{ textAlign: "center", padding: "12px 8px", background: T.card, borderRadius: 10, border: `1px solid ${T.cardBorder}` }}>
               <div style={{ fontSize: 20, fontWeight: 800, color: T.accent, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{r.stat}</div>
@@ -472,7 +485,7 @@ function RecOpsModal({ onClose }) {
     </div>
   );
 }
-function SQLModal({ onClose }) {
+function SQLModal({ onClose, isMobile }) {
   const steps = [
     {
       num: "01",
@@ -510,7 +523,7 @@ function SQLModal({ onClose }) {
     }}>
       <div onClick={e => e.stopPropagation()} style={{
         background: T.bg, borderRadius: 10, maxWidth: 640, width: "100%",
-        maxHeight: "85vh", overflowY: "auto", padding: "32px 28px",
+        maxHeight: "85vh", overflowY: "auto", padding: isMobile ? "20px 16px" : "32px 28px",
         border: `1px solid ${T.cardBorder}`, boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
       }}>
         {/* Header */}
@@ -579,7 +592,7 @@ function SQLModal({ onClose }) {
     </div>
   );
 }
-function ProspectModal({ onClose }) {
+function ProspectModal({ onClose, isMobile }) {
   const steps = [
     {
       num: "01",
@@ -621,7 +634,7 @@ function ProspectModal({ onClose }) {
     }}>
       <div onClick={e => e.stopPropagation()} style={{
         background: T.bg, borderRadius: 10, maxWidth: 640, width: "100%",
-        maxHeight: "85vh", overflowY: "auto", padding: "32px 28px",
+        maxHeight: "85vh", overflowY: "auto", padding: isMobile ? "20px 16px" : "32px 28px",
         border: `1px solid ${T.cardBorder}`, boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
       }}>
         {/* Header */}
@@ -670,7 +683,7 @@ function ProspectModal({ onClose }) {
     </div>
   );
 }
-function BuildTile({ build, index, onModalOpen }) {
+function BuildTile({ build, index, onModalOpen, isMobile }) {
   const isModal = build.modal;
   const Tag = isModal ? "div" : "a";
   const linkProps = isModal ? { onClick: () => onModalOpen && onModalOpen(build.modal) } : { href: build.url, target: "_blank", rel: "noopener noreferrer" };
@@ -678,7 +691,7 @@ function BuildTile({ build, index, onModalOpen }) {
     <Tag {...linkProps} style={{
       display: "flex", flexDirection: "column", textDecoration: "none", color: "inherit", cursor: "pointer",
       background: `linear-gradient(135deg, ${build.color}06 0%, ${T.card} 60%)`, border: `1px solid ${T.cardBorder}`,
-      borderRadius: 10, padding: "24px 24px 20px",
+      borderRadius: 10, padding: isMobile ? "18px 16px 16px" : "24px 24px 20px",
       position: "relative", overflow: "hidden", height: "100%",
       boxShadow: "0 1px 6px rgba(0,0,0,0.03)",
       transition: "box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease",
@@ -731,6 +744,7 @@ function RecCard({ rec, index }) {
   );
 }
 export default function RecruiterCV() {
+  const isMobile = useIsMobile(640);
   const [tab, setTab] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [modal, setModal] = useState(null);
@@ -773,7 +787,7 @@ export default function RecruiterCV() {
     }
   }, [tab]);
   return (
-    <div style={{ background: "#E8E4DE", color: T.text, minHeight: "100vh", fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", overflowX: "hidden", position: "relative", padding: "40px 24px" }}>
+    <div style={{ background: "#E8E4DE", color: T.text, minHeight: "100vh", fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", overflowX: "hidden", position: "relative", padding: isMobile ? "16px 8px" : "40px 24px" }}>
 
       {/* CV Paper Container */}
       <div style={{
@@ -781,7 +795,7 @@ export default function RecruiterCV() {
         background: T.bg, borderRadius: 16,
         border: `1px solid ${T.cardBorder}`,
         boxShadow: "0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04)",
-        padding: "0 40px 40px",
+        padding: isMobile ? "0 16px 24px" : "0 40px 40px",
         minHeight: 0,
       }}>
         {/* Subtle warm radial glow behind header */}
@@ -795,7 +809,7 @@ export default function RecruiterCV() {
           transition: "all 0.7s ease", position: "relative",
         }}>
           {/* Tabs — flush at top of card */}
-          <div style={{ display: "flex", gap: 3, background: T.tagBg, borderRadius: "15px 15px 0 0", padding: 4, margin: "0 -40px", position: "relative" }}>
+          <div style={{ display: "flex", gap: 3, background: T.tagBg, borderRadius: "15px 15px 0 0", padding: 4, margin: isMobile ? "0 -16px" : "0 -40px", position: "relative" }}>
             {/* Sliding pill background */}
             <div style={{
               position: "absolute", top: 4, bottom: 4, borderRadius: 10,
@@ -810,10 +824,10 @@ export default function RecruiterCV() {
               onMouseEnter={e => { if (tab !== i) { e.currentTarget.style.color = T.text; e.currentTarget.style.fontWeight = "700"; e.currentTarget.style.letterSpacing = "0.3px"; } }}
               onMouseLeave={e => { if (tab !== i) { e.currentTarget.style.color = T.textLight; e.currentTarget.style.fontWeight = "500"; e.currentTarget.style.letterSpacing = "0px"; } }}
               style={{
-                flex: 1, padding: "10px 14px", borderRadius: 10, border: "none",
+                flex: 1, padding: isMobile ? "9px 6px" : "10px 14px", borderRadius: 10, border: "none",
                 background: "transparent",
                 color: tab === i ? T.accent : T.textLight,
-                fontSize: 13, fontWeight: tab === i ? 700 : 500,
+                fontSize: isMobile ? 12 : 13, fontWeight: tab === i ? 700 : 500,
                 fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", cursor: "pointer",
                 transition: "color 0.2s ease, font-weight 0.2s ease, letter-spacing 0.2s ease",
                 position: "relative", zIndex: 1,
@@ -822,9 +836,9 @@ export default function RecruiterCV() {
             ))}
           </div>
           {/* Name + Title + Icons */}
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 20, marginBottom: 14 }}>
-            <h1 style={{ fontSize: 24, fontWeight: 800, margin: 0, lineHeight: 1, letterSpacing: "-1px", color: T.text, flex: "0 0 auto" }}>Phil Role</h1>
-            <p style={{ fontSize: 24, fontWeight: 800, margin: 0, lineHeight: 1, letterSpacing: "-1px", color: T.accent, textAlign: "center", flex: "1 1 auto" }}>Head of Talent Acquisition</p>
+          <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", justifyContent: isMobile ? "center" : "space-between", alignItems: "center", marginTop: isMobile ? 16 : 20, marginBottom: 14, gap: isMobile ? 8 : 0 }}>
+            <h1 style={{ fontSize: isMobile ? 20 : 24, fontWeight: 800, margin: 0, lineHeight: 1, letterSpacing: "-1px", color: T.text, flex: "0 0 auto" }}>Phil Role</h1>
+            <p style={{ fontSize: isMobile ? 16 : 24, fontWeight: 800, margin: 0, lineHeight: 1, letterSpacing: "-1px", color: T.accent, textAlign: "center", flex: isMobile ? "0 0 auto" : "1 1 auto" }}>Head of Talent Acquisition</p>
             <div style={{ display: "flex", gap: 8, flex: "0 0 auto" }}>
             {[
               { href: "https://www.linkedin.com/in/jamiejaylyons/", label: "LinkedIn", svg: <svg width="16" height="16" viewBox="0 0 24 24" fill={T.text}><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> },
@@ -866,7 +880,7 @@ export default function RecruiterCV() {
               Looking for my next role as first or early TA hire at a Series A/B company. Own the hiring plan, shape how the team scales.
             </p>
             {/* Stats */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8, marginBottom: 22 }}>
+            <div style={{ display: "grid", gridTemplateColumns: isMobile ? "repeat(2, 1fr)" : "repeat(4, 1fr)", gap: 8, marginBottom: 22 }}>
               {STATS.map((s, i) => (
                 <div key={s.label} style={{
                   textAlign: "center", padding: "14px 6px 12px",
@@ -884,11 +898,11 @@ export default function RecruiterCV() {
               ))}
             </div>
             <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent + "CC", letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 700 }}>Work experience</p>
-            {ROLES.map((role, i) => <RoleCard key={i} role={role} index={i} isLast={i === ROLES.length - 1} />)}
+            {ROLES.map((role, i) => <RoleCard key={i} role={role} index={i} isLast={i === ROLES.length - 1} isMobile={isMobile} />)}
             {/* Education */}
             <div style={{ marginTop: 22, marginBottom: 24 }}>
               <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent + "CC", letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 700 }}>Education</p>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10 }}>
+              <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: 10 }}>
                 <div style={{ padding: "14px 16px", background: T.card, borderRadius: 10, border: `1px solid ${T.cardBorder}`, boxShadow: "0 2px 8px rgba(0,0,0,0.02)" }}>
                   <div style={{ fontSize: 13, color: T.text, fontWeight: 600 }}>BA (Hons) Business Management</div>
                   <div style={{ fontSize: 11, color: T.textLight, marginTop: 4 }}>University of Leeds · 2:1</div>
@@ -908,7 +922,7 @@ export default function RecruiterCV() {
               <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent + "CC", letterSpacing: "0.3px", margin: "0 0 16px 2px", fontWeight: 700 }}>What people say about my work</p>
               <div>
                 {/* Recommendation card */}
-                <div onMouseEnter={() => setRecPaused(true)} onMouseLeave={() => setRecPaused(false)} style={{ padding: "32px 36px 24px", background: T.card, border: `1px solid ${T.cardBorder}`, borderRadius: 10, boxShadow: "0 1px 6px rgba(0,0,0,0.02)", position: "relative", overflow: "hidden" }}>
+                <div onMouseEnter={() => setRecPaused(true)} onMouseLeave={() => setRecPaused(false)} style={{ padding: isMobile ? "20px 18px 16px" : "32px 36px 24px", background: T.card, border: `1px solid ${T.cardBorder}`, borderRadius: 10, boxShadow: "0 1px 6px rgba(0,0,0,0.02)", position: "relative", overflow: "hidden" }}>
                   {/* Big decorative quote mark */}
                   <div style={{ position: "absolute", top: 10, right: 20, fontSize: 64, color: T.accent + "12", fontFamily: "Georgia, serif", lineHeight: 1, pointerEvents: "none" }}>{"\u201C"}</div>
                   <div style={{
@@ -920,7 +934,7 @@ export default function RecruiterCV() {
                   <div style={{ fontSize: 13, color: T.textMid, lineHeight: 1.7, marginBottom: 0, fontStyle: "italic" }}>"{RECOMMENDATIONS[recIdx].text}"</div>
                   </div>{/* end slide wrapper */}
                   {/* Name, dots, relationship row */}
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: 14 }}>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: 14, flexWrap: isMobile ? "wrap" : "nowrap", gap: isMobile ? 8 : 0 }}>
                     <div style={{
                       opacity: recSlide === "in" ? 1 : 0,
                       transform: recSlide === "in" ? "translateX(0)" : recSlide === "out-left" ? "translateX(-40px)" : recSlide === "out-right" ? "translateX(40px)" : recSlide === "enter-right" ? "translateX(40px)" : "translateX(-40px)",
@@ -960,8 +974,8 @@ export default function RecruiterCV() {
               return (
                 <div key={cat}>
                   <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent + "CC", letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 700 }}>{cat}</p>
-                  <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 14 }}>
-                    {tiles.map((build, i) => <BuildTile key={i} build={build} index={i} onModalOpen={setModal} />)}
+                  <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)", gap: isMobile ? 10 : 14 }}>
+                    {tiles.map((build, i) => <BuildTile key={i} build={build} index={i} onModalOpen={setModal} isMobile={isMobile} />)}
                   </div>
                 </div>
               );
@@ -974,7 +988,7 @@ export default function RecruiterCV() {
               <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent + "CC", letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 700 }}>A bit about me</p>
               <p style={{ fontSize: 14, color: T.textMid, lineHeight: 1.65, marginBottom: 16 }}>(Ideal spot for an intro video, but I'm going to be cheeky and slip in a video breaking down how we're helping teams manage application volume with First! :D)</p>
               <div style={{
-                width: "80%", aspectRatio: "16/9", borderRadius: 10, margin: "0 auto",
+                width: isMobile ? "100%" : "80%", aspectRatio: "16/9", borderRadius: 10, margin: "0 auto",
                 overflow: "hidden", border: `1px solid ${T.cardBorder}`,
                 marginBottom: 8,
               }}>
@@ -999,7 +1013,7 @@ export default function RecruiterCV() {
                   { emoji: "\u2708\uFE0F", label: "Travel", text: "Spent 3 months in Southeast Asia between jobs. Best decision I ever made. Worst sunburn I ever got. Both in Thailand." },
                 ].map((item, i) => (
                   <div key={i} style={{
-                    padding: "16px 18px", background: T.card, border: `1px solid ${T.cardBorder}`,
+                    padding: isMobile ? "14px 14px" : "16px 18px", background: T.card, border: `1px solid ${T.cardBorder}`,
                     borderRadius: 10, boxShadow: "0 2px 8px rgba(0,0,0,0.02)",
                   }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
@@ -1020,7 +1034,7 @@ export default function RecruiterCV() {
                   { emoji: "\uD83C\uDF1F", label: "Generosity", text: "I share what I know, help where I can, and trust that it comes back around. Karma compounds." },
                 ].map((t, i) => (
                   <div key={i} style={{
-                    padding: "16px 18px", background: T.card,
+                    padding: isMobile ? "14px 14px" : "16px 18px", background: T.card,
                     border: `1px solid ${T.cardBorder}`,
                     borderRadius: 10,
                     boxShadow: "0 2px 8px rgba(0,0,0,0.02)",
@@ -1039,20 +1053,20 @@ export default function RecruiterCV() {
           </div>{/* end flex track */}
         </div>{/* end overflow hidden */}
         {/* Sheets Modal */}
-        {modal === "sheets" && <SheetsModal onClose={() => setModal(null)} />}
-        {modal === "sql" && <SQLModal onClose={() => setModal(null)} />}
-        {modal === "prospect" && <ProspectModal onClose={() => setModal(null)} />}
-        {modal === "recops" && <RecOpsModal onClose={() => setModal(null)} />}
+        {modal === "sheets" && <SheetsModal onClose={() => setModal(null)} isMobile={isMobile} />}
+        {modal === "sql" && <SQLModal onClose={() => setModal(null)} isMobile={isMobile} />}
+        {modal === "prospect" && <ProspectModal onClose={() => setModal(null)} isMobile={isMobile} />}
+        {modal === "recops" && <RecOpsModal onClose={() => setModal(null)} isMobile={isMobile} />}
         </div>
       </div>
       {/* FOOTER — outside card, on raw background */}
-      <footer style={{ padding: "40px 0 48px", textAlign: "center", maxWidth: 960, margin: "0 auto" }}>
-        <p style={{ fontSize: 18, fontWeight: 400, color: T.text, marginBottom: 24, letterSpacing: "-0.3px" }}>
+      <footer style={{ padding: isMobile ? "28px 16px 36px" : "40px 0 48px", textAlign: "center", maxWidth: 960, margin: "0 auto" }}>
+        <p style={{ fontSize: isMobile ? 15 : 18, fontWeight: 400, color: T.text, marginBottom: 24, letterSpacing: "-0.3px" }}>
           Built by a recruiter, for recruiters, because we deserve better than a Word doc.
         </p>
         <div style={{ display: "inline-flex", gap: 10, flexWrap: "wrap", justifyContent: "center" }}>
           <a href="https://calendly.com/" target="_blank" rel="noopener noreferrer" style={{
-            padding: "11px 24px", borderRadius: 10, fontSize: 13, fontWeight: 600,
+            padding: isMobile ? "13px 32px" : "11px 24px", borderRadius: 10, fontSize: 13, fontWeight: 600,
             background: T.accent, color: "#fff", textDecoration: "none",
             fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", transition: "all 0.25s ease",
             boxShadow: "0 2px 8px rgba(196,112,75,0.2)",
