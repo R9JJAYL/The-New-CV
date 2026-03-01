@@ -934,32 +934,39 @@ export default function RecruiterCV() {
                   <div style={{ fontSize: 13, color: T.textMid, lineHeight: 1.7, marginBottom: 0, fontStyle: "italic" }}>"{RECOMMENDATIONS[recIdx].text}"</div>
                   </div>{/* end slide wrapper */}
                   {/* Name, dots, relationship row */}
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: 14, flexWrap: isMobile ? "wrap" : "nowrap", gap: isMobile ? 8 : 0 }}>
-                    <div style={{
-                      opacity: recSlide === "in" ? 1 : 0,
-                      transform: recSlide === "in" ? "translateX(0)" : recSlide === "out-left" ? "translateX(-40px)" : recSlide === "out-right" ? "translateX(40px)" : recSlide === "enter-right" ? "translateX(40px)" : "translateX(-40px)",
-                      transition: recSlide === "in" || recSlide.startsWith("out") ? "opacity 0.35s ease, transform 0.35s ease" : "none",
-                      display: "flex", alignItems: "center", gap: 10, flex: 1, minWidth: 0, overflow: "hidden",
-                    }}>
-                      <div style={{ width: 32, height: 32, flexShrink: 0, borderRadius: "50%", background: `linear-gradient(135deg, ${T.warm1}, ${T.accentLight})`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, fontWeight: 700, color: T.accent }}>{RECOMMENDATIONS[recIdx].name.split(" ").map(n => n[0]).join("")}</div>
-                      <div style={{ minWidth: 0 }}>
-                        <div style={{ fontSize: 13, fontWeight: 700, color: T.text, whiteSpace: "nowrap" }}>{RECOMMENDATIONS[recIdx].name}</div>
-                        <div style={{ fontSize: 11, color: T.textLight, whiteSpace: "nowrap" }}>{RECOMMENDATIONS[recIdx].role}</div>
+                  <div style={{ marginTop: 14 }}>
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                      <div style={{
+                        opacity: recSlide === "in" ? 1 : 0,
+                        transform: recSlide === "in" ? "translateX(0)" : recSlide === "out-left" ? "translateX(-40px)" : recSlide === "out-right" ? "translateX(40px)" : recSlide === "enter-right" ? "translateX(40px)" : "translateX(-40px)",
+                        transition: recSlide === "in" || recSlide.startsWith("out") ? "opacity 0.35s ease, transform 0.35s ease" : "none",
+                        display: "flex", alignItems: "center", gap: 10, flex: 1, minWidth: 0, overflow: "hidden",
+                      }}>
+                        <div style={{ width: 32, height: 32, flexShrink: 0, borderRadius: "50%", background: `linear-gradient(135deg, ${T.warm1}, ${T.accentLight})`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, fontWeight: 700, color: T.accent }}>{RECOMMENDATIONS[recIdx].name.split(" ").map(n => n[0]).join("")}</div>
+                        <div style={{ minWidth: 0 }}>
+                          <div style={{ fontSize: 13, fontWeight: 700, color: T.text, whiteSpace: "nowrap" }}>{RECOMMENDATIONS[recIdx].name}</div>
+                          <div style={{ fontSize: 11, color: T.textLight, whiteSpace: "nowrap" }}>{RECOMMENDATIONS[recIdx].role}</div>
+                        </div>
+                      </div>
+                      {!isMobile && <div style={{ display: "flex", alignItems: "center", gap: 6, flexShrink: 0 }}>
+                        {RECOMMENDATIONS.map((_, i) => (
+                          <div key={i} onClick={() => { if (i !== recIdx) goToRec(i, i > recIdx ? "right" : "left"); }} style={{ width: 6, height: 6, borderRadius: "50%", background: i === recIdx && recSlide === "in" ? T.accent : T.cardBorder, cursor: "pointer", transition: "background 0.35s ease" }} />
+                        ))}
+                      </div>}
+                      <div style={{
+                        opacity: recSlide === "in" ? 1 : 0,
+                        transform: recSlide === "in" ? "translateX(0)" : recSlide === "out-left" ? "translateX(-40px)" : recSlide === "out-right" ? "translateX(40px)" : recSlide === "enter-right" ? "translateX(40px)" : "translateX(-40px)",
+                        transition: recSlide === "in" || recSlide.startsWith("out") ? "opacity 0.35s ease, transform 0.35s ease" : "none",
+                        flex: 1, display: "flex", justifyContent: "flex-end", minWidth: 0, overflow: "hidden",
+                      }}>
+                        <span style={{ fontSize: 10, color: T.textLight, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "3px 7px", background: T.tagBg, borderRadius: 6, border: `1px solid ${T.cardBorder}`, whiteSpace: "nowrap" }}>{RECOMMENDATIONS[recIdx].relation}</span>
                       </div>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: 6, flexShrink: 0 }}>
+                    {isMobile && <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 6, marginTop: 10 }}>
                       {RECOMMENDATIONS.map((_, i) => (
                         <div key={i} onClick={() => { if (i !== recIdx) goToRec(i, i > recIdx ? "right" : "left"); }} style={{ width: 6, height: 6, borderRadius: "50%", background: i === recIdx && recSlide === "in" ? T.accent : T.cardBorder, cursor: "pointer", transition: "background 0.35s ease" }} />
                       ))}
-                    </div>
-                    <div style={{
-                      opacity: recSlide === "in" ? 1 : 0,
-                      transform: recSlide === "in" ? "translateX(0)" : recSlide === "out-left" ? "translateX(-40px)" : recSlide === "out-right" ? "translateX(40px)" : recSlide === "enter-right" ? "translateX(40px)" : "translateX(-40px)",
-                      transition: recSlide === "in" || recSlide.startsWith("out") ? "opacity 0.35s ease, transform 0.35s ease" : "none",
-                      flex: 1, display: "flex", justifyContent: "flex-end", minWidth: 0, overflow: "hidden",
-                    }}>
-                      <span style={{ fontSize: 10, color: T.textLight, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "3px 7px", background: T.tagBg, borderRadius: 6, border: `1px solid ${T.cardBorder}`, whiteSpace: "nowrap" }}>{RECOMMENDATIONS[recIdx].relation}</span>
-                    </div>
+                    </div>}
                   </div>
                 </div>
               </div>
