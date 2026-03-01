@@ -894,8 +894,8 @@ export default function RecruiterCV() {
                   <div style={{ fontSize: 11, color: T.textLight, marginTop: 4 }}>University of Leeds · 2:1</div>
                 </div>
                 <div style={{ padding: "14px 16px", background: T.card, borderRadius: 10, border: `1px solid ${T.cardBorder}`, boxShadow: "0 2px 8px rgba(0,0,0,0.02)" }}>
-                  <div style={{ fontSize: 13, color: T.text, fontWeight: 600 }}>AIRS Certified</div>
-                  <div style={{ fontSize: 11, color: T.textLight, marginTop: 4 }}>Internet Recruiter Certification</div>
+                  <div style={{ fontSize: 13, color: T.text, fontWeight: 600 }}>First Certified</div>
+                  <div style={{ fontSize: 11, color: T.textLight, marginTop: 4 }}>CV Sifting Process Enhancement</div>
                 </div>
                 <div style={{ padding: "14px 16px", background: T.card, borderRadius: 10, border: `1px solid ${T.cardBorder}`, boxShadow: "0 2px 8px rgba(0,0,0,0.02)" }}>
                   <div style={{ fontSize: 13, color: T.text, fontWeight: 600 }}>LinkedIn Certified</div>
