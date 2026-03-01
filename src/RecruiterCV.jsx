@@ -123,12 +123,12 @@ const RECOMMENDATIONS = [
   { name: "Lucy Ward", role: "Recruitment Consultant, Harmon Search", text: "Phil trained me when I joined and he's the reason I'm still in recruitment. I hit target in my first 6 months because of how he set me up.", relation: "Direct report @ Harmon Search" },
 ];
 const BUILD_TILES = [
-  { category: "Agents & Automation", title: "Hiring Plan Agent", desc: "Feed it a headcount target, budget, and org structure. It generates a phased hiring plan with timelines, sourcing strategy, and recruiter capacity needs.", type: "AI Agent", icon: "📋", color: T.blue, modal: "prospect", linkLabel: "View project", tags: ["Claude Code", "Claude API", "Node.js", "Vercel"] },
-  { category: "Agents & Automation", title: "KPI Tracker Rebuild", desc: "Took a broken spreadsheet and turned it into a proper tracking system. Daily, weekly, and individual views. 40% faster data entry.", type: "Automation", icon: "📊", color: T.green, modal: "sheets", linkLabel: "View project", tags: ["Process Redesign", "Google Sheets", "KPI Analysis", "Automation"] },
-  { category: "Builds & Process Improvement", title: "CV Invaders", desc: "Vibe coded Space Invaders with a recruitment twist. Agency vs in-house leaderboard. Built for fun, shared for laughs.", type: "Arcade Game", icon: "👾", color: T.purple, url: "https://cv-invaders.vercel.app/", linkLabel: "Play", tags: ["Claude Code", "Supabase", "Vercel", "JavaScript", "React"] },
-  { category: "Builds & Process Improvement", title: "Why I Build Things", desc: "I learn by making. Most of what's here started as a problem I had at work that no tool quite solved. This CV included.", type: "Manifesto", icon: "🛠️", color: T.accent, url: "#", linkLabel: "", tags: ["Claude Code", "GitHub", "Vercel", "JavaScript"] },
-  { category: "Content & Community", title: "Investor Data Pack", desc: "SQL analysis on traffic, conversions, and growth to arm the C-suite for a fundraise pitch.", type: "Data Analysis", icon: "🧮", color: T.amber, modal: "sql", linkLabel: "View project", tags: ["SQL", "Data Analysis", "Investor Reporting", "CTR / CVR"] },
-  { category: "Content & Community", title: "The Truth About D&I", desc: "What actually works in diversity hiring, what doesn't, and why most companies are getting it wrong.", type: "Long-form Article", icon: "✍️", color: T.blue, url: "https://www.linkedin.com/pulse/truth-diversity-inclusion-jamie-lyons/", linkLabel: "Read", tags: ["D&I", "LinkedIn", "Recruitment", "Opinion"] },
+  { category: "Agents & Builds", title: "Hiring Plan Agent", desc: "Feed it a headcount target, budget, and org structure. It generates a phased hiring plan with timelines, sourcing strategy, and recruiter capacity needs.", type: "AI Agent", icon: "📋", color: T.blue, modal: "prospect", linkLabel: "View project", tags: ["Claude Code", "Claude API", "Node.js", "Vercel"] },
+  { category: "Automation & Process Improvement", title: "Feedback Chaser Bot", desc: "Polls the ATS for outstanding hiring manager feedback. If none submitted after 48 hours, it auto-chases them on Slack with context and a direct link.", type: "Automation", icon: "⚡", color: T.green, modal: "sheets", linkLabel: "View project", tags: ["Zapier", "Greenhouse API", "Slack"] },
+  { category: "Agents & Builds", title: "CV Invaders", desc: "Vibe coded Space Invaders with a recruitment twist. Agency vs in-house leaderboard. Built for fun, shared for laughs.", type: "Arcade Game", icon: "👾", color: T.purple, url: "https://cv-invaders.vercel.app/", linkLabel: "Play", tags: ["Claude Code", "Supabase", "GitHub", "JavaScript"] },
+  { category: "Automation & Process Improvement", title: "Recruiter Process Survey", desc: "Surveyed the recruiting team quarterly to surface process pain points. Used the data to prioritise fixes, remove bottlenecks, and drive measurable improvement in time-to-hire and recruiter satisfaction.", type: "RecOps", icon: "📋", color: T.accent, url: "https://www.linkedin.com/posts/jamiejaylyons_week-21-their-hiring-secrets-ugcPost-7430184709894090752-7D9k", linkLabel: "Read more", tags: ["RecOps", "Google Forms", "Data Analysis"] },
+  { category: "Content & Community", title: "Weekly LinkedIn Content", desc: "Weekly book breakdowns, podcast highlights, hiring event recaps, and honest takes on what's working in TA. Building in public, one post at a time.", type: "Content Series", icon: "✍️", color: T.blue, url: "https://www.linkedin.com/in/jamiejaylyons/recent-activity/all/", linkLabel: "See posts", tags: ["Books", "Podcasts", "Events", "Hiring"] },
+  { category: "Content & Community", title: "If You Found This Useful...", desc: "Then you'll probably like my LinkedIn. I write about hiring, RecOps, and the occasional hot take. No thought leadership fluff, promise.", type: "Easter Egg", icon: "😏", color: T.accent, url: "https://www.linkedin.com/in/jamiejaylyons/", linkLabel: "Follow me", tags: ["LinkedIn", "Hiring", "RecOps", "Hot Takes"] },
 ];
 const STATS = [
   { value: 300, suffix: "+", label: "Career Hires", prefix: "" },
@@ -273,32 +273,38 @@ function SheetsModal({ onClose }) {
     {
       num: "01",
       title: "The Problem",
-      body: "KPI tracking was scattered across disconnected sheets with no consistency. Senior leads were spending 45+ minutes a week on admin just keeping numbers up to date. The team didn't fully understand how their KPIs were calculated, and there was no easy way to analyse individual or team performance at review time.",
+      body: "Hiring managers forget to submit interview feedback. Recruiters waste hours chasing scorecards manually — checking the ATS, sending Slack messages, following up again two days later. Meanwhile, candidates sit in limbo and time-to-hire creeps up.",
       color: T.red,
     },
     {
       num: "02",
-      title: "Sheet 1: Daily KPI Tracker",
-      body: "A redesigned daily tracker with cleaner data entry, conditional formatting for instant visual feedback, and automated calculations. Removed manual steps, added error handling with IFERROR functions, and protected the structure so nobody could accidentally break formulas.",
+      title: "The Automation",
+      body: "A Zapier workflow that runs every morning at 9am. It pulls recent interviews from Greenhouse via the Harvest API, checks whether each interviewer has submitted their scorecard, and cross-references a \"Last Chased\" custom field in Greenhouse to avoid double-messaging.",
       color: T.blue,
     },
     {
       num: "03",
-      title: "Sheet 2: Weekly KPI Tracker",
-      body: "A weekly rollup pulling directly from the daily sheet. Week-on-week comparisons, team-level summaries, and friendly competition between teams built in. Designed so leadership could get what they needed in seconds, not minutes.",
+      title: "How It Works",
+      body: "For each missing scorecard, Zapier sends a friendly Slack DM to the hiring manager with the candidate name, role, interview date, and a direct link to submit feedback. It then stamps the \"Last Chased\" custom field in Greenhouse so the same person doesn't get chased again the next day.",
       color: T.green,
     },
     {
       num: "04",
-      title: "Sheet 3: Individual Performance",
-      body: "A personal tracker for each team member showing their own numbers, targets, and progress. Built so 1:1s could focus on coaching, not 'let me find your stats'. Also used to support people during annual reviews with clear, data-backed performance summaries.",
+      title: "Escalation Logic",
+      body: "First chase is a gentle nudge at 48 hours. If still no feedback after 72 hours, a second message goes out with the recruiter CC'd. After 96 hours, the hiring manager's manager gets a summary of all outstanding scorecards. All configurable per team using Zapier filters.",
       color: T.amber,
+    },
+    {
+      num: "05",
+      title: "The Impact",
+      body: "Scorecard completion rates jumped from 64% to 95% within the first month. Recruiters reclaimed 3–4 hours per week previously spent on manual chasing. Average time from interview to decision dropped by 1.5 days across the business.",
+      color: T.purple,
     },
   ];
   const results = [
-    { stat: "45+", label: "minutes saved per week for senior leads" },
-    { stat: "15%+", label: "improvement in main KPI scores" },
-    { stat: "2+ yrs", label: "sheets still in use after leaving" },
+    { stat: "95%", label: "scorecard completion rate (up from 64%)" },
+    { stat: "3-4 hrs", label: "saved per recruiter per week" },
+    { stat: "1.5 days", label: "faster interview-to-decision time" },
   ];
   return (
     <div onClick={onClose} style={{
@@ -316,11 +322,11 @@ function SheetsModal({ onClose }) {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 20 }}>
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
-              <span style={{ fontSize: 24 }}>📊</span>
-              <span style={{ fontSize: 9, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "3px 8px", background: T.green + "12", color: T.green, borderRadius: 6, letterSpacing: "0.5px", textTransform: "uppercase", fontWeight: 600 }}>Process Improvement</span>
+              <span style={{ fontSize: 24 }}>⚡</span>
+              <span style={{ fontSize: 9, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "3px 8px", background: T.green + "12", color: T.green, borderRadius: 6, letterSpacing: "0.5px", textTransform: "uppercase", fontWeight: 600 }}>Automation</span>
             </div>
-            <h2 style={{ fontSize: 22, fontWeight: 800, color: T.text, margin: 0, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>Google Sheets KPI Redesign</h2>
-            <p style={{ fontSize: 12, color: T.textLight, marginTop: 4, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>TalentLoop · 2021</p>
+            <h2 style={{ fontSize: 22, fontWeight: 800, color: T.text, margin: 0, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>Feedback Chaser Bot</h2>
+            <p style={{ fontSize: 12, color: T.textLight, marginTop: 4, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>Greenhouse + Slack Integration</p>
           </div>
           <button onClick={onClose} style={{
             width: 32, height: 32, borderRadius: 10, border: `1px solid ${T.cardBorder}`,
@@ -357,7 +363,7 @@ function SheetsModal({ onClose }) {
         <div style={{ marginTop: 16, padding: "12px 16px", background: T.tagBg, borderRadius: 10 }}>
           <div style={{ fontSize: 9, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textFaint, textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: 6 }}>Skills used</div>
           <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
-            {["Process Automation", "Stakeholder Management", "Performance Analysis", "UI Design", "Conditional Formatting", "Sheet Protection", "IFERROR / Functions"].map(s => (
+            {["Zapier", "Greenhouse Harvest API", "Slack", "Custom Fields", "Escalation Logic", "Process Automation"].map(s => (
               <span key={s} style={{ padding: "3px 8px", borderRadius: 6, fontSize: 10, background: T.card, color: T.textMid, border: `1px solid ${T.cardBorder}` }}>{s}</span>
             ))}
           </div>
@@ -835,7 +841,7 @@ export default function RecruiterCV() {
 
         {/* ===== Tab 1: MY PROJECTS ===== */}
         <div ref={panelRefs[1]} style={{ width: `${100 / 3}%`, flexShrink: 0, padding: "0 0 20px" }}>
-            {["Agents & Automation", "Builds & Process Improvement", "Content & Community"].map(cat => {
+            {["Agents & Builds", "Automation & Process Improvement", "Content & Community"].map(cat => {
               const tiles = BUILD_TILES.filter(b => b.category === cat);
               if (!tiles.length) return null;
               return (

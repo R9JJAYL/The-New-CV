@@ -13,7 +13,8 @@
       "Bash(python3:*)",
       "Bash(open:*)",
       "WebFetch(domain:first.cx)",
-      "WebFetch(domain:claude.ai)"
+      "WebFetch(domain:claude.ai)",
+      "WebFetch(domain:www.linkedin.com)"
     ]
   }
 }
