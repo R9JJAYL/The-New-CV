@@ -28,17 +28,17 @@ const ROLES = [
     companyDesc: "AI-powered recruitment technology start-up. 5 employees at hire. Building tools to help in-house teams manage application volume and improve hiring quality.",
     companyPills: ["High Growth Start-up", "AI CV Screening Tech", "5 Employees"],
     skillPills: ["Product Strategy", "Go-to-Market", "Founding Team", "AI Tooling"],
-    roleContext: "First non-technical hire in a 5-person founding team building AI recruitment software. Owning both sides — shaping the product roadmap from a practitioner's perspective while building the go-to-market motion from scratch. Running customer discovery, leading sales conversations, creating content, and hiring the early commercial team.",
+    roleContext: "First non-technical hire in a 5-person founding team building AI recruitment software. Owning both sides - shaping the product roadmap from a practitioner's perspective while building the go-to-market motion from scratch. Running customer discovery, leading sales conversations, creating content, and hiring the early commercial team.",
     duration: "1y 5m",
-    period: "Sep 2023 — Present",
+    period: "Sep 2023 - Present",
     type: "In-House",
     color: T.blue,
     logo: "/first-logo.png",
     logoFallback: "F",
     highlights: [
-      "Shaped product direction from a recruiter's perspective — the only practitioner on the founding team.",
+      "Shaped product direction from a recruiter's perspective - the only practitioner on the founding team.",
       "Ran 40+ customer discovery calls with TA leaders to validate product-market fit.",
-      "Built the GTM strategy and sales playbook — converted 12 pilot customers in 6 months.",
+      "Built the GTM strategy and sales playbook - converted 12 pilot customers in 6 months.",
       "Created all product content, demos, and sales collateral from scratch.",
       "Designed the onboarding flow that cut customer time-to-value from 2 weeks to 3 days.",
       "Hired the first 10 team members as the company grew from 5 to 15.",
@@ -53,18 +53,18 @@ const ROLES = [
     skillPills: ["Tech Hiring", "Direct Sourcing", "Stakeholder Management"],
     roleContext: "Embedded in the engineering org as the sole recruiter covering backend, platform, and infrastructure across 4 squads. Partnered with 11 hiring managers on role scoping, market mapping, and offer strategy. Managed the full cycle from sourcing through to close, with a focus on reducing time-to-offer and eliminating agency dependency entirely.",
     duration: "2y 8m",
-    period: "Jan 2021 — Aug 2023",
+    period: "Jan 2021 - Aug 2023",
     type: "In-House",
     color: T.green,
     logo: "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="14" fill="#0C2416"/><circle cx="38" cy="50" r="22" fill="#27775A"/><circle cx="62" cy="50" r="22" fill="#4ADE80" opacity="0.55"/></svg>'),
     logoFallback: "NB",
     highlights: [
-      "Hired 95 engineers in 2.5 years — 70% sourced directly, zero through agencies.",
+      "Hired 95 engineers in 2.5 years - 70% sourced directly, zero through agencies.",
       "93% 12-month retention rate across all hires, beating the company average by 10 points.",
-      "Eliminated agency dependency for the engineering org — saving an estimated £450k+ in fees.",
-      "Designed and ran the company's first sourcing bootcamp — upskilled 6 new recruiters.",
+      "Eliminated agency dependency for the engineering org - saving an estimated £450k+ in fees.",
+      "Designed and ran the company's first sourcing bootcamp - upskilled 6 new recruiters.",
       "Built a brand new platform team from 0 to 14 engineers in 5 months.",
-      "Rebuilt the candidate experience survey — NPS jumped from 64 to 86 company-wide.",
+      "Rebuilt the candidate experience survey - NPS jumped from 64 to 86 company-wide.",
     ],
     progression: { count: 1, path: "Talent Partner (12 months) → Senior Talent Partner (20 months)" },
     leaving: "Headhunted by First to build their TA function from scratch.",
@@ -77,18 +77,18 @@ const ROLES = [
     skillPills: ["Tech Hiring", "Client Management", "Pipeline Building"],
     roleContext: "Placed inside VC-backed startups as an extension of their internal TA teams, working on-site and operating as if in-house. Managed the full recruitment cycle for software engineering roles, from intake and sourcing through to offer negotiation. Built candidate pipelines, ran stakeholder calibration sessions, and trained junior consultants across multiple client accounts.",
     duration: "2y 10m",
-    period: "Mar 2018 — Dec 2020",
+    period: "Mar 2018 - Dec 2020",
     type: "Embedded RPO",
     color: T.amber,
     logo: "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="14" fill="#2E1A06"/><circle cx="44" cy="44" r="20" fill="none" stroke="#D4A04A" stroke-width="6"/><circle cx="44" cy="44" r="7" fill="#D4A04A"/><line x1="59" y1="59" x2="78" y2="78" stroke="#F5DEB3" stroke-width="8" stroke-linecap="round"/></svg>'),
     logoFallback: "HS",
     highlights: [
-      "Billed £540k+ over 2.5 years — top biller 7 out of 10 quarters.",
+      "Billed £540k+ over 2.5 years - top biller 7 out of 10 quarters.",
       "Placed 120+ candidates with a 92% retention rate at 12 months.",
-      "Won 18 new client accounts through candidate referrals alone — zero cold outreach.",
-      "Ran a 12-hire embedded project for a Series A fintech — completed 2 weeks ahead of schedule.",
+      "Won 18 new client accounts through candidate referrals alone - zero cold outreach.",
+      "Ran a 12-hire embedded project for a Series A fintech - completed 2 weeks ahead of schedule.",
       "Built a candidate community of 2,000+ engineers through events, dinners, and content.",
-      "Mentored 3 junior consultants — all hit target within their first 6 months.",
+      "Mentored 3 junior consultants - all hit target within their first 6 months.",
     ],
     progression: { count: 1, path: "Consultant (14 months) → Senior Consultant (20 months)" },
     leaving: "Wanted to be part of the teams I was hiring for. Made the jump to in-house.",
@@ -101,13 +101,13 @@ const ROLES = [
     skillPills: ["High Volume", "Contract & Perm", "Business Development"],
     roleContext: "Graduate entry into high-volume agency recruitment, covering contract and permanent technology roles across the South East. 80+ calls a day from week one, managing the full cycle from business development and job qualification through to sourcing, interviewing, and closing. Learned the fundamentals of sales, negotiation, and candidate management at pace.",
     duration: "1y 8m",
-    period: "Jul 2016 — Feb 2018",
+    period: "Jul 2016 - Feb 2018",
     type: "Agency",
     color: T.red,
     logo: "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="14" fill="#2E1010"/><path d="M30 60L50 38L70 60" fill="none" stroke="#E88888" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 76L50 54L70 76" fill="none" stroke="#F5C4C4" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>'),
     logoFallback: "SR",
     highlights: [
-      "Billed £220k in second year — 120% of target, up from 65% in year one.",
+      "Billed £220k in second year - 120% of target, up from 65% in year one.",
       "Fastest in the cohort to make a placement (19 days from desk start).",
       "Placed 55 candidates across contract and permanent roles.",
       "Built an early specialism in DevOps and cloud infrastructure before most agencies had a dedicated desk.",
@@ -117,7 +117,7 @@ const ROLES = [
   },
 ];
 const RECOMMENDATIONS = [
-  { name: "Priya Sharma", role: "Head of TA, Series B SaaS", text: "Phil demo'd the product and within five minutes I knew he'd actually done the job. He wasn't selling — he was explaining how he'd solve problems I hadn't even told him about yet.", relation: "Customer @ First" },
+  { name: "Priya Sharma", role: "Head of TA, Series B SaaS", text: "Phil demo'd the product and within five minutes I knew he'd actually done the job. He wasn't selling - he was explaining how he'd solve problems I hadn't even told him about yet.", relation: "Customer @ First" },
   { name: "Marcus Chen", role: "Staff Engineer, Nexus Bank", text: "Phil sent me two sentences about why I'd be a good fit, both specific to things on my profile nobody else had noticed. Three years later I'm still here.", relation: "Candidate @ Nexus Bank" },
   { name: "Tom Okafor", role: "Engineering Director, Nexus Bank", text: "Phil hired 40 of my engineers and I'd trust every single one of them again. He understood what good looked like for my team better than most of the team did.", relation: "Hiring manager @ Nexus Bank" },
   { name: "Lucy Ward", role: "Recruitment Consultant, Harmon Search", text: "Phil trained me when I joined and he's the reason I'm still in recruitment. I hit target in my first 6 months because of how he set me up.", relation: "Direct report @ Harmon Search" },
@@ -125,7 +125,7 @@ const RECOMMENDATIONS = [
 const BUILD_TILES = [
   { category: "Agents & Builds", title: "Hiring Plan Agent", desc: "Feed it a headcount target, budget, and org structure. It generates a phased hiring plan with timelines, sourcing strategy, and recruiter capacity needs.", type: "AI Agent", icon: "🤖", color: T.blue, modal: "prospect", linkLabel: "View project", tags: ["Claude Code", "Claude API", "Node.js", "Vercel"] },
   { category: "Automation & Process Improvement", title: "Feedback Chaser Automation", desc: "Polls the ATS for outstanding hiring manager feedback. If none submitted after 48 hours, it auto-chases them on Slack with context and a direct link.", type: "Automation", icon: "⚡", color: T.green, modal: "sheets", linkLabel: "View project", tags: ["Zapier", "Greenhouse API", "Slack"] },
-  { category: "Agents & Builds", title: "CV Invaders", desc: "Vibe coded Space Invaders with a recruitment twist. Agency vs in-house leaderboard. Built for fun, shared for laughs. This is a live real game — click to play!", type: "Arcade Game", icon: "👾", color: T.purple, url: "https://cv-invaders.vercel.app/", linkLabel: "Play", tags: ["Claude Code", "Supabase", "GitHub", "JavaScript"] },
+  { category: "Agents & Builds", title: "CV Invaders", desc: "Vibe coded Space Invaders with a recruitment twist. Agency vs in-house leaderboard. Built for fun, shared for laughs. This is a live real game - click to play!", type: "Arcade Game", icon: "👾", color: T.purple, url: "https://cv-invaders.vercel.app/", linkLabel: "Play", tags: ["Claude Code", "Supabase", "GitHub", "JavaScript"] },
   { category: "Automation & Process Improvement", title: "Recruiter Process Survey", desc: "Surveyed the recruiting team quarterly to surface process pain points. Used the data to prioritise fixes, remove bottlenecks, and drive measurable improvement in time-to-hire and recruiter satisfaction.", type: "RecOps", icon: "📋", color: T.accent, modal: "recops", linkLabel: "View project", tags: ["RecOps", "Google Forms", "Data Analysis"] },
   { category: "Content & Community", title: "Vibe-coded CV Guide", desc: "Click here to drop some love on the post to spread the word and get more recruiters vibe coding! The more likes, the more people see it.", type: "Shameless Plug", icon: "📄", color: T.accent, url: "https://www.linkedin.com/in/jamiejaylyons/", linkLabel: "Like the post", tags: ["Recruiter Training", "Vibe Coding", "Future of Work"] },
   { category: "Content & Community", title: "Weekly Recruitment Content", desc: "I post weekly hiring breakdowns. Hiring podcasts, hiring books, hiring events and much more, all recruitment related. Click to check out my content!", type: "Shameless Plug v2", icon: "✍️", color: T.blue, url: "https://www.linkedin.com/in/jamiejaylyons/recent-activity/all/", linkLabel: "See posts", tags: ["Recruitment Content", "Books", "Podcasts", "Events"] },
@@ -282,7 +282,7 @@ function SheetsModal({ onClose, isMobile }) {
     {
       num: "01",
       title: "The Problem",
-      body: "Hiring managers forget to submit interview feedback. Recruiters waste hours chasing scorecards — checking the ATS, pinging on Slack, following up two days later. Candidates sit in limbo and time-to-hire creeps up.",
+      body: "Hiring managers forget to submit interview feedback. Recruiters waste hours chasing scorecards - checking the ATS, pinging on Slack, following up two days later. Candidates sit in limbo and time-to-hire creeps up.",
       color: T.red,
     },
     {
@@ -306,7 +306,7 @@ function SheetsModal({ onClose, isMobile }) {
     {
       num: "05",
       title: "The Impact",
-      body: "Scorecard completion jumped from 64% to 95% within the first month. Recruiters reclaimed 3–4 hours a week previously spent on manual chasing. Average time from interview to decision dropped by 1.5 days.",
+      body: "Scorecard completion jumped from 64% to 95% within the first month. Recruiters reclaimed 3-4 hours a week previously spent on manual chasing. Average time from interview to decision dropped by 1.5 days.",
       color: T.purple,
     },
   ];
@@ -386,31 +386,31 @@ function RecOpsModal({ onClose, isMobile }) {
     {
       num: "01",
       title: "The Problem",
-      body: "Recruiters are closest to the process but rarely get asked what's broken. Pain points go unreported, workarounds become habits, and leadership makes decisions on metrics alone — missing the context behind the numbers.",
+      body: "Recruiters are closest to the process but rarely get asked what's broken. Pain points go unreported, workarounds become habits, and leadership makes decisions on metrics alone - missing the context behind the numbers.",
       color: T.red,
     },
     {
       num: "02",
       title: "The Survey",
-      body: "Built a quarterly anonymous survey sent to every recruiter and coordinator. Covered the full hiring lifecycle: intake quality, interviewer reliability, offer approval speed, ATS friction, and hiring manager responsiveness. Simple 1–5 scoring with free-text follow-ups.",
+      body: "Built a quarterly anonymous survey sent to every recruiter and coordinator. Covered the full hiring lifecycle: intake quality, interviewer reliability, offer approval speed, ATS friction, and hiring manager responsiveness. Simple 1-5 scoring with free-text follow-ups.",
       color: T.blue,
     },
     {
       num: "03",
       title: "The Analysis",
-      body: "Aggregated scores by theme and tracked trends quarter-over-quarter. Highlighted the top 3 pain points each cycle and paired them with recruiter quotes to give leadership the full picture — not just a number, but the story behind it.",
+      body: "Aggregated scores by theme and tracked trends quarter-over-quarter. Highlighted the top 3 pain points each cycle and paired them with recruiter quotes to give leadership the full picture - not just a number, but the story behind it.",
       color: T.green,
     },
     {
       num: "04",
       title: "The Action",
-      body: "Each quarter, picked the highest-impact issue and fixed it. One cycle it was intake quality — we rebuilt the kickoff template. Another it was interview no-shows — we added calendar holds and reminders. Small, targeted changes driven by the people doing the work.",
+      body: "Each quarter, picked the highest-impact issue and fixed it. One cycle it was intake quality - we rebuilt the kickoff template. Another it was interview no-shows - we added calendar holds and reminders. Small, targeted changes driven by the people doing the work.",
       color: T.amber,
     },
     {
       num: "05",
       title: "The Impact",
-      body: "Recruiter satisfaction went from 3.1 to 4.4 within three cycles. Time-to-hire dropped as bottlenecks were systematically removed. The survey became the team's favourite feedback channel — they finally felt heard.",
+      body: "Recruiter satisfaction went from 3.1 to 4.4 within three cycles. Time-to-hire dropped as bottlenecks were systematically removed. The survey became the team's favourite feedback channel - they finally felt heard.",
       color: T.purple,
     },
   ];
@@ -490,13 +490,13 @@ function ProspectModal({ onClose, isMobile }) {
     {
       num: "01",
       title: "The Problem",
-      body: "Every quarter, the same question: how many people do we need to hire, when, and how? Building a plan means pulling data from the ATS, finance, and hiring managers — then stitching it into a spreadsheet that's outdated the moment it's shared. Takes days, never quite right.",
+      body: "Every quarter, the same question: how many people do we need to hire, when, and how? Building a plan means pulling data from the ATS, finance, and hiring managers - then stitching it into a spreadsheet that's outdated the moment it's shared. Takes days, never quite right.",
       color: T.red,
     },
     {
       num: "02",
       title: "The Agent",
-      body: "An AI agent that takes a headcount target, team structure, and budget — then generates a phased hiring plan. Calculates recruiter capacity, suggests sourcing mix (direct vs agency vs referral), sets realistic timelines per role type, and flags risks like competing offers or market scarcity.",
+      body: "An AI agent that takes a headcount target, team structure, and budget - then generates a phased hiring plan. Calculates recruiter capacity, suggests sourcing mix (direct vs agency vs referral), sets realistic timelines per role type, and flags risks like competing offers or market scarcity.",
       color: T.blue,
     },
     {
@@ -514,7 +514,7 @@ function ProspectModal({ onClose, isMobile }) {
     {
       num: "05",
       title: "The Impact",
-      body: "What used to take 3–5 days now takes under 10 minutes. Plans are more consistent, more defensible in leadership meetings, and easier to update when priorities shift. It doesn't replace your judgement — it gives you a first draft worth editing instead of a blank sheet worth dreading.",
+      body: "What used to take 3-5 days now takes under 10 minutes. Plans are more consistent, more defensible in leadership meetings, and easier to update when priorities shift. It doesn't replace your judgement - it gives you a first draft worth editing instead of a blank sheet worth dreading.",
       color: T.accent,
     },
   ];
@@ -701,7 +701,7 @@ export default function RecruiterCV() {
           opacity: loaded ? 1 : 0, transform: loaded ? "translateY(0)" : "translateY(20px)",
           transition: "all 0.7s ease", position: "relative",
         }}>
-          {/* Tabs — flush at top of card */}
+          {/* Tabs - flush at top of card */}
           <div style={{ display: "flex", gap: 3, background: T.tagBg, borderRadius: "15px 15px 0 0", padding: 4, margin: isMobile ? "0 -16px" : "0 -40px", position: "relative" }}>
             {/* Sliding pill background */}
             <div style={{
@@ -958,7 +958,7 @@ export default function RecruiterCV() {
         {modal === "recops" && <RecOpsModal onClose={() => setModal(null)} isMobile={isMobile} />}
         </div>
       </div>
-      {/* FOOTER — outside card, on raw background */}
+      {/* FOOTER - outside card, on raw background */}
       <footer style={{ padding: isMobile ? "28px 16px 36px" : "40px 0 48px", textAlign: "center", maxWidth: 960, margin: "0 auto" }}>
         <p style={{ fontSize: isMobile ? 15 : 18, fontWeight: 400, color: T.text, marginBottom: 24, letterSpacing: "-0.3px" }}>
           Built by a recruiter, for recruiters, because we deserve better than a Word doc.
