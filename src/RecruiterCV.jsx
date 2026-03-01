@@ -117,10 +117,10 @@ const ROLES = [
   },
 ];
 const RECOMMENDATIONS = [
-  { name: "Priya Sharma", role: "Head of TA, Series B SaaS", text: "Phil demo'd the product and within five minutes I knew he'd actually done the job. He wasn't selling - he was explaining how he'd solve problems I hadn't even told him about yet.", relation: "Customer @ First" },
-  { name: "Marcus Chen", role: "Staff Engineer, Nexus Bank", text: "Phil sent me two sentences about why I'd be a good fit, both specific to things on my profile nobody else had noticed. Three years later I'm still here.", relation: "Candidate @ Nexus Bank" },
-  { name: "Tom Okafor", role: "Engineering Director, Nexus Bank", text: "Phil hired 40 of my engineers and I'd trust every single one of them again. He understood what good looked like for my team better than most of the team did.", relation: "Hiring manager @ Nexus Bank" },
-  { name: "Lucy Ward", role: "Recruitment Consultant, Harmon Search", text: "Phil trained me when I joined and he's the reason I'm still in recruitment. I hit target in my first 6 months because of how he set me up.", relation: "Direct report @ Harmon Search" },
+  { name: "Priya Sharma", role: "Head of TA", text: "Phil demo'd the product and within five minutes I knew he'd actually done the job. He wasn't selling - he was explaining how he'd solve problems I hadn't even told him about yet.", relation: "Customer" },
+  { name: "Marcus Chen", role: "Staff Engineer", text: "Phil sent me two sentences about why I'd be a good fit, both specific to things on my profile nobody else had noticed. Three years later I'm still here.", relation: "Candidate" },
+  { name: "Tom Okafor", role: "Engineering Director", text: "Phil hired 40 of my engineers and I'd trust every single one of them again. He understood what good looked like for my team better than most of the team did.", relation: "Hiring Manager" },
+  { name: "Lucy Ward", role: "Recruitment Consultant", text: "Phil trained me when I joined and he's the reason I'm still in recruitment. I hit target in my first 6 months because of how he set me up.", relation: "Direct Report" },
 ];
 const BUILD_TILES = [
   { category: "Agents & Builds", title: "Hiring Plan Agent", desc: "Feed it a headcount target, budget, and org structure. It generates a phased hiring plan with timelines, sourcing strategy, and recruiter capacity needs.", type: "AI Agent", icon: "🤖", color: T.blue, modal: "prospect", linkLabel: "View project", tags: ["Claude Code", "Claude API", "Node.js", "Vercel"] },
@@ -835,12 +835,12 @@ export default function RecruiterCV() {
                   </div>{/* end slide wrapper */}
                   {/* Name, dots, relationship row */}
                   <div style={{ marginTop: 14 }}>
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                    <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", alignItems: isMobile ? "flex-start" : "center", justifyContent: "space-between", gap: isMobile ? 8 : 0 }}>
                       <div style={{
                         opacity: recSlide === "in" ? 1 : 0,
                         transform: recSlide === "in" ? "translateX(0)" : recSlide === "out-left" ? "translateX(-40px)" : recSlide === "out-right" ? "translateX(40px)" : recSlide === "enter-right" ? "translateX(40px)" : "translateX(-40px)",
                         transition: recSlide === "in" || recSlide.startsWith("out") ? "opacity 0.35s ease, transform 0.35s ease" : "none",
-                        display: "flex", alignItems: "center", gap: 10, flex: 1, minWidth: 0, overflow: "hidden",
+                        display: "flex", alignItems: "center", gap: 10, minWidth: 0,
                       }}>
                         <div style={{ width: 32, height: 32, flexShrink: 0, borderRadius: "50%", background: `linear-gradient(135deg, ${T.warm1}, ${T.accentLight})`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, fontWeight: 700, color: T.accent }}>{RECOMMENDATIONS[recIdx].name.split(" ").map(n => n[0]).join("")}</div>
                         <div style={{ minWidth: 0 }}>
@@ -848,19 +848,26 @@ export default function RecruiterCV() {
                           <div style={{ fontSize: 11, color: T.textLight, whiteSpace: "nowrap" }}>{RECOMMENDATIONS[recIdx].role}</div>
                         </div>
                       </div>
+                      {isMobile && <div style={{
+                        opacity: recSlide === "in" ? 1 : 0,
+                        transition: recSlide === "in" || recSlide.startsWith("out") ? "opacity 0.35s ease" : "none",
+                        marginLeft: 42,
+                      }}>
+                        <span style={{ fontSize: 10, color: T.textLight, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "3px 7px", background: T.tagBg, borderRadius: 6, border: `1px solid ${T.cardBorder}`, whiteSpace: "nowrap" }}>{RECOMMENDATIONS[recIdx].relation}</span>
+                      </div>}
                       {!isMobile && <div style={{ display: "flex", alignItems: "center", gap: 6, flexShrink: 0 }}>
                         {RECOMMENDATIONS.map((_, i) => (
                           <div key={i} onClick={() => { if (i !== recIdx) goToRec(i, i > recIdx ? "right" : "left"); }} style={{ width: 6, height: 6, borderRadius: "50%", background: i === recIdx && recSlide === "in" ? T.accent : T.cardBorder, cursor: "pointer", transition: "background 0.35s ease" }} />
                         ))}
                       </div>}
-                      <div style={{
+                      {!isMobile && <div style={{
                         opacity: recSlide === "in" ? 1 : 0,
                         transform: recSlide === "in" ? "translateX(0)" : recSlide === "out-left" ? "translateX(-40px)" : recSlide === "out-right" ? "translateX(40px)" : recSlide === "enter-right" ? "translateX(40px)" : "translateX(-40px)",
                         transition: recSlide === "in" || recSlide.startsWith("out") ? "opacity 0.35s ease, transform 0.35s ease" : "none",
                         flex: 1, display: "flex", justifyContent: "flex-end", minWidth: 0, overflow: "hidden",
                       }}>
                         <span style={{ fontSize: 10, color: T.textLight, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "3px 7px", background: T.tagBg, borderRadius: 6, border: `1px solid ${T.cardBorder}`, whiteSpace: "nowrap" }}>{RECOMMENDATIONS[recIdx].relation}</span>
-                      </div>
+                      </div>}
                     </div>
                     {isMobile && <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 6, marginTop: 10 }}>
                       {RECOMMENDATIONS.map((_, i) => (
