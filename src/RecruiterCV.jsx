@@ -209,16 +209,16 @@ function RoleCard({ role, index, isLast }) {
         boxShadow: open ? "0 4px 16px rgba(196,112,75,0.12)" : hovered ? "0 2px 8px rgba(196,112,75,0.1)" : "0 1px 4px rgba(0,0,0,0.03)",
       }}>
         {/* Grey header */}
-        <div style={{ background: hovered && !open ? T.warm1 + "80" : T.tagBg, padding: "12px 22px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap", transition: "background 0.3s ease", borderRadius: "10px 10px 0 0" }}>
+        <div style={{ background: hovered && !open ? "#ECEAE6" : T.tagBg, padding: "12px 22px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap", transition: "background 0.3s ease", borderRadius: "10px 10px 0 0" }}>
           <h3 style={{ fontSize: 16, fontWeight: 700, margin: 0, color: T.text, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{role.title} <span style={{ color: T.textLight, fontWeight: 500 }}>@</span> <span style={{ color: T.textMid, fontWeight: 600 }}>{role.company}</span></h3>
           <div style={{ flexShrink: 0 }}>
-            <span style={{ fontSize: 11, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, whiteSpace: "nowrap" }}>
-              {role.period}{role.duration && <span style={{ color: T.textFaint }}> ({role.duration})</span>}
+            <span style={{ fontSize: 11, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textMid, whiteSpace: "nowrap" }}>
+              {role.period}{role.duration && <span style={{ color: T.textLight }}> ({role.duration})</span>}
             </span>
           </div>
         </div>
         {/* White body */}
-        <div style={{ background: T.card, padding: "14px 22px 14px", position: "relative", borderRadius: "0 0 10px 10px" }}>
+        <div style={{ background: hovered && !open ? "#F9F8F6" : T.card, padding: "14px 22px 14px", position: "relative", borderRadius: "0 0 10px 10px", transition: "background 0.3s ease" }}>
           {role.companyPills && (
             <div style={{ display: "flex", gap: 4, flexWrap: "wrap", alignItems: "center", marginBottom: 10 }}>
               {role.companyPills.map((pill, i) => (
@@ -249,7 +249,7 @@ function RoleCard({ role, index, isLast }) {
                 </div>
               )}
               {role.leaving && (
-                <div style={{ marginTop: 8, fontSize: 11, color: T.textFaint, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", fontStyle: "italic" }}>Reason for leaving: {role.leaving}</div>
+                <div style={{ marginTop: 10, fontSize: 11, color: T.textLight, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}><span style={{ color: T.textMid, fontWeight: 600 }}>Reason for leaving:</span> {role.leaving}</div>
               )}
             </div>
           </div>
@@ -903,25 +903,6 @@ export default function RecruiterCV() {
                 </div>
               </div>
             </div>
-            {/* Skills */}
-            <div style={{ marginBottom: 36 }}>
-              <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>Skills</p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-                {[
-                  { category: "Recruitment & Strategy", color: T.blue, skills: ["Direct Sourcing", "Stakeholder Management", "Offer Negotiation", "Candidate Experience", "Interview Process Design", "Employer Branding", "Agency Management", "Referral Programmes", "Hiring Manager Coaching", "Pipeline Forecasting", "Comp Benchmarking", "Reporting & Dashboards", "Budget Management", "Vendor Negotiation", "New Business Development"] },
-                  { category: "Tech Stack", color: T.green, skills: ["Greenhouse", "LinkedIn Recruiter", "Google Sheets", "Python (basic)", "Slack API", "Zapier / Make.com / n8n", "Boolean Search", "Claude / GPT-4"] },
-                ].map((group) => (
-                  <div key={group.category} style={{ display: "flex", gap: 12, alignItems: "baseline", flexWrap: "wrap" }}>
-                    <span style={{ fontSize: 10, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: group.color, textTransform: "uppercase", letterSpacing: 0.5, fontWeight: 600, minWidth: 140, flexShrink: 0 }}>{group.category}</span>
-                    <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-                      {group.skills.map((skill) => (
-                        <span key={skill} style={{ padding: "5px 12px", borderRadius: 10, fontSize: 12, background: T.card, color: T.textMid, border: `1px solid ${T.cardBorder}`, boxShadow: "0 1px 3px rgba(0,0,0,0.02)" }}>{skill}</span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
             {/* Recommendations */}
             <div style={{ marginTop: 22 }}>
               <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>LinkedIn Recommendations</p>
@@ -1040,10 +1021,11 @@ export default function RecruiterCV() {
                   { emoji: "\uD83C\uDF1F", label: "Generosity", text: "I share what I know, help where I can, and trust that it comes back around. Karma compounds." },
                 ].map((t, i) => (
                   <div key={i} style={{
-                    padding: "16px 18px", background: T.card, border: `1px solid ${T.cardBorder}`,
+                    padding: "16px 18px", background: T.card,
+                    borderTop: `1px solid ${T.cardBorder}`, borderRight: `1px solid ${T.cardBorder}`, borderBottom: `1px solid ${T.cardBorder}`,
+                    borderLeft: `3px solid ${T.accentBorder}`,
                     borderRadius: 10,
                     boxShadow: "0 2px 8px rgba(0,0,0,0.02)",
-                    borderLeft: `3px solid ${T.accentBorder}`,
                   }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
                       <span style={{ fontSize: 16 }}>{t.emoji}</span>
