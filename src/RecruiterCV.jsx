@@ -266,9 +266,12 @@ function RoleCard({ role, index, isLast, isMobile }) {
               )}
             </div>
           </div>
-          {/* Chevron */}
-          <div style={{ display: "flex", justifyContent: "center", marginTop: 8, transition: "transform 0.3s ease", transform: open ? "rotate(180deg)" : "rotate(0deg)" }}>
-            <svg width="14" height="14" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke={T.textLight} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          {/* Tap hint */}
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 4, marginTop: 8 }}>
+            <span style={{ fontSize: 10, color: T.textLight, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{open ? "Close" : "Press to see achievements"}</span>
+            <span style={{ display: "inline-flex", alignItems: "center", transition: "transform 0.3s ease", transform: open ? "rotate(180deg)" : "rotate(0deg)" }}>
+              <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke={T.textLight} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </span>
           </div>
         </div>
       </div>
