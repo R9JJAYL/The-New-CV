@@ -222,7 +222,8 @@ function RoleCard({ role, index, isLast }) {
           {role.roleContext && <p style={{ fontSize: 13, color: T.textMid, margin: "0 0 0", lineHeight: 1.6 }}><span style={{ fontSize: 13, color: T.accent, fontWeight: 700 }}>My role: </span>{role.roleContext}</p>}
           {/* Pills and chevron row */}
           <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 10 }}>
-            <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: 4, flexWrap: "wrap", alignItems: "center" }}>
+              {role.companyPills && <span style={{ fontSize: 10, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textFaint, whiteSpace: "nowrap" }}>Company tags:</span>}
               {role.companyPills && role.companyPills.map((pill, i) => (
                 <span key={"c" + i} style={{ fontSize: 10, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "3px 7px", background: T.tagBg, color: T.textLight, borderRadius: 6, border: `1px solid ${T.cardBorder}`, whiteSpace: "nowrap" }}>{pill}</span>
               ))}
@@ -889,9 +890,8 @@ export default function RecruiterCV() {
             </div>
             <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>Work experience</p>
             {ROLES.map((role, i) => <RoleCard key={i} role={role} index={i} isLast={i === ROLES.length - 1} />)}
-            <div style={{ height: 1, background: `linear-gradient(90deg, transparent, ${T.cardBorder}, transparent)`, margin: "28px 0" }} />
             {/* Education */}
-            <div style={{ marginBottom: 24 }}>
+            <div style={{ marginTop: 22, marginBottom: 24 }}>
               <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>Education</p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10 }}>
                 <div style={{ padding: "14px 16px", background: T.card, borderRadius: 10, border: `1px solid ${T.cardBorder}`, boxShadow: "0 2px 8px rgba(0,0,0,0.02)" }}>
@@ -927,9 +927,8 @@ export default function RecruiterCV() {
                 ))}
               </div>
             </div>
-            <div style={{ height: 1, background: `linear-gradient(90deg, transparent, ${T.cardBorder}, transparent)`, marginBottom: 28 }} />
             {/* Recommendations */}
-            <div>
+            <div style={{ marginTop: 22 }}>
               <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>LinkedIn Recommendations</p>
               <p style={{ fontSize: 12, color: T.textFaint, marginBottom: 16, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>What people say about my work</p>
               <div>
