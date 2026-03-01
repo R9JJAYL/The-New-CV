@@ -127,7 +127,7 @@ const BUILD_TILES = [
   { category: "Automation & Process Improvement", title: "Feedback Chaser Automation", desc: "Polls the ATS for outstanding hiring manager feedback. If none submitted after 48 hours, it auto-chases them on Slack with context and a direct link.", type: "Automation", icon: "⚡", color: T.green, modal: "sheets", linkLabel: "View project", tags: ["Zapier", "Greenhouse API", "Slack"] },
   { category: "Agents & Builds", title: "CV Invaders", desc: "Vibe coded Space Invaders with a recruitment twist. Agency vs in-house leaderboard. Built for fun, shared for laughs.", type: "Arcade Game", icon: "👾", color: T.purple, url: "https://cv-invaders.vercel.app/", linkLabel: "Play", tags: ["Claude Code", "Supabase", "GitHub", "JavaScript"] },
   { category: "Automation & Process Improvement", title: "Recruiter Process Survey", desc: "Surveyed the recruiting team quarterly to surface process pain points. Used the data to prioritise fixes, remove bottlenecks, and drive measurable improvement in time-to-hire and recruiter satisfaction.", type: "RecOps", icon: "📋", color: T.accent, modal: "recops", linkLabel: "View project", tags: ["RecOps", "Google Forms", "Data Analysis"] },
-  { category: "Content & Community", title: "Vibe-coded CV Guide", desc: "If you found this guide useful, drop a like on the post to spread the word and get more recruiters vibe coding!", type: "Shameless Plug", icon: "📄", color: T.accent, url: "https://www.linkedin.com/in/jamiejaylyons/", linkLabel: "Like the post", tags: ["Recruiter Training", "Vibe Coding", "Future of Work"] },
+  { category: "Content & Community", title: "Vibe-coded CV Guide", desc: "Click here to drop some love on the post to spread the word and get more recruiters vibe coding! The more likes, the more people see it.", type: "Shameless Plug", icon: "📄", color: T.accent, url: "https://www.linkedin.com/in/jamiejaylyons/", linkLabel: "Like the post", tags: ["Recruiter Training", "Vibe Coding", "Future of Work"] },
   { category: "Content & Community", title: "Weekly Recruitment Content", desc: "I post weekly hiring breakdowns. Hiring podcasts, hiring books, hiring events and much more, all recruitment related. Click to check out my content!", type: "Shameless Plug v2", icon: "✍️", color: T.blue, url: "https://www.linkedin.com/in/jamiejaylyons/recent-activity/all/", linkLabel: "See posts", tags: ["Recruitment Content", "Books", "Podcasts", "Events"] },
 ];
 const STATS = [
@@ -693,7 +693,7 @@ function BuildTile({ build, index, onModalOpen }) {
             <span style={{ fontSize: 9, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: build.color, textTransform: "uppercase", letterSpacing: 0.5, fontWeight: 600 }}>{build.type}</span>
           </div>
       </div>
-      <p style={{ fontSize: 13, color: T.textLight, lineHeight: 1.6, margin: "0 0 12px", flex: 1 }}>{build.desc}</p>
+      <p style={{ fontSize: 13, color: T.textLight, lineHeight: 1.6, margin: "0 0 12px", flex: 1, display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{build.desc}</p>
       {build.tags && (
         <div style={{ display: "flex", gap: 4, flexWrap: "wrap", marginBottom: 14 }}>
           {build.tags.map(tag => (
@@ -828,9 +828,9 @@ export default function RecruiterCV() {
             <div style={{ display: "flex", gap: 8, flex: "0 0 auto" }}>
             {[
               { href: "https://www.linkedin.com/in/jamiejaylyons/", label: "LinkedIn", svg: <svg width="16" height="16" viewBox="0 0 24 24" fill={T.accent}><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> },
-              { href: "mailto:phil@example.com", label: "Email", svg: <svg width="16" height="16" viewBox="0 0 24 24" fill={T.accent}><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> },
+              { href: "mailto:jamie@firststage.co", label: "Email", svg: <svg width="16" height="16" viewBox="0 0 24 24" fill={T.accent}><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> },
               { href: "tel:+447700000000", label: "Phone", svg: <svg width="16" height="16" viewBox="0 0 24 24" fill={T.accent}><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> },
-              { href: "https://calendly.com/placeholder", label: "Book a meeting", svg: <svg width="16" height="16" viewBox="0 0 24 24" fill={T.accent}><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg> },
+              { href: "https://calendly.com", label: "Book a meeting", svg: <svg width="16" height="16" viewBox="0 0 24 24" fill={T.accent}><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg> },
             ].map(item => (
               <a key={item.label} href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined} aria-label={item.label} style={{
                 width: 32, height: 32, borderRadius: 10,
