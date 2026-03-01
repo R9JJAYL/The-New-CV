@@ -675,20 +675,17 @@ function ProspectModal({ onClose }) {
   );
 }
 function BuildTile({ build, index, onModalOpen }) {
-  const ref = useRef(null);
-  const inView = useInView(ref);
   const isModal = build.modal;
   const Tag = isModal ? "div" : "a";
   const linkProps = isModal ? { onClick: () => onModalOpen && onModalOpen(build.modal) } : { href: build.url, target: "_blank", rel: "noopener noreferrer" };
   return (
-    <Tag ref={ref} {...linkProps} style={{
+    <Tag {...linkProps} style={{
       display: "flex", flexDirection: "column", textDecoration: "none", color: "inherit", cursor: "pointer",
       background: `linear-gradient(135deg, ${build.color}06 0%, ${T.card} 60%)`, border: `1px solid ${T.cardBorder}`,
       borderRadius: 10, padding: "24px 24px 20px",
       position: "relative", overflow: "hidden", height: "100%",
-      transition: `all 0.5s ease ${index * 80}ms`,
-      opacity: inView ? 1 : 0, transform: inView ? "translateY(0)" : "translateY(18px)",
       boxShadow: "0 1px 6px rgba(0,0,0,0.03)",
+      transition: "box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease",
     }}
     onMouseEnter={e => { e.currentTarget.style.boxShadow = `0 8px 24px ${build.color}15`; e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.borderColor = build.color + "35"; }}
     onMouseLeave={e => { e.currentTarget.style.boxShadow = "0 1px 6px rgba(0,0,0,0.03)"; e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = T.cardBorder; }}
@@ -743,10 +740,30 @@ export default function RecruiterCV() {
   const [modal, setModal] = useState(null);
   const [containerH, setContainerH] = useState("auto");
   const [recIdx, setRecIdx] = useState(0);
+  const [recSlide, setRecSlide] = useState("in"); // "in", "out-left", "out-right"
+  const [recPaused, setRecPaused] = useState(false);
+  const recTransitioning = useRef(false);
+  const goToRec = (nextIdx, direction) => {
+    if (recTransitioning.current) return;
+    recTransitioning.current = true;
+    setRecSlide(direction === "left" ? "out-left" : "out-right");
+    setTimeout(() => {
+      setRecIdx(nextIdx);
+      setRecSlide(direction === "left" ? "enter-right" : "enter-left");
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        setRecSlide("in");
+        recTransitioning.current = false;
+      }));
+    }, 350);
+  };
   useEffect(() => {
-    const id = setInterval(() => setRecIdx(i => (i + 1) % RECOMMENDATIONS.length), 6000);
+    if (recPaused) return;
+    const id = setInterval(() => {
+      if (recTransitioning.current) return;
+      goToRec((recIdx + 1) % RECOMMENDATIONS.length, "right");
+    }, 6000);
     return () => clearInterval(id);
-  }, []);
+  }, [recPaused, recIdx]);
   const panelRefs = [useRef(null), useRef(null), useRef(null)];
   useEffect(() => { setLoaded(true); }, []);
   useEffect(() => {
@@ -915,28 +932,46 @@ export default function RecruiterCV() {
             <div>
               <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>LinkedIn Recommendations</p>
               <p style={{ fontSize: 12, color: T.textFaint, marginBottom: 16, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>What people say about my work</p>
-              <div style={{ position: "relative" }}>
-                {/* Arrow buttons */}
-                <button onClick={() => setRecIdx(i => (i - 1 + RECOMMENDATIONS.length) % RECOMMENDATIONS.length)} style={{ position: "absolute", left: -6, top: "50%", transform: "translateY(-50%)", zIndex: 2, width: 28, height: 28, borderRadius: "50%", border: `1px solid ${T.cardBorder}`, background: T.card, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, color: T.textMid, boxShadow: "0 1px 4px rgba(0,0,0,0.06)", transition: "all 0.2s" }} onMouseEnter={e => { e.target.style.background = T.tagBg; e.target.style.borderColor = T.accentBorder; }} onMouseLeave={e => { e.target.style.background = T.card; e.target.style.borderColor = T.cardBorder; }}>‹</button>
-                <button onClick={() => setRecIdx(i => (i + 1) % RECOMMENDATIONS.length)} style={{ position: "absolute", right: -6, top: "50%", transform: "translateY(-50%)", zIndex: 2, width: 28, height: 28, borderRadius: "50%", border: `1px solid ${T.cardBorder}`, background: T.card, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, color: T.textMid, boxShadow: "0 1px 4px rgba(0,0,0,0.06)", transition: "all 0.2s" }} onMouseEnter={e => { e.target.style.background = T.tagBg; e.target.style.borderColor = T.accentBorder; }} onMouseLeave={e => { e.target.style.background = T.card; e.target.style.borderColor = T.cardBorder; }}>›</button>
-                {/* Single recommendation card */}
-                <div style={{ padding: "22px 36px", background: T.card, border: `1px solid ${T.cardBorder}`, borderRadius: 10, boxShadow: "0 1px 6px rgba(0,0,0,0.02)", transition: "opacity 0.4s ease", position: "relative" }}>
-                  <div style={{ fontSize: 13, color: T.textMid, lineHeight: 1.7, marginBottom: 14, fontStyle: "italic", minHeight: 44 }}>"{RECOMMENDATIONS[recIdx].text}"</div>
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                      <div style={{ width: 32, height: 32, borderRadius: "50%", background: `linear-gradient(135deg, ${T.warm1}, ${T.accentLight})`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, fontWeight: 700, color: T.accent }}>{RECOMMENDATIONS[recIdx].name.split(" ").map(n => n[0]).join("")}</div>
-                      <div>
-                        <div style={{ fontSize: 13, fontWeight: 700, color: T.text }}>{RECOMMENDATIONS[recIdx].name}</div>
-                        <div style={{ fontSize: 11, color: T.textLight }}>{RECOMMENDATIONS[recIdx].role}</div>
+              <div>
+                {/* Recommendation card */}
+                <div onMouseEnter={() => setRecPaused(true)} onMouseLeave={() => setRecPaused(false)} style={{ padding: "32px 36px 24px", background: T.card, border: `1px solid ${T.cardBorder}`, borderRadius: 10, boxShadow: "0 1px 6px rgba(0,0,0,0.02)", position: "relative", overflow: "hidden" }}>
+                  {/* Big decorative quote mark */}
+                  <div style={{ position: "absolute", top: 10, right: 20, fontSize: 64, color: T.accent + "12", fontFamily: "Georgia, serif", lineHeight: 1, pointerEvents: "none" }}>{"\u201C"}</div>
+                  <div style={{
+                    opacity: recSlide === "in" ? 1 : 0,
+                    transform: recSlide === "in" ? "translateX(0)" : recSlide === "out-left" ? "translateX(-40px)" : recSlide === "out-right" ? "translateX(40px)" : recSlide === "enter-right" ? "translateX(40px)" : "translateX(-40px)",
+                    transition: recSlide === "in" || recSlide.startsWith("out") ? "opacity 0.35s ease, transform 0.35s ease" : "none",
+                    minHeight: 60,
+                  }}>
+                  <div style={{ fontSize: 13, color: T.textMid, lineHeight: 1.7, marginBottom: 0, fontStyle: "italic" }}>"{RECOMMENDATIONS[recIdx].text}"</div>
+                  </div>{/* end slide wrapper */}
+                  {/* Name, dots, relationship row */}
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: 14 }}>
+                    <div style={{
+                      opacity: recSlide === "in" ? 1 : 0,
+                      transform: recSlide === "in" ? "translateX(0)" : recSlide === "out-left" ? "translateX(-40px)" : recSlide === "out-right" ? "translateX(40px)" : recSlide === "enter-right" ? "translateX(40px)" : "translateX(-40px)",
+                      transition: recSlide === "in" || recSlide.startsWith("out") ? "opacity 0.35s ease, transform 0.35s ease" : "none",
+                      display: "flex", alignItems: "center", gap: 10, flex: 1, minWidth: 0, overflow: "hidden",
+                    }}>
+                      <div style={{ width: 32, height: 32, flexShrink: 0, borderRadius: "50%", background: `linear-gradient(135deg, ${T.warm1}, ${T.accentLight})`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, fontWeight: 700, color: T.accent }}>{RECOMMENDATIONS[recIdx].name.split(" ").map(n => n[0]).join("")}</div>
+                      <div style={{ minWidth: 0 }}>
+                        <div style={{ fontSize: 13, fontWeight: 700, color: T.text, whiteSpace: "nowrap" }}>{RECOMMENDATIONS[recIdx].name}</div>
+                        <div style={{ fontSize: 11, color: T.textLight, whiteSpace: "nowrap" }}>{RECOMMENDATIONS[recIdx].role}</div>
                       </div>
                     </div>
-                    <span style={{ fontSize: 9, color: T.textFaint, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", textTransform: "uppercase", letterSpacing: 0.5, padding: "2px 7px", background: T.tagBg, borderRadius: 6 }}>{RECOMMENDATIONS[recIdx].relation}</span>
-                  </div>
-                  {/* Dot indicators */}
-                  <div style={{ display: "flex", justifyContent: "center", gap: 6, marginTop: 14 }}>
-                    {RECOMMENDATIONS.map((_, i) => (
-                      <div key={i} onClick={() => setRecIdx(i)} style={{ width: 6, height: 6, borderRadius: "50%", background: i === recIdx ? T.accent : T.cardBorder, cursor: "pointer", transition: "background 0.3s" }} />
-                    ))}
+                    <div style={{ display: "flex", alignItems: "center", gap: 6, flexShrink: 0 }}>
+                      {RECOMMENDATIONS.map((_, i) => (
+                        <div key={i} onClick={() => { if (i !== recIdx) goToRec(i, i > recIdx ? "right" : "left"); }} style={{ width: 6, height: 6, borderRadius: "50%", background: i === recIdx && recSlide === "in" ? T.accent : T.cardBorder, cursor: "pointer", transition: "background 0.35s ease" }} />
+                      ))}
+                    </div>
+                    <div style={{
+                      opacity: recSlide === "in" ? 1 : 0,
+                      transform: recSlide === "in" ? "translateX(0)" : recSlide === "out-left" ? "translateX(-40px)" : recSlide === "out-right" ? "translateX(40px)" : recSlide === "enter-right" ? "translateX(40px)" : "translateX(-40px)",
+                      transition: recSlide === "in" || recSlide.startsWith("out") ? "opacity 0.35s ease, transform 0.35s ease" : "none",
+                      flex: 1, display: "flex", justifyContent: "flex-end", minWidth: 0, overflow: "hidden",
+                    }}>
+                      <span style={{ fontSize: 9, color: T.textFaint, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", textTransform: "uppercase", letterSpacing: 0.5, padding: "2px 7px", background: T.tagBg, borderRadius: 6, whiteSpace: "nowrap" }}>{RECOMMENDATIONS[recIdx].relation}</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -963,9 +998,9 @@ export default function RecruiterCV() {
         <div ref={panelRefs[2]} style={{ width: `${100 / 3}%`, flexShrink: 0, padding: "0 0 20px" }}>
             <div style={{ marginBottom: 24 }}>
               <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>A bit about me</p>
-              <p style={{ fontSize: 14, color: T.textMid, lineHeight: 1.65, marginBottom: 16 }}>Ideal spot for an intro video, but if you're enjoying my content, check out how we're helping teams manage application volume in this product breakdown of First!</p>
+              <p style={{ fontSize: 14, color: T.textMid, lineHeight: 1.65, marginBottom: 16 }}>(Ideal spot for an intro video, but I'm going to be cheeky and slip in a video to show how we're helping teams manage application volume with First! :D)</p>
               <div style={{
-                width: "60%", aspectRatio: "16/9", borderRadius: 10, margin: "0 auto",
+                width: "80%", aspectRatio: "16/9", borderRadius: 10, margin: "0 auto",
                 overflow: "hidden", border: `1px solid ${T.cardBorder}`,
                 marginBottom: 8,
               }}>
@@ -982,18 +1017,21 @@ export default function RecruiterCV() {
               <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>A few things about me</p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 10 }}>
                 {[
-                  { label: "Football", text: "Lifelong Crystal Palace fan. Yes, I know. No, I can't explain it either. Season ticket holder. The highs are rare but they're worth it." },
-                  { label: "Running", text: "5k most mornings around Brockwell Park. I'm slow but consistent, which is also how I'd describe my sourcing." },
-                  { label: "Cooking", text: "I make everything from scratch. Current obsession is getting the perfect crispy chilli oil. My mates say I should start a food account. I won't." },
-                  { label: "Mabel", text: "One-year-old cockapoo. Has 1,200 Instagram followers. I have 800. She's better at personal branding than most recruiters." },
-                  { label: "Reading", text: "Mostly non-fiction. Thinking Fast and Slow changed how I interview. Currently reading Range by David Epstein. It's basically about why generalists win." },
-                  { label: "Travel", text: "Spent 3 months in Southeast Asia between jobs. Best decision I ever made. Worst sunburn I ever got. Both in Thailand." },
+                  { emoji: "\u26BD", label: "Football", text: "Lifelong Crystal Palace fan. Yes, I know. No, I can't explain it either. Season ticket holder. The highs are rare but they're worth it." },
+                  { emoji: "\uD83C\uDFC3", label: "Running", text: "5k most mornings around Brockwell Park. I'm slow but consistent, which is also how I'd describe my sourcing." },
+                  { emoji: "\uD83C\uDF73", label: "Cooking", text: "I make everything from scratch. Current obsession is getting the perfect crispy chilli oil. My mates say I should start a food account. I won't." },
+                  { emoji: "\uD83D\uDC36", label: "Mabel", text: "One-year-old cockapoo. Has 1,200 Instagram followers. I have 800. She's better at personal branding than most recruiters." },
+                  { emoji: "\uD83D\uDCDA", label: "Reading", text: "Mostly non-fiction. Thinking Fast and Slow changed how I interview. Currently reading Range by David Epstein. It's basically about why generalists win." },
+                  { emoji: "\u2708\uFE0F", label: "Travel", text: "Spent 3 months in Southeast Asia between jobs. Best decision I ever made. Worst sunburn I ever got. Both in Thailand." },
                 ].map((item, i) => (
                   <div key={i} style={{
                     padding: "16px 18px", background: T.card, border: `1px solid ${T.cardBorder}`,
                     borderRadius: 10, boxShadow: "0 2px 8px rgba(0,0,0,0.02)",
                   }}>
-                    <div style={{ fontSize: 10, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent, textTransform: "uppercase", letterSpacing: 0.8, marginBottom: 6, fontWeight: 600 }}>{item.label}</div>
+                    <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+                      <span style={{ fontSize: 18 }}>{item.emoji}</span>
+                      <span style={{ fontSize: 10, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent, textTransform: "uppercase", letterSpacing: 0.8, fontWeight: 600 }}>{item.label}</span>
+                    </div>
                     <div style={{ fontSize: 13, color: T.textMid, lineHeight: 1.65 }}>{item.text}</div>
                   </div>
                 ))}
@@ -1003,9 +1041,10 @@ export default function RecruiterCV() {
               <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>What I value</p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 10 }}>
                 {[
-                  { label: "Honesty over polish", text: "I'd rather someone tell me I'm wrong than agree with me to be polite. That goes both ways." },
-                  { label: "Doing the work", text: "I've never been the smartest person in the room, but I'll be the one who actually followed up." },
-                  { label: "Loyalty to people", text: "Every company I've left, I've stayed close with the people. That matters more to me than a brand on my CV." },
+                  { emoji: "\uD83D\uDCAC", label: "Honesty over polish", text: "I'd rather someone tell me I'm wrong than agree with me to be polite. That goes both ways." },
+                  { emoji: "\uD83D\uDCAA", label: "Doing the work", text: "I've never been the smartest person in the room, but I'll be the one who actually followed up." },
+                  { emoji: "\uD83E\uDD1D", label: "Loyalty to people", text: "Every company I've left, I've stayed close with the people. That matters more to me than a brand on my CV." },
+                  { emoji: "\uD83E\uDD14", label: "Curiosity over comfort", text: "I'd rather ask a stupid question than pretend I understand. That's how I went from agency to building AI products." },
                 ].map((t, i) => (
                   <div key={i} style={{
                     padding: "16px 18px", background: T.card, border: `1px solid ${T.cardBorder}`,
@@ -1013,7 +1052,10 @@ export default function RecruiterCV() {
                     boxShadow: "0 2px 8px rgba(0,0,0,0.02)",
                     borderLeft: `3px solid ${T.accentBorder}`,
                   }}>
-                    <div style={{ fontSize: 13, fontWeight: 700, color: T.text, marginBottom: 4 }}>{t.label}</div>
+                    <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
+                      <span style={{ fontSize: 16 }}>{t.emoji}</span>
+                      <span style={{ fontSize: 13, fontWeight: 700, color: T.text }}>{t.label}</span>
+                    </div>
                     <div style={{ fontSize: 13, color: T.textMid, lineHeight: 1.65 }}>{t.text}</div>
                   </div>
                 ))}
@@ -1029,7 +1071,7 @@ export default function RecruiterCV() {
         {modal === "prospect" && <ProspectModal onClose={() => setModal(null)} />}
         {modal === "recops" && <RecOpsModal onClose={() => setModal(null)} />}
         {/* FOOTER */}
-        <footer style={{ padding: "40px 0 48px", borderTop: `1px solid ${T.cardBorder}`, textAlign: "center", position: "relative" }}>
+        <footer style={{ padding: "48px 0", borderTop: `1px solid ${T.cardBorder}`, textAlign: "center", position: "relative" }}>
           <div style={{ position: "absolute", top: -1, left: "20%", right: "20%", height: 1, background: `linear-gradient(90deg, transparent, ${T.accent}30, transparent)` }} />
           <p style={{ fontSize: 18, fontWeight: 400, color: T.text, marginBottom: 24, letterSpacing: "-0.3px" }}>
             Built by a recruiter, for recruiters, because we deserve better than a Word doc.
