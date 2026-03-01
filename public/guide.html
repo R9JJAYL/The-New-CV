@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Recruiter's Guide to Vibe Code Their First Project</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Georgia', serif; background: #FAF9F7; color: #2D2B28; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 32px; margin-bottom: 4px; color: #2D2B28; }
+  h2 { font-size: 24px; margin-top: 48px; margin-bottom: 16px; color: #2D2B28; padding-bottom: 8px; border-bottom: 2px solid #EDE9E3; }
+  h3 { font-size: 18px; margin-top: 32px; margin-bottom: 12px; color: #C4704B; }
+  h4 { font-size: 14px; margin-top: 24px; margin-bottom: 8px; }
+  p { margin-bottom: 16px; font-size: 16px; }
+  .subtitle { font-size: 17px; color: #6B6560; margin-bottom: 8px; font-family: 'Helvetica Neue', sans-serif; }
+  .byline { font-size: 14px; color: #9C9590; margin-bottom: 32px; font-family: 'Helvetica Neue', sans-serif; }
+  hr { border: none; border-top: 1px solid #EDE9E3; margin: 40px 0; }
+  ul, ol { margin-bottom: 16px; padding-left: 24px; }
+  li { margin-bottom: 8px; font-size: 16px; }
+  strong { color: #2D2B28; }
+  em { color: #6B6560; }
+  code { font-family: 'SF Mono', 'Fira Code', monospace; background: #F3F0EC; padding: 2px 6px; border-radius: 4px; font-size: 14px; }
+  pre { background: #2D2B28; color: #FAF9F7; padding: 16px 20px; border-radius: 10px; margin-bottom: 16px; overflow-x: auto; font-size: 14px; line-height: 1.5; }
+  pre code { background: none; padding: 0; color: inherit; }
+  blockquote { border-left: 3px solid #C4704B; padding: 12px 20px; margin: 16px 0; background: #FDF3ED; border-radius: 0 8px 8px 0; font-style: italic; color: #6B6560; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 14px; font-family: 'Helvetica Neue', sans-serif; }
+  th { background: #F3F0EC; padding: 10px 14px; text-align: left; font-weight: 700; border-bottom: 2px solid #EDE9E3; font-size: 13px; }
+  td { padding: 10px 14px; border-bottom: 1px solid #EDE9E3; }
+  tr:last-child td { border-bottom: none; }
+  a { color: #C4704B; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #EDE9E3; font-size: 13px; color: #9C9590; text-align: center; font-family: 'Helvetica Neue', sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>The Recruiter's Guide to Vibe Code Their First Project</h1>
+<p class="subtitle">From zero to deployed, ready to share</p>
+<p class="byline"><strong>By Jamie Lyons</strong> — Recruiter & TA Leader | Co-written with Luke Morton — Software Engineer</p>
+
+<hr>
+
+<h2>Ignore the Noise — You're Not Behind</h2>
+
+<p>If LinkedIn is making you feel like you're already behind on AI — relax. You're not. The posts make it sound like everyone's building apps and automating their workflows, but the reality is most people are still just chatting to ChatGPT about dinner recipes. Only around 14% of UK adults even pay for an AI subscription. A fraction of those have tried vibe coding. And an even smaller fraction have actually deployed something live. This project takes a few hours — and by the end of it, you'll be in that tiny percentile of people who've actually built and shipped something with AI.</p>
+
+<p>You're not late. You're early. And we're going to build something genuinely cool.</p>
+
+<h2>Why Your CV Is the Perfect First Project</h2>
+
+<p>Every recruiter has a CV. Most of us hate ours. The format has barely changed since the 1950s — a flat document listing jobs in reverse order. It's awkward to write, boring to read, and impossible to show personality through. It sits in a folder until you're job hunting, gets reluctantly updated, and goes back in the folder. That's exactly what makes it the perfect first project — not to land a job, but as a low-pressure excuse to actually <em>learn</em> these tools by making something real out of something overdue a reinvention.</p>
+
+<ul>
+  <li><strong>You already have the content.</strong> No need to invent a project — your career data is right there.</li>
+  <li><strong>Zero commercial risk.</strong> No GDPR, no client data, no stakeholders. If it breaks, nobody cares.</li>
+  <li><strong>It's a document you're fed up with.</strong> Turning something boring into something you're proud of beats a to-do app tutorial.</li>
+  <li><strong>You'll genuinely learn AI.</strong> Prompting, iteration, where it's brilliant and where it falls over — by building, not reading LinkedIn posts.</li>
+  <li><strong>It's surprisingly cathartic.</strong> Structuring your career into data forces you to reflect on what you've actually done.</li>
+  <li><strong>It's fun.</strong> Watching a chat prompt turn into a live website in a few hours makes you want to build more.</li>
+</ul>
+
+<p>The side effect is you'll stand out too — but that's the bonus. The real point is giving yourself permission to play. This guide takes you from zero to a deployed site. If you've used ChatGPT, you have enough AI experience to do this.</p>
+
+<hr>
+
+<h2>What You'll End Up With</h2>
+
+<p>A live website (like <a href="https://github.com/R9JJAYL/The-New-CV">The New CV</a>) — a single-page React app with:</p>
+
+<ul>
+  <li>Tabbed navigation (Career / Projects / Personal)</li>
+  <li>Animated stat counters</li>
+  <li>Expandable role cards with achievements</li>
+  <li>Project showcases with embedded demos</li>
+  <li>Recommendations section</li>
+  <li>Smooth scroll animations</li>
+  <li>A warm, professional design</li>
+</ul>
+
+<p>All hosted for free, updating automatically when you make changes.</p>
+
+<hr>
+
+<h2>What It'll Cost</h2>
+
+<p>Let's be upfront:</p>
+
+<table>
+  <tr><th>Tool</th><th>Cost</th><th>Notes</th></tr>
+  <tr><td><strong>Claude.ai</strong> (chat)</td><td>Free tier available</td><td>Used for initial prototype. Free plan works fine.</td></tr>
+  <tr><td><strong>Claude Code</strong> (CLI)</td><td><strong>~$5–20/session</strong></td><td>This is the main cost. Claude Code uses API credits. A heavy building session can use $5–15. You can set spending limits.</td></tr>
+  <tr><td><strong>GitHub</strong></td><td>Free</td><td>Where your code lives. Free for public repos.</td></tr>
+  <tr><td><strong>Vercel</strong></td><td>Free</td><td>Hosts your site. Free tier is generous for personal projects.</td></tr>
+  <tr><td><strong>VS Code</strong></td><td>Free</td><td>Code editor (optional — Claude Code works in terminal).</td></tr>
+</table>
+
+<p><strong>The honest truth:</strong> Claude Code is the only thing that'll cost you money. GitHub and Vercel are completely free for this kind of project. If you're careful with your prompting (more on that later), you can build the whole thing for under $20.</p>
+
+<hr>
+
+<h2>Part 1: Create Your Prototype in Claude.ai</h2>
+
+<p>Before touching any code tools, start in regular Claude chat. This is where you'll design what your CV looks like.</p>
+
+<h3>Step 1: Write Your Prompt</h3>
+
+<p>The trick is giving Claude enough context to build something good on the first try. A vague prompt gives you a vague result.</p>
+
+<p>Here's an example prompt you can adapt:</p>
+
+<blockquote>
+"I'm a recruiter with 8 years of experience. I want to build an interactive digital CV as a single-page React app. Here's what I want:<br><br>
+— A warm, professional design (think cream/terracotta tones, not corporate blue)<br>
+— Three tabs: My Career, My Projects, My Personal Life<br>
+— My Career should have: a headline with my name and title, a short summary paragraph, animated stats (e.g. '300+ career hires'), and expandable role cards for each position showing company, dates, my role context, and key achievements<br>
+— My Projects should showcase 3-4 things I've built or led<br>
+— My Personal Life should be light and human — hobbies, values, a bit of personality<br><br>
+Here's my career data:<br>
+[paste your roles, achievements, stats here]<br><br>
+Build it as a single JSX component. Use inline styles (no CSS files). Include smooth animations and hover effects. Make it feel premium but approachable."
+</blockquote>
+
+<h3>Tips for Better Prompts</h3>
+
+<ul>
+  <li><strong>Be specific about design.</strong> "Warm tones" is better than "make it look nice." Give examples: "like a Notion page" or "cream background, terracotta accents."</li>
+  <li><strong>Include your actual data.</strong> Don't say "add my roles" — paste them in. The more real content Claude has, the better the output.</li>
+  <li><strong>Specify the tech.</strong> Saying "single JSX component with inline styles" avoids Claude splitting things across 10 files you'll struggle to manage.</li>
+  <li><strong>Describe interactions.</strong> "Expandable cards that reveal achievements on click" is better than "interactive role section."</li>
+</ul>
+
+<h3>Step 2: Use the Artifact</h3>
+
+<p>Claude.ai will generate a React component as an artifact. You can preview it right there in the chat. Click through, check the layout, see if it feels right.</p>
+
+<p><strong>This won't be perfect.</strong> That's fine. The goal is a solid starting point — maybe 70% of what you want. You'll refine it later with Claude Code.</p>
+
+<h3>Step 3: Iterate in Chat</h3>
+
+<p>Ask Claude to adjust things:</p>
+
+<ul>
+  <li><em>"Make the stat counters animate when they scroll into view"</em></li>
+  <li><em>"Add a chevron arrow that shows when you hover over a role card"</em></li>
+  <li><em>"The company pills should be smaller and more subtle"</em></li>
+</ul>
+
+<p>Get it to about 80% in chat before moving on. Each change in Claude Code costs API credits, so the more you nail in the free chat, the better.</p>
+
+<h3>Step 4: Copy Your Code</h3>
+
+<p>Once you're happy with the prototype, copy the full JSX code from the artifact. You'll paste this into your project files shortly.</p>
+
+<hr>
+
+<h2>Part 2: Set Up Your Tools</h2>
+
+<p>You need three things installed on your computer. If you've never done anything like this, don't panic — each step has one command or one download.</p>
+
+<h3>Install Node.js</h3>
+
+<p>Node.js lets you run JavaScript on your computer (which is what React needs).</p>
+
+<ol>
+  <li>Go to <a href="https://nodejs.org">nodejs.org</a></li>
+  <li>Download the <strong>LTS</strong> version (the one that says "Recommended")</li>
+  <li>Run the installer, click Next through everything</li>
+  <li>Verify it worked — open your terminal and type:</li>
+</ol>
+
+<pre><code>node --version</code></pre>
+
+<p>You should see something like <code>v22.x.x</code>. If you do, you're good.</p>
+
+<p><strong>What's a terminal?</strong></p>
+<ul>
+  <li><strong>Mac:</strong> Open the app called "Terminal" (search for it in Spotlight with Cmd+Space)</li>
+  <li><strong>Windows:</strong> Open "Command Prompt" or "PowerShell" (search in Start menu)</li>
+</ul>
+
+<h3>Install Claude Code</h3>
+
+<p>Claude Code is a command-line tool that lets Claude directly edit your project files, run your dev server, and see what your site looks like — all from your terminal.</p>
+
+<pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
+
+<p>Then authenticate:</p>
+
+<pre><code>claude</code></pre>
+
+<p>It'll open a browser window to log in with your Anthropic account. Follow the prompts to connect.</p>
+
+<p><strong>Important:</strong> Claude Code uses API credits. You'll want to set up a spending limit at <a href="https://console.anthropic.com">console.anthropic.com</a> so you don't get surprised. Start with a $20 limit — that's plenty for this project.</p>
+
+<h3>Install Git</h3>
+
+<p>Git tracks changes to your code (like "save points" in a video game). You'll need it to push your code to GitHub.</p>
+
+<ul>
+  <li><strong>Mac:</strong> It's probably already installed. Type <code>git --version</code> in terminal. If it asks to install Xcode tools, say yes.</li>
+  <li><strong>Windows:</strong> Download from <a href="https://git-scm.com">git-scm.com</a>, run the installer with default settings.</li>
+</ul>
+
+<h3>Create a GitHub Account</h3>
+
+<p>Go to <a href="https://github.com">github.com</a> and sign up. It's free. This is where your code will live online.</p>
+
+<hr>
+
+<h2>Part 3: Create Your Project</h2>
+
+<h3>Step 1: Scaffold with Vite</h3>
+
+<p>Vite is the tool that bundles your React code into a website. Run this in your terminal:</p>
+
+<pre><code>npm create vite@latest my-cv -- --template react</code></pre>
+
+<p>This creates a folder called <code>my-cv</code> with everything set up. Now:</p>
+
+<pre><code>cd my-cv
+npm install</code></pre>
+
+<h3>Step 2: Paste Your Prototype</h3>
+
+<p>Remember the code you copied from Claude.ai? Now it's time to use it.</p>
+
+<ol>
+  <li>Open the file <code>src/App.jsx</code> in any text editor (or VS Code if you installed it)</li>
+  <li>Delete everything in it</li>
+  <li>Paste your Claude-generated component</li>
+  <li>Make sure the file exports your component as default, e.g.:</li>
+</ol>
+
+<pre><code>export default function RecruiterCV() {
+  // ... your component code
+}</code></pre>
+
+<h3>Step 3: Check It Works</h3>
+
+<p>Start the dev server:</p>
+
+<pre><code>npm run dev</code></pre>
+
+<p>Open the URL it shows (usually <code>http://localhost:5173</code>) in your browser. You should see your CV. It might have issues — that's what Part 4 is for.</p>
+
+<hr>
+
+<h2>Part 4: Refine with Claude Code</h2>
+
+<p>This is where the magic happens. Claude Code can see your files, edit them, run your dev server, and even take screenshots to check its own work.</p>
+
+<h3>Start Claude Code</h3>
+
+<p>In your terminal, navigate to your project folder and run:</p>
+
+<pre><code>cd my-cv
+claude</code></pre>
+
+<p>You're now in an interactive session with Claude. It can see all your project files.</p>
+
+<h3>How to Give Good Instructions</h3>
+
+<p>Be specific and visual. Instead of:</p>
+
+<blockquote>"Make it look better"</blockquote>
+
+<p>Say:</p>
+
+<blockquote>"The role cards look flat. Add a subtle border, a hover effect that lifts the card slightly, and a warm box-shadow on hover. Keep the cream/terracotta colour scheme."</blockquote>
+
+<p>Instead of:</p>
+
+<blockquote>"Fix the layout"</blockquote>
+
+<p>Say:</p>
+
+<blockquote>"The stat counters should be in a 4-column grid on desktop. On mobile they should stack to 2 columns. Add some spacing between them."</blockquote>
+
+<h3>Using Previews</h3>
+
+<p>Claude Code has a built-in preview system that's a game-changer for design work. When you start your dev server through Claude Code, it can:</p>
+
+<ul>
+  <li>Take screenshots of your site and see exactly what you see</li>
+  <li>Inspect specific CSS values (colours, fonts, spacing) directly</li>
+  <li>Click buttons and scroll the page to test interactions</li>
+  <li>Check mobile layouts by resizing the viewport</li>
+</ul>
+
+<p>This means Claude can edit your code, check the result, and fix issues — all without you having to describe what went wrong. Just say:</p>
+
+<blockquote>"Start the dev server and take a screenshot. Then fix anything that looks off."</blockquote>
+
+<h3>Select Element: Point at What You Want to Change</h3>
+
+<p>This is the feature that makes design iteration feel like magic. Claude Code's preview has a <strong>select element</strong> tool — you can literally point at something on the page and say what you want changed about it.</p>
+
+<p>Instead of trying to describe which element you mean in words ("the third box in the stats section, the one with the border..."), you just:</p>
+
+<ol>
+  <li>Ask Claude to take a screenshot of your site</li>
+  <li>Point at the element you want to change (Claude can identify it from coordinates or descriptions)</li>
+  <li>Tell it what to do: <em>"make this text bigger"</em>, <em>"change this background to cream"</em>, <em>"add more padding here"</em></li>
+</ol>
+
+<p>This is incredibly useful when you don't know CSS or design terminology. You don't need to say "increase the font-size to 16px and add 12px of padding-bottom." You can just say:</p>
+
+<blockquote>"This heading feels cramped. Give it more breathing room and make it slightly larger."</blockquote>
+
+<p>Claude will inspect the element, figure out the current styles, and make sensible adjustments. It's the closest thing to pointing at your screen and saying "fix that bit."</p>
+
+<h3>Design Without Knowing Design</h3>
+
+<p>You don't need to know what looks good — you just need to know what <em>doesn't</em> look right. Some prompts that work well:</p>
+
+<ul>
+  <li><em>"Something feels off about the spacing on these cards. Can you check the screenshot and tighten it up?"</em></li>
+  <li><em>"The colours feel too cold. Make it warmer — think cream, terracotta, soft browns."</em></li>
+  <li><em>"This section looks flat and boring. Add some depth — maybe subtle shadows or a background tint."</em></li>
+  <li><em>"It looks good on desktop but check what it looks like on mobile and fix anything that's broken."</em></li>
+  <li><em>"The role cards need more visual hierarchy. The title should feel more important than the description."</em></li>
+</ul>
+
+<p>You're art-directing, not coding. Tell Claude what <em>feels</em> wrong and let it figure out the CSS. That's the whole point.</p>
+
+<h3>Check It on Mobile and Desktop</h3>
+
+<p>Your CV will get shared as a link — and people will open it on their phone as often as their laptop. Claude Code's preview can resize the viewport to simulate different devices, so you can check both without leaving your terminal.</p>
+
+<blockquote>"Resize the preview to mobile and take a screenshot. Fix anything that's broken or hard to read."</blockquote>
+
+<p>Then switch back:</p>
+
+<blockquote>"Now check desktop. Make sure the layout uses the full width properly."</blockquote>
+
+<p>Things that commonly break on mobile: multi-column grids squashing together, text overflowing its container, buttons too small to tap, and horizontal scrolling where there shouldn't be any. Claude will spot and fix these if you ask it to check.</p>
+
+<h3>Go Wild: Try Something Ridiculous</h3>
+
+<p>Here's where it gets fun. You've been making sensible refinements — now try something completely daft.</p>
+
+<p>Ask Claude Code:</p>
+
+<blockquote>"Retheme my entire CV to look like it belongs on the Nike website. Use their colour scheme, fonts, and visual style. Here's their site for reference: nike.com"</blockquote>
+
+<p>Sit back and watch. In about 60 seconds, your warm cream CV will transform into a bold, black-and-white, swoosh-energy version of itself. It'll look completely different. It might look amazing. It might look absurd. Either way, you'll get a visceral sense of just how capable and flexible this is.</p>
+
+<p>Now here's the important bit — undoing it:</p>
+
+<blockquote>"That was fun but undo all of that. Take it back to how it was before."</blockquote>
+
+<p>And just like that, it's back. If you committed before the experiment (which you should — see Part 5), you've always got that save point to return to. This is the safety net that makes experimentation free.</p>
+
+<p>Try it with any brand you like — Spotify, Apple, your own company. The point isn't to keep the result. The point is to see that the AI can completely reshape your project in seconds, and you can always walk it back. Once that clicks, you stop being precious about your code and start being creative with it. That's when vibe coding gets really fun.</p>
+
+<h3>Common Refinements You'll Want</h3>
+
+<p>Here are specific prompts that worked well during the build of the example CV:</p>
+
+<ul>
+  <li><em>"Add scroll-triggered animations so elements fade in as you scroll down"</em></li>
+  <li><em>"Make the role cards expandable — click to show achievements, click again to collapse"</em></li>
+  <li><em>"Add a tabbed navigation at the top that switches between Career, Projects, and Personal"</em></li>
+  <li><em>"Add a connector line between the role cards so it looks like a timeline"</em></li>
+  <li><em>"The header area of each card should have a subtle grey background to separate it from the body"</em></li>
+</ul>
+
+<h3>Watch Your Spend</h3>
+
+<p>Each back-and-forth with Claude Code uses API credits. Some tips:</p>
+
+<ul>
+  <li><strong>Batch your requests.</strong> Instead of 5 separate messages asking for 5 small changes, combine them into one: <em>"Make these changes: 1) increase font to 13px, 2) add hover shadow, 3) remove the skill pills, 4) rename 'Work history' to 'Work experience'."</em></li>
+  <li><strong>Be precise.</strong> Vague instructions lead to Claude trying things, checking, adjusting — that's more API calls. Specific instructions get it right faster.</li>
+  <li><strong>Use Claude.ai for design decisions.</strong> If you're not sure what you want, brainstorm in the free chat first. Only use Claude Code when you know what change you need made.</li>
+</ul>
+
+<hr>
+
+<h2>Part 5: Version Control with Git</h2>
+
+<h3>What Is Version Control?</h3>
+
+<p>Think of Git as an unlimited undo system for your entire project. Every time you "commit," you're saving a snapshot. If you mess something up, you can always go back.</p>
+
+<p><strong>Key terms:</strong></p>
+<ul>
+  <li><strong>Repository (repo):</strong> Your project folder, tracked by Git</li>
+  <li><strong>Commit:</strong> A saved snapshot with a description of what changed</li>
+  <li><strong>Push:</strong> Uploading your commits to GitHub</li>
+  <li><strong>Branch:</strong> A separate line of work (you probably won't need this yet)</li>
+</ul>
+
+<h3>Step 1: Initialize Git</h3>
+
+<p>In your project folder:</p>
+
+<pre><code>git init
+git add .
+git commit -m "Initial commit: my digital CV"</code></pre>
+
+<h3>Step 2: Create a GitHub Repository</h3>
+
+<ol>
+  <li>Go to <a href="https://github.com">github.com</a> and click the <strong>+</strong> button → <strong>New repository</strong></li>
+  <li>Name it something like <code>my-digital-cv</code></li>
+  <li>Keep it <strong>Public</strong> (needed for free Vercel hosting)</li>
+  <li><strong>Don't</strong> add a README or .gitignore (you already have these)</li>
+  <li>Click <strong>Create repository</strong></li>
+</ol>
+
+<p>GitHub will show you commands. Run these:</p>
+
+<pre><code>git remote add origin https://github.com/YOUR-USERNAME/my-digital-cv.git
+git branch -M main
+git push -u origin main</code></pre>
+
+<h3>Step 3: Making Changes Going Forward</h3>
+
+<p>Every time you make changes you're happy with:</p>
+
+<pre><code>git add .
+git commit -m "Short description of what changed"
+git push</code></pre>
+
+<p><strong>Claude Code and Git:</strong> When you're using Claude Code, you can ask it to commit for you. It'll show you what's changed and ask you to approve the commit message before doing anything. This is safe — Claude Code won't push to GitHub without your explicit permission.</p>
+
+<h3>What to Approve vs. What to Be Careful With</h3>
+
+<p>When Claude Code suggests actions, here's a quick guide:</p>
+
+<table>
+  <tr><th>Action</th><th>Risk Level</th><th>Notes</th></tr>
+  <tr><td>Editing files</td><td>Low</td><td>This is what it's for. Always reviewable.</td></tr>
+  <tr><td>Running dev server</td><td>Low</td><td>Just starts a local preview.</td></tr>
+  <tr><td><code>git add</code> + <code>git commit</code></td><td>Low</td><td>Saves a snapshot. Easily undone.</td></tr>
+  <tr><td><code>git push</code></td><td>Medium</td><td>Sends code to GitHub. Confirm you're happy first.</td></tr>
+  <tr><td>Installing packages (<code>npm install ...</code>)</td><td>Medium</td><td>Adds dependencies. Check what it's installing.</td></tr>
+  <tr><td>Deleting files</td><td>Medium</td><td>Make sure you've committed first.</td></tr>
+  <tr><td><code>git push --force</code></td><td><strong>High</strong></td><td>Can overwrite history. Almost never needed.</td></tr>
+  <tr><td>Anything with <code>rm -rf</code></td><td><strong>High</strong></td><td>Permanent deletion. Ask why.</td></tr>
+</table>
+
+<p><strong>Rule of thumb:</strong> If Claude Code asks to do something you don't understand, say no and ask it to explain. It won't be offended.</p>
+
+<hr>
+
+<h2>Part 6: Deploy to Vercel</h2>
+
+<p>This is the exciting bit — making your CV live on the internet.</p>
+
+<h3>Step 1: Sign Up for Vercel</h3>
+
+<ol>
+  <li>Go to <a href="https://vercel.com">vercel.com</a></li>
+  <li>Click <strong>Sign Up</strong></li>
+  <li>Choose <strong>Continue with GitHub</strong> (this connects your accounts)</li>
+</ol>
+
+<h3>Step 2: Import Your Project</h3>
+
+<ol>
+  <li>Once logged in, click <strong>Add New → Project</strong></li>
+  <li>You'll see your GitHub repos listed. Find <code>my-digital-cv</code> and click <strong>Import</strong></li>
+  <li>Vercel will auto-detect that it's a Vite project</li>
+  <li>Leave all the default settings as they are</li>
+  <li>Click <strong>Deploy</strong></li>
+</ol>
+
+<p>Wait about 60 seconds. That's it. Your CV is live.</p>
+
+<p>Vercel will give you a URL like <code>my-digital-cv.vercel.app</code>. That's your live site. Share it anywhere.</p>
+
+<h3>Step 3: Automatic Deployments</h3>
+
+<p>Here's the best part: every time you push to GitHub, Vercel automatically rebuilds and deploys your site. The workflow becomes:</p>
+
+<ol>
+  <li>Make changes with Claude Code</li>
+  <li>Commit and push to GitHub</li>
+  <li>Vercel deploys automatically in ~60 seconds</li>
+  <li>Your live site is updated</li>
+</ol>
+
+<p>No servers to manage. No deployment scripts. Just push and it's live.</p>
+
+<h3>Custom Domain (Optional)</h3>
+
+<p>If you own a domain (e.g., <code>jamielyons.com</code>), you can connect it in Vercel's project settings under <strong>Domains</strong>. Vercel handles SSL certificates automatically. This costs whatever your domain registration is (usually ~$10/year) but the hosting itself stays free.</p>
+
+<hr>
+
+<h2>Part 7: Common Mistakes & How to Avoid Them</h2>
+
+<p>These are lessons from building the example project. Learn from them so you don't have to learn the hard way.</p>
+
+<h3>1. Being Too Vague with Claude</h3>
+
+<p><strong>Bad:</strong> <em>"Make the design better."</em><br>
+<strong>Good:</strong> <em>"Add a 1px border in #EDE9E3 to the role cards, increase the border-radius to 10px, and add a subtle box-shadow on hover: 0 8px 28px rgba(196,112,75,0.13)."</em></p>
+
+<p>The more specific you are, the fewer iterations (and API credits) you'll burn.</p>
+
+<h3>2. Not Committing Often Enough</h3>
+
+<p>Commit after every change that works. If you make 10 changes and something breaks, you'll wish you could go back to change 7. With Git, you can — but only if you committed at change 7.</p>
+
+<p>A good rhythm: make a change → check it works → commit → move on.</p>
+
+<h3>3. Trying to Do Too Much at Once</h3>
+
+<p>Don't ask Claude Code to "build the whole CV" in one go. Break it into pieces:</p>
+<ul>
+  <li>First get the layout working</li>
+  <li>Then add the data</li>
+  <li>Then add animations</li>
+  <li>Then polish the design</li>
+</ul>
+
+<p>Each piece is easier to review and fix.</p>
+
+<h3>4. Ignoring the Preview</h3>
+
+<p>Claude Code can take screenshots and check its own work. If you notice something looks wrong, tell it to screenshot and fix it. Don't try to describe visual bugs in words when Claude can literally see the page.</p>
+
+<h3>5. Over-Engineering</h3>
+
+<p>You're building a personal CV, not a SaaS product. You don't need:</p>
+<ul>
+  <li>A database</li>
+  <li>User authentication</li>
+  <li>A backend server</li>
+  <li>TypeScript (plain JavaScript is fine)</li>
+  <li>10 different files (one component file works great)</li>
+</ul>
+
+<p>Keep it simple. One React component with inline styles is perfectly fine for this. The example CV is a single 850-line file and it works beautifully.</p>
+
+<h3>6. Forgetting to Set a Spending Limit</h3>
+
+<p>Set your API spending limit at <a href="https://console.anthropic.com">console.anthropic.com</a> <em>before</em> you start building. Start with $20. You can always increase it later. Getting a surprise bill is not fun.</p>
+
+<h3>7. Not Checking Mobile</h3>
+
+<p>Your CV will probably be viewed on phones. Periodically ask Claude Code to check the mobile layout. Most things work fine, but grids and side-by-side layouts often need adjusting for small screens.</p>
+
+<hr>
+
+<h2>Quick Reference: The Full Workflow</h2>
+
+<p>Here's the entire process at a glance:</p>
+
+<pre><code>1. DESIGN      → Claude.ai chat (free) → get a prototype artifact
+2. SCAFFOLD    → npm create vite@latest my-cv -- --template react
+3. PASTE       → Copy prototype into src/App.jsx
+4. REFINE      → claude (Claude Code) → iterate on design & features
+5. COMMIT      → git add . && git commit -m "description"
+6. PUSH        → git push
+7. DEPLOY      → Connect GitHub to Vercel → automatic deploys
+8. ITERATE     → Repeat steps 4-6 as needed</code></pre>
+
+<hr>
+
+<h2>Honourable Mentions: Things Worth Knowing</h2>
+
+<p>These didn't fit neatly into the build steps, but they're worth knowing about once you're up and running.</p>
+
+<h3>CLAUDE.md — Give Claude a Memory</h3>
+
+<p>Every time you start a new Claude Code session, Claude doesn't remember what you told it last time. It reads your files, but it doesn't know your preferences, your design decisions, or the context behind your project.</p>
+
+<p>That's what a <code>CLAUDE.md</code> file is for. Drop one in the root of your project and Claude will read it at the start of every session. Think of it as a brief for Claude — persistent instructions that carry over between conversations.</p>
+
+<p>For a CV project, yours might look something like:</p>
+
+<pre><code># Project context
+This is a personal digital CV built with React + Vite.
+Single-page app, one main component in src/RecruiterCV.jsx.
+
+# Design
+- Warm colour palette: cream (#FAF9F7), terracotta (#C4704B)
+- Georgia for body text, Helvetica Neue for UI elements
+- Inline styles only — no CSS files
+- Subtle animations, nothing flashy
+
+# Preferences
+- Keep everything in one file — don't split into components
+- British English spelling
+- Commit messages should be concise, present tense</code></pre>
+
+<p>This saves you repeating yourself every session. Instead of explaining the colour scheme for the fifth time, Claude just reads the file and knows.</p>
+
+<h3>Skills — Reusable Slash Commands</h3>
+
+<p>Claude Code supports <strong>skills</strong> — custom slash commands you can install or create. They're like saved prompts that run specific workflows.</p>
+
+<p>For example, you could have a <code>/commit</code> skill that stages changes, writes a commit message in your preferred style, and pushes to GitHub. Or a <code>/check-mobile</code> skill that resizes the preview, takes a screenshot, and reports back.</p>
+
+<p>You don't need these to build your CV — they're a rabbit hole for later. But if you find yourself repeating the same instructions over and over, that's a sign something could be a skill. You can browse community skills or write your own once you're comfortable.</p>
+
+<h3>Markdown Files (.md)</h3>
+
+<p>You'll see <code>.md</code> files everywhere in code projects — <code>README.md</code>, <code>CLAUDE.md</code>, this guide started as one. Markdown is a simple way to write formatted text using plain characters:</p>
+
+<pre><code># Heading
+## Smaller heading
+**Bold text**
+*Italic text*
+- Bullet point
+[Link text](https://url.com)
+`inline code`</code></pre>
+
+<p>GitHub renders markdown files beautifully, so your <code>README.md</code> becomes the front page of your project. It's worth writing a decent one — even just a few lines explaining what the project is and linking to the live site. It's the first thing anyone sees if they find your repo.</p>
+
+<hr>
+
+<h2>Glossary</h2>
+
+<p>If you hit a term you don't know:</p>
+
+<table>
+  <tr><th>Term</th><th>What It Means</th></tr>
+  <tr><td><strong>React</strong></td><td>A JavaScript library for building user interfaces. Your CV is a React app.</td></tr>
+  <tr><td><strong>JSX</strong></td><td>A way to write HTML-like code inside JavaScript. It's what React components are made of.</td></tr>
+  <tr><td><strong>Vite</strong></td><td>A build tool that bundles your code and runs a development server. Think of it as the engine.</td></tr>
+  <tr><td><strong>Node.js</strong></td><td>JavaScript runtime for your computer. Needed to run Vite and other tools.</td></tr>
+  <tr><td><strong>npm</strong></td><td>Node Package Manager. Installs libraries and runs scripts. Comes with Node.js.</td></tr>
+  <tr><td><strong>Git</strong></td><td>Version control system. Tracks changes to your files like unlimited undo.</td></tr>
+  <tr><td><strong>GitHub</strong></td><td>A website that hosts Git repositories. Where your code lives online.</td></tr>
+  <tr><td><strong>Vercel</strong></td><td>A hosting platform. Takes your GitHub code and makes it a live website.</td></tr>
+  <tr><td><strong>Component</strong></td><td>A reusable piece of UI. Your whole CV might be one component.</td></tr>
+  <tr><td><strong>Inline styles</strong></td><td>CSS written directly in your JavaScript, rather than in a separate .css file.</td></tr>
+  <tr><td><strong>Dev server</strong></td><td>A local web server that shows your site while you're building it.</td></tr>
+  <tr><td><strong>Deploy</strong></td><td>Making your code available on the internet as a live website.</td></tr>
+  <tr><td><strong>CLI</strong></td><td>Command Line Interface. A text-based way to interact with tools (like Claude Code).</td></tr>
+  <tr><td><strong>API credits</strong></td><td>What Claude Code charges. Each message/action uses some credits.</td></tr>
+  <tr><td><strong>HMR</strong></td><td>Hot Module Replacement. When you save a file, the browser updates instantly without refreshing.</td></tr>
+</table>
+
+<hr>
+
+<h2>What's Next?</h2>
+
+<p>Once your CV is live, you've got options:</p>
+
+<ul>
+  <li><strong>Add a custom domain</strong> — Buy a cheap domain and point it at your Vercel project</li>
+  <li><strong>Add more sections</strong> — Blog posts, case studies, testimonials</li>
+  <li><strong>Build something else</strong> — A sourcing tool, a job board, a hiring dashboard. The skills transfer directly</li>
+  <li><strong>Share your journey</strong> — Write about what you built on LinkedIn. Recruiters building things gets attention</li>
+</ul>
+
+<p>The whole point is that you've now got a working mental model of how AI-assisted development works. You've gone from prompt to prototype to production. That's not a small thing.</p>
+
+<p>Good luck building.</p>
+
+<div class="footer">
+  Built with <a href="https://claude.ai">Claude</a> and <a href="https://claude.ai/claude-code">Claude Code</a> | Hosted on <a href="https://vercel.com">Vercel</a> | Source on <a href="https://github.com/R9JJAYL/The-New-CV">GitHub</a>
+</div>
+
+</div>
+</body>
+</html>

@@ -25,10 +25,10 @@ const ROLES = [
   {
     title: "Head of Talent Acquisition",
     company: "First",
-    companyDesc: "Series B health-tech. £45m raise, 140 employees at hire. Operating in the £350bn global digital health market. Hiring across engineering, product, design, and commercial.",
-    companyPills: ["£45m Series B", "Health-Tech", "140 Employees"],
-    skillPills: ["Volume Hiring", "Tech Hiring", "TA Build", "Process Design"],
-    roleContext: "Hired to build and own the TA function from scratch, reporting directly to the CPO. Inherited zero processes, one agency relationship, and a hiring plan of 80+ roles across engineering, product, design, and GTM. Built the full recruitment infrastructure including ATS setup, interview frameworks, scorecards, and hiring manager training. Promoted to Head of TA after 10 months.",
+    companyDesc: "AI-powered recruitment technology start-up. 5 employees at hire. Building tools to help in-house teams manage application volume and improve hiring quality.",
+    companyPills: ["AI Recruitment Technology", "High Growth Start-up", "5 Employees"],
+    skillPills: ["Product Strategy", "Go-to-Market", "Founding Team", "AI Tooling"],
+    roleContext: "Joined as the first non-technical hire in a 5-person founding team building AI recruitment software. Bridging the gap between product and market — shaping the product roadmap from a practitioner's perspective, leading early customer conversations, and building the go-to-market motion from scratch. Wearing every hat: sales, customer success, content, and hiring strategy.",
     duration: "1y 5m",
     period: "Sep 2023 — Present",
     type: "In-House",
@@ -36,13 +36,12 @@ const ROLES = [
     logo: "/first-logo.png",
     logoFallback: "F",
     highlights: [
-      "Scaled company from 140 to 310 employees in 18 months with a 3-person TA team.",
-      "Reduced average time-to-offer from 38 days to 19 days by redesigning the interview framework.",
-      "Personally sourced and closed 12 senior/staff-level engineers after 6+ months of failed agency searches.",
-      "Launched a referral programme generating 30% of all hires — highest in the company's history.",
-      "Introduced structured scorecards across 18 hiring managers — 90% adoption within 6 weeks.",
-      "Built real-time hiring dashboards in Google Sheets, replacing £16k/year in ATS analytics tooling.",
-      "Negotiated 80+ offers with a 95% acceptance rate.",
+      "First non-technical hire — shaped product direction from a recruiter's perspective from day one.",
+      "Led early customer discovery with 40+ TA leaders to validate product-market fit.",
+      "Built the go-to-market strategy and sales playbook, converting 12 pilot customers in 6 months.",
+      "Created all product content, demos, and sales collateral from scratch.",
+      "Designed the onboarding flow that reduced customer time-to-value from 2 weeks to 3 days.",
+      "Hired the first 3 commercial team members as the company grew from 5 to 15.",
     ],
     progression: { count: 1, path: "Senior TA Partner (10 months) → Head of Talent Acquisition (7 months)" },
   },
@@ -124,12 +123,12 @@ const RECOMMENDATIONS = [
   { name: "Lucy Ward", role: "Recruitment Consultant, Harmon Search", text: "Phil trained me when I joined and he's the reason I'm still in recruitment. I hit target in my first 6 months because of how he set me up.", relation: "Direct report @ Harmon Search" },
 ];
 const BUILD_TILES = [
-  { category: "Agents", title: "Prospect Research Agent", desc: "Feed it a company URL. It scrapes careers pages, detects the ATS, maps hiring patterns, and returns a structured outreach brief.", type: "AI Agent", icon: "🔍", color: T.blue, url: "#", linkLabel: "Coming soon", tags: ["Claude Code", "Web Scraping", "Supabase", "Vercel"] },
-  { category: "Agents", title: "CV Invaders", desc: "Agency vs in-house. 60 seconds. Protect the ATS from evil bots. Built for fun, shared for laughs.", type: "Arcade Game", icon: "👾", color: T.purple, url: "https://cv-invaders.vercel.app/", linkLabel: "Play", tags: ["Claude Code", "Supabase", "Vercel", "JavaScript", "React"] },
-  { category: "Builds & Automation", title: "Why I Build Things", desc: "I learn by making. Most of what's here started as a problem I had at work that no tool quite solved. This CV included.", type: "Manifesto", icon: "🛠️", color: T.accent, url: "#", linkLabel: "", tags: ["Claude Code", "GitHub", "Vercel", "JavaScript"] },
-  { category: "Builds & Automation", title: "KPI Tracker Rebuild", desc: "Took a broken spreadsheet and turned it into a proper tracking system. Daily, weekly, and individual views. 40% faster data entry.", type: "Automation", icon: "📊", color: T.green, modal: "sheets", linkLabel: "View project", tags: ["Process Redesign", "Google Sheets", "KPI Analysis", "Automation"] },
-  { category: "Articles", title: "Investor Data Pack", desc: "SQL analysis on traffic, conversions, and growth to arm the C-suite for a fundraise pitch.", type: "Data Analysis", icon: "🧮", color: T.amber, modal: "sql", linkLabel: "View project", tags: ["SQL", "Data Analysis", "Investor Reporting", "CTR / CVR"] },
-  { category: "Articles", title: "The Truth About D&I", desc: "What actually works in diversity hiring, what doesn't, and why most companies are getting it wrong.", type: "Long-form Article", icon: "✍️", color: T.blue, url: "https://www.linkedin.com/pulse/truth-diversity-inclusion-jamie-lyons/", linkLabel: "Read", tags: ["D&I", "LinkedIn", "Recruitment", "Opinion"] },
+  { category: "Agents & Automation", title: "Hiring Plan Agent", desc: "Feed it a headcount target, budget, and org structure. It generates a phased hiring plan with timelines, sourcing strategy, and recruiter capacity needs.", type: "AI Agent", icon: "📋", color: T.blue, modal: "prospect", linkLabel: "View project", tags: ["Claude Code", "Claude API", "Node.js", "Vercel"] },
+  { category: "Agents & Automation", title: "KPI Tracker Rebuild", desc: "Took a broken spreadsheet and turned it into a proper tracking system. Daily, weekly, and individual views. 40% faster data entry.", type: "Automation", icon: "📊", color: T.green, modal: "sheets", linkLabel: "View project", tags: ["Process Redesign", "Google Sheets", "KPI Analysis", "Automation"] },
+  { category: "Builds & Process Improvement", title: "CV Invaders", desc: "Vibe coded Space Invaders with a recruitment twist. Agency vs in-house leaderboard. Built for fun, shared for laughs.", type: "Arcade Game", icon: "👾", color: T.purple, url: "https://cv-invaders.vercel.app/", linkLabel: "Play", tags: ["Claude Code", "Supabase", "Vercel", "JavaScript", "React"] },
+  { category: "Builds & Process Improvement", title: "Why I Build Things", desc: "I learn by making. Most of what's here started as a problem I had at work that no tool quite solved. This CV included.", type: "Manifesto", icon: "🛠️", color: T.accent, url: "#", linkLabel: "", tags: ["Claude Code", "GitHub", "Vercel", "JavaScript"] },
+  { category: "Content & Community", title: "Investor Data Pack", desc: "SQL analysis on traffic, conversions, and growth to arm the C-suite for a fundraise pitch.", type: "Data Analysis", icon: "🧮", color: T.amber, modal: "sql", linkLabel: "View project", tags: ["SQL", "Data Analysis", "Investor Reporting", "CTR / CVR"] },
+  { category: "Content & Community", title: "The Truth About D&I", desc: "What actually works in diversity hiring, what doesn't, and why most companies are getting it wrong.", type: "Long-form Article", icon: "✍️", color: T.blue, url: "https://www.linkedin.com/pulse/truth-diversity-inclusion-jamie-lyons/", linkLabel: "Read", tags: ["D&I", "LinkedIn", "Recruitment", "Opinion"] },
 ];
 const STATS = [
   { value: 300, suffix: "+", label: "Career Hires", prefix: "" },
@@ -204,12 +203,13 @@ function RoleCard({ role, index, isLast }) {
         position: "relative", cursor: "pointer",
         borderRadius: 10, overflow: "hidden",
         border: `1px solid ${open ? T.accentBorder : hovered ? T.accent + "40" : T.cardBorder}`,
-        transition: `all 0.4s ease ${index * 60}ms`,
-        opacity: inView ? 1 : 0, transform: inView ? "translateY(0)" : "translateY(18px)",
-        boxShadow: open ? "0 4px 20px rgba(196,112,75,0.12)" : hovered ? "0 4px 18px rgba(196,112,75,0.12)" : "0 1px 4px rgba(0,0,0,0.03)",
+        transition: `all 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease ${index * 60}ms, transform 0.4s ease ${index * 60}ms`,
+        opacity: inView ? 1 : 0,
+        transform: inView ? (hovered && !open ? "translateY(-3px) scale(1.005)" : "translateY(0) scale(1)") : "translateY(18px) scale(1)",
+        boxShadow: open ? "0 6px 24px rgba(196,112,75,0.14)" : hovered ? "0 8px 28px rgba(196,112,75,0.13), 0 2px 8px rgba(0,0,0,0.04)" : "0 1px 4px rgba(0,0,0,0.03)",
       }}>
         {/* Grey header */}
-        <div style={{ background: T.tagBg, padding: "12px 22px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
+        <div style={{ background: hovered && !open ? T.warm1 + "80" : T.tagBg, padding: "12px 22px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap", transition: "background 0.3s ease" }}>
           <h3 style={{ fontSize: 16, fontWeight: 700, margin: 0, color: T.text, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{role.title} <span style={{ color: T.textLight, fontWeight: 500 }}>@</span> <span style={{ color: T.textMid, fontWeight: 600 }}>{role.company}</span></h3>
           <div style={{ flexShrink: 0 }}>
             <span style={{ fontSize: 11, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "4px 10px", background: T.card, color: T.textLight, borderRadius: 6, border: `1px solid ${T.cardBorder}`, whiteSpace: "nowrap" }}>
@@ -281,21 +281,18 @@ function SheetsModal({ onClose }) {
       title: "Sheet 1: Daily KPI Tracker",
       body: "A redesigned daily tracker with cleaner data entry, conditional formatting for instant visual feedback, and automated calculations. Removed manual steps, added error handling with IFERROR functions, and protected the structure so nobody could accidentally break formulas.",
       color: T.blue,
-      embed: "https://docs.google.com/spreadsheets/d/12UYoobccjtrzmX9VEOjLgQRXTRxT5DqF53Tcoq6xgPc/preview?gid=586722786",
     },
     {
       num: "03",
       title: "Sheet 2: Weekly KPI Tracker",
       body: "A weekly rollup pulling directly from the daily sheet. Week-on-week comparisons, team-level summaries, and friendly competition between teams built in. Designed so leadership could get what they needed in seconds, not minutes.",
       color: T.green,
-      embed: "https://docs.google.com/spreadsheets/d/1RHCckzmudOT8LLC4-JD13LPP3P84e2TD1u69RtysiUY/preview?gid=703124017",
     },
     {
       num: "04",
       title: "Sheet 3: Individual Performance",
       body: "A personal tracker for each team member showing their own numbers, targets, and progress. Built so 1:1s could focus on coaching, not 'let me find your stats'. Also used to support people during annual reviews with clear, data-backed performance summaries.",
       color: T.amber,
-      embed: "https://docs.google.com/spreadsheets/d/1rfP_tJNh8LbF-j1aH9_0qBCXw05aR7iilbucGfGgMgM/preview?gid=1413052365",
     },
   ];
   const results = [
@@ -353,15 +350,6 @@ function SheetsModal({ onClose }) {
                 <span style={{ fontSize: 14, fontWeight: 700, color: T.text }}>{step.title}</span>
               </div>
               <p style={{ fontSize: 13, color: T.textMid, lineHeight: 1.65, margin: 0 }}>{step.body}</p>
-              {step.embed && (
-                <div style={{ marginTop: 10, borderRadius: 10, overflow: "hidden", border: `1px solid ${T.cardBorder}`, background: "#fff" }}>
-                  <iframe
-                    src={step.embed}
-                    style={{ width: "100%", height: 200, border: "none", display: "block" }}
-                    title={step.title}
-                  />
-                </div>
-              )}
             </div>
           ))}
         </div>
@@ -373,14 +361,6 @@ function SheetsModal({ onClose }) {
               <span key={s} style={{ padding: "3px 8px", borderRadius: 6, fontSize: 10, background: T.card, color: T.textMid, border: `1px solid ${T.cardBorder}` }}>{s}</span>
             ))}
           </div>
-        </div>
-        {/* Footer link */}
-        <div style={{ marginTop: 16, textAlign: "center" }}>
-          <a href="https://github.com/R9JJAYL/Google-Sheets-Process-Improvement" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()} style={{
-            fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.green, fontWeight: 600, textDecoration: "none",
-          }}>
-            Full breakdown on GitHub →
-          </a>
         </div>
       </div>
     </div>
@@ -493,6 +473,97 @@ function SQLModal({ onClose }) {
     </div>
   );
 }
+function ProspectModal({ onClose }) {
+  const steps = [
+    {
+      num: "01",
+      title: "The Problem",
+      body: "Every quarter, the Head of TA gets asked the same question: how many people do we need to hire, when, and how? Building a hiring plan means pulling data from the ATS, finance, and hiring managers — then stitching it into a spreadsheet that's outdated the moment it's shared. It takes days, and it's never quite right.",
+      color: T.red,
+    },
+    {
+      num: "02",
+      title: "The Agent",
+      body: "Built an AI agent that takes a headcount target, team structure, and budget — then generates a phased hiring plan. It calculates recruiter capacity, suggests sourcing mix (direct vs agency vs referral), sets realistic timelines per role type, and flags risks like competing offers or market scarcity.",
+      color: T.blue,
+    },
+    {
+      num: "03",
+      title: "How It Works",
+      body: "Feed the agent your inputs: target headcount, departments, seniority split, budget, and timeline. It models hiring velocity based on typical conversion rates (applications → screens → interviews → offers → hires), calculates how many recruiters you need at each phase, and produces a week-by-week plan with milestones.",
+      color: T.green,
+    },
+    {
+      num: "04",
+      title: "What It Returns",
+      body: "A structured hiring plan broken down by department and quarter. Recruiter capacity model showing when you need to scale the team. Sourcing strategy per role type. Budget allocation across channels. Risk flags for hard-to-fill roles. Everything you'd normally spend a week building in a spreadsheet.",
+      color: T.amber,
+    },
+    {
+      num: "05",
+      title: "The Impact",
+      body: "What used to take 3-5 days of spreadsheet work now takes under 10 minutes. Plans are more consistent, more defensible in leadership meetings, and easier to update when priorities shift. The agent doesn't replace your judgement — it gives you a first draft worth editing instead of a blank sheet worth dreading.",
+      color: T.accent,
+    },
+  ];
+  return (
+    <div onClick={onClose} style={{
+      position: "fixed", inset: 0, zIndex: 100,
+      background: "rgba(0,0,0,0.5)", backdropFilter: "blur(6px)",
+      display: "flex", alignItems: "center", justifyContent: "center",
+      padding: 20, animation: "fadeIn 0.2s ease",
+    }}>
+      <div onClick={e => e.stopPropagation()} style={{
+        background: T.bg, borderRadius: 10, maxWidth: 640, width: "100%",
+        maxHeight: "85vh", overflowY: "auto", padding: "32px 28px",
+        border: `1px solid ${T.cardBorder}`, boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
+      }}>
+        {/* Header */}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 20 }}>
+          <div>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+              <span style={{ fontSize: 24 }}>📋</span>
+              <span style={{ fontSize: 9, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "3px 8px", background: T.blue + "12", color: T.blue, borderRadius: 6, letterSpacing: "0.5px", textTransform: "uppercase", fontWeight: 600 }}>AI Agent</span>
+              <span style={{ fontSize: 9, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "3px 8px", background: T.amber + "12", color: T.amber, borderRadius: 6, letterSpacing: "0.5px", textTransform: "uppercase", fontWeight: 600 }}>Coming Soon</span>
+            </div>
+            <h2 style={{ fontSize: 22, fontWeight: 800, color: T.text, margin: 0, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>Hiring Plan Agent</h2>
+            <p style={{ fontSize: 12, color: T.textLight, marginTop: 4, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>From headcount target to phased plan in minutes</p>
+          </div>
+          <button onClick={onClose} style={{
+            width: 32, height: 32, borderRadius: 10, border: `1px solid ${T.cardBorder}`,
+            background: T.card, color: T.textLight, fontSize: 16, cursor: "pointer",
+            display: "flex", alignItems: "center", justifyContent: "center",
+          }}>×</button>
+        </div>
+        {/* Steps */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          {steps.map((step, i) => (
+            <div key={i} style={{
+              padding: "16px 18px", background: T.card, border: `1px solid ${T.cardBorder}`,
+              borderRadius: 10, borderLeft: `3px solid ${step.color}`,
+              boxShadow: "0 1px 4px rgba(0,0,0,0.02)",
+            }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 5 }}>
+                <span style={{ fontSize: 11, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: step.color, fontWeight: 700 }}>{step.num}</span>
+                <span style={{ fontSize: 14, fontWeight: 700, color: T.text }}>{step.title}</span>
+              </div>
+              <p style={{ fontSize: 13, color: T.textMid, lineHeight: 1.65, margin: 0 }}>{step.body}</p>
+            </div>
+          ))}
+        </div>
+        {/* Skills */}
+        <div style={{ marginTop: 16, padding: "12px 16px", background: T.tagBg, borderRadius: 10 }}>
+          <div style={{ fontSize: 9, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textFaint, textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: 6 }}>Tech stack</div>
+          <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
+            {["Claude Code", "Claude API", "Node.js", "Vercel"].map(s => (
+              <span key={s} style={{ padding: "3px 8px", borderRadius: 6, fontSize: 10, background: T.card, color: T.textMid, border: `1px solid ${T.cardBorder}` }}>{s}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 function BuildTile({ build, index, onModalOpen }) {
   const ref = useRef(null);
   const inView = useInView(ref);
@@ -561,6 +632,11 @@ export default function RecruiterCV() {
   const [loaded, setLoaded] = useState(false);
   const [modal, setModal] = useState(null);
   const [containerH, setContainerH] = useState("auto");
+  const [recIdx, setRecIdx] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setRecIdx(i => (i + 1) % RECOMMENDATIONS.length), 6000);
+    return () => clearInterval(id);
+  }, []);
   const panelRefs = [useRef(null), useRef(null), useRef(null)];
   useEffect(() => { setLoaded(true); }, []);
   useEffect(() => {
@@ -729,15 +805,37 @@ export default function RecruiterCV() {
             <div>
               <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>LinkedIn Recommendations</p>
               <p style={{ fontSize: 12, color: T.textFaint, marginBottom: 16, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>What people say about my work</p>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 12 }}>
-                {RECOMMENDATIONS.map((rec, i) => <RecCard key={i} rec={rec} index={i} />)}
+              <div style={{ position: "relative" }}>
+                {/* Arrow buttons */}
+                <button onClick={() => setRecIdx(i => (i - 1 + RECOMMENDATIONS.length) % RECOMMENDATIONS.length)} style={{ position: "absolute", left: -6, top: "50%", transform: "translateY(-50%)", zIndex: 2, width: 28, height: 28, borderRadius: "50%", border: `1px solid ${T.cardBorder}`, background: T.card, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, color: T.textMid, boxShadow: "0 1px 4px rgba(0,0,0,0.06)", transition: "all 0.2s" }} onMouseEnter={e => { e.target.style.background = T.tagBg; e.target.style.borderColor = T.accentBorder; }} onMouseLeave={e => { e.target.style.background = T.card; e.target.style.borderColor = T.cardBorder; }}>‹</button>
+                <button onClick={() => setRecIdx(i => (i + 1) % RECOMMENDATIONS.length)} style={{ position: "absolute", right: -6, top: "50%", transform: "translateY(-50%)", zIndex: 2, width: 28, height: 28, borderRadius: "50%", border: `1px solid ${T.cardBorder}`, background: T.card, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, color: T.textMid, boxShadow: "0 1px 4px rgba(0,0,0,0.06)", transition: "all 0.2s" }} onMouseEnter={e => { e.target.style.background = T.tagBg; e.target.style.borderColor = T.accentBorder; }} onMouseLeave={e => { e.target.style.background = T.card; e.target.style.borderColor = T.cardBorder; }}>›</button>
+                {/* Single recommendation card */}
+                <div style={{ padding: "22px 36px", background: T.card, border: `1px solid ${T.cardBorder}`, borderRadius: 10, boxShadow: "0 1px 6px rgba(0,0,0,0.02)", transition: "opacity 0.4s ease", position: "relative" }}>
+                  <div style={{ fontSize: 13, color: T.textMid, lineHeight: 1.7, marginBottom: 14, fontStyle: "italic", minHeight: 44 }}>"{RECOMMENDATIONS[recIdx].text}"</div>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                      <div style={{ width: 32, height: 32, borderRadius: "50%", background: `linear-gradient(135deg, ${T.warm1}, ${T.accentLight})`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, fontWeight: 700, color: T.accent }}>{RECOMMENDATIONS[recIdx].name.split(" ").map(n => n[0]).join("")}</div>
+                      <div>
+                        <div style={{ fontSize: 13, fontWeight: 700, color: T.text }}>{RECOMMENDATIONS[recIdx].name}</div>
+                        <div style={{ fontSize: 11, color: T.textLight }}>{RECOMMENDATIONS[recIdx].role}</div>
+                      </div>
+                    </div>
+                    <span style={{ fontSize: 9, color: T.textFaint, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", textTransform: "uppercase", letterSpacing: 0.5, padding: "2px 7px", background: T.tagBg, borderRadius: 6 }}>{RECOMMENDATIONS[recIdx].relation}</span>
+                  </div>
+                  {/* Dot indicators */}
+                  <div style={{ display: "flex", justifyContent: "center", gap: 6, marginTop: 14 }}>
+                    {RECOMMENDATIONS.map((_, i) => (
+                      <div key={i} onClick={() => setRecIdx(i)} style={{ width: 6, height: 6, borderRadius: "50%", background: i === recIdx ? T.accent : T.cardBorder, cursor: "pointer", transition: "background 0.3s" }} />
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
         </div>
 
         {/* ===== Tab 1: MY PROJECTS ===== */}
         <div ref={panelRefs[1]} style={{ width: `${100 / 3}%`, flexShrink: 0, padding: "0 0 20px" }}>
-            {["Agents", "Builds & Automation", "Articles"].map(cat => {
+            {["Agents & Automation", "Builds & Process Improvement", "Content & Community"].map(cat => {
               const tiles = BUILD_TILES.filter(b => b.category === cat);
               if (!tiles.length) return null;
               return (
@@ -818,6 +916,7 @@ export default function RecruiterCV() {
         {/* Sheets Modal */}
         {modal === "sheets" && <SheetsModal onClose={() => setModal(null)} />}
         {modal === "sql" && <SQLModal onClose={() => setModal(null)} />}
+        {modal === "prospect" && <ProspectModal onClose={() => setModal(null)} />}
         {/* FOOTER */}
         <footer style={{ padding: "40px 0 48px", borderTop: `1px solid ${T.cardBorder}`, textAlign: "center", position: "relative" }}>
           <div style={{ position: "absolute", top: -1, left: "20%", right: "20%", height: 1, background: `linear-gradient(90deg, transparent, ${T.accent}30, transparent)` }} />
@@ -835,6 +934,7 @@ export default function RecruiterCV() {
             onMouseLeave={e => { e.target.style.transform = "translateY(0)"; e.target.style.boxShadow = "0 2px 8px rgba(196,112,75,0.2)"; }}
             >Book a time to talk</a>
           </div>
+          <p style={{ fontSize: 11, color: T.textFaint, marginTop: 20, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>A template built by <a href="https://www.linkedin.com/in/jamiejaylyons/" target="_blank" rel="noopener noreferrer" style={{ color: T.textFaint, textDecoration: 'underline' }}>Jamie Lyons</a></p>
         </footer>
         </div>
       </div>

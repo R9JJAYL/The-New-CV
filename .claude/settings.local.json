@@ -4,7 +4,16 @@
       "Bash(npm install)",
       "Bash(git init:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(gh repo create:*)",
+      "Bash(git push:*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(lsof:*)",
+      "Bash(curl:*)",
+      "Bash(python3:*)",
+      "Bash(open:*)",
+      "WebFetch(domain:first.cx)",
+      "WebFetch(domain:claude.ai)"
     ]
   }
 }
