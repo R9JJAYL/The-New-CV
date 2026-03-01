@@ -123,11 +123,11 @@ const RECOMMENDATIONS = [
   { name: "Lucy Ward", role: "Recruitment Consultant, Harmon Search", text: "Phil trained me when I joined and he's the reason I'm still in recruitment. I hit target in my first 6 months because of how he set me up.", relation: "Direct report @ Harmon Search" },
 ];
 const BUILD_TILES = [
-  { category: "Agents & Builds", title: "Hiring Plan Agent", desc: "Feed it a headcount target, budget, and org structure. It generates a phased hiring plan with timelines, sourcing strategy, and recruiter capacity needs.", type: "AI Agent", icon: "📋", color: T.blue, modal: "prospect", linkLabel: "View project", tags: ["Claude Code", "Claude API", "Node.js", "Vercel"] },
-  { category: "Automation & Process Improvement", title: "Feedback Chaser Bot", desc: "Polls the ATS for outstanding hiring manager feedback. If none submitted after 48 hours, it auto-chases them on Slack with context and a direct link.", type: "Automation", icon: "⚡", color: T.green, modal: "sheets", linkLabel: "View project", tags: ["Zapier", "Greenhouse API", "Slack"] },
+  { category: "Agents & Builds", title: "Hiring Plan Agent", desc: "Feed it a headcount target, budget, and org structure. It generates a phased hiring plan with timelines, sourcing strategy, and recruiter capacity needs.", type: "AI Agent", icon: "🤖", color: T.blue, modal: "prospect", linkLabel: "View project", tags: ["Claude Code", "Claude API", "Node.js", "Vercel"] },
+  { category: "Automation & Process Improvement", title: "Feedback Chaser Automation", desc: "Polls the ATS for outstanding hiring manager feedback. If none submitted after 48 hours, it auto-chases them on Slack with context and a direct link.", type: "Automation", icon: "⚡", color: T.green, modal: "sheets", linkLabel: "View project", tags: ["Zapier", "Greenhouse API", "Slack"] },
   { category: "Agents & Builds", title: "CV Invaders", desc: "Vibe coded Space Invaders with a recruitment twist. Agency vs in-house leaderboard. Built for fun, shared for laughs.", type: "Arcade Game", icon: "👾", color: T.purple, url: "https://cv-invaders.vercel.app/", linkLabel: "Play", tags: ["Claude Code", "Supabase", "GitHub", "JavaScript"] },
   { category: "Automation & Process Improvement", title: "Recruiter Process Survey", desc: "Surveyed the recruiting team quarterly to surface process pain points. Used the data to prioritise fixes, remove bottlenecks, and drive measurable improvement in time-to-hire and recruiter satisfaction.", type: "RecOps", icon: "📋", color: T.accent, modal: "recops", linkLabel: "View project", tags: ["RecOps", "Google Forms", "Data Analysis"] },
-  { category: "Content & Community", title: "Vibe-coded CV Guide", desc: "If you found this guide useful, drop a like on the post to spread the word and get more recruiters vibe coding!", type: "Shameless Plug", icon: "😏", color: T.accent, url: "https://www.linkedin.com/in/jamiejaylyons/", linkLabel: "Like the post", tags: ["Recruiter Training", "Vibe Coding", "Future of Work"] },
+  { category: "Content & Community", title: "Vibe-coded CV Guide", desc: "If you found this guide useful, drop a like on the post to spread the word and get more recruiters vibe coding!", type: "Shameless Plug", icon: "📄", color: T.accent, url: "https://www.linkedin.com/in/jamiejaylyons/", linkLabel: "Like the post", tags: ["Recruiter Training", "Vibe Coding", "Future of Work"] },
   { category: "Content & Community", title: "Weekly Recruitment Content", desc: "I post weekly hiring breakdowns. Hiring podcasts, hiring books, hiring events and much more, all recruitment related. Click to check out my content!", type: "Shameless Plug v2", icon: "✍️", color: T.blue, url: "https://www.linkedin.com/in/jamiejaylyons/recent-activity/all/", linkLabel: "See posts", tags: ["Recruitment Content", "Books", "Podcasts", "Events"] },
 ];
 const STATS = [
@@ -326,7 +326,7 @@ function SheetsModal({ onClose }) {
               <span style={{ fontSize: 24 }}>⚡</span>
               <span style={{ fontSize: 9, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", padding: "3px 8px", background: T.green + "12", color: T.green, borderRadius: 6, letterSpacing: "0.5px", textTransform: "uppercase", fontWeight: 600 }}>Automation</span>
             </div>
-            <h2 style={{ fontSize: 22, fontWeight: 800, color: T.text, margin: 0, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>Feedback Chaser Bot</h2>
+            <h2 style={{ fontSize: 22, fontWeight: 800, color: T.text, margin: 0, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>Feedback Chaser Automation</h2>
             <p style={{ fontSize: 12, color: T.textLight, marginTop: 4, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>Greenhouse + Slack Integration</p>
           </div>
           <button onClick={onClose} style={{
@@ -786,7 +786,7 @@ export default function RecruiterCV() {
         background: T.bg, borderRadius: 16,
         border: `1px solid ${T.cardBorder}`,
         boxShadow: "0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04)",
-        padding: "0 40px 32px",
+        padding: "0 40px 40px",
         minHeight: 0,
       }}>
         {/* Subtle warm radial glow behind header */}
@@ -860,7 +860,7 @@ export default function RecruiterCV() {
           }}>
 
         {/* ===== Tab 0: MY CAREER ===== */}
-        <div ref={panelRefs[0]} style={{ width: `${100 / 3}%`, flexShrink: 0, padding: "0 0 20px" }}>
+        <div ref={panelRefs[0]} style={{ width: `${100 / 3}%`, flexShrink: 0, padding: 0 }}>
             <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>Work summary</p>
             <p style={{ fontSize: 14, color: T.textMid, lineHeight: 1.75, margin: "0 0 8px" }}>
               8 years in recruitment. Started in high-volume agency, moved into embedded RPO across VC-backed startups,
@@ -978,12 +978,12 @@ export default function RecruiterCV() {
         </div>
 
         {/* ===== Tab 1: MY PROJECTS ===== */}
-        <div ref={panelRefs[1]} style={{ width: `${100 / 3}%`, flexShrink: 0, padding: "0 0 20px" }}>
+        <div ref={panelRefs[1]} style={{ width: `${100 / 3}%`, flexShrink: 0, padding: 0, display: "flex", flexDirection: "column", gap: 28 }}>
             {["Agents & Builds", "Automation & Process Improvement", "Content & Community"].map(cat => {
               const tiles = BUILD_TILES.filter(b => b.category === cat);
               if (!tiles.length) return null;
               return (
-                <div key={cat} style={{ marginBottom: 28 }}>
+                <div key={cat}>
                   <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>{cat}</p>
                   <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 14 }}>
                     {tiles.map((build, i) => <BuildTile key={i} build={build} index={i} onModalOpen={setModal} />)}
@@ -994,8 +994,8 @@ export default function RecruiterCV() {
         </div>
 
         {/* ===== Tab 2: MY PERSONAL LIFE ===== */}
-        <div ref={panelRefs[2]} style={{ width: `${100 / 3}%`, flexShrink: 0, padding: "0 0 20px" }}>
-            <div style={{ marginBottom: 24 }}>
+        <div ref={panelRefs[2]} style={{ width: `${100 / 3}%`, flexShrink: 0, padding: 0, display: "flex", flexDirection: "column", gap: 24 }}>
+            <div>
               <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>A bit about me</p>
               <p style={{ fontSize: 14, color: T.textMid, lineHeight: 1.65, marginBottom: 16 }}>(Ideal spot for an intro video, but I'm going to be cheeky and slip in a video to show how we're helping teams manage application volume with First! :D)</p>
               <div style={{
@@ -1012,7 +1012,7 @@ export default function RecruiterCV() {
                 />
               </div>
             </div>
-            <div style={{ marginBottom: 36 }}>
+            <div>
               <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.textLight, letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 500 }}>A few things about me</p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 10 }}>
                 {[
@@ -1068,27 +1068,26 @@ export default function RecruiterCV() {
         {modal === "sql" && <SQLModal onClose={() => setModal(null)} />}
         {modal === "prospect" && <ProspectModal onClose={() => setModal(null)} />}
         {modal === "recops" && <RecOpsModal onClose={() => setModal(null)} />}
-        {/* FOOTER */}
-        <footer style={{ padding: "48px 0", borderTop: `1px solid ${T.cardBorder}`, textAlign: "center", position: "relative" }}>
-          <div style={{ position: "absolute", top: -1, left: "20%", right: "20%", height: 1, background: `linear-gradient(90deg, transparent, ${T.accent}30, transparent)` }} />
-          <p style={{ fontSize: 18, fontWeight: 400, color: T.text, marginBottom: 24, letterSpacing: "-0.3px" }}>
-            Built by a recruiter, for recruiters, because we deserve better than a Word doc.
-          </p>
-          <div style={{ display: "inline-flex", gap: 10, flexWrap: "wrap", justifyContent: "center" }}>
-            <a href="https://calendly.com/" target="_blank" rel="noopener noreferrer" style={{
-              padding: "11px 24px", borderRadius: 10, fontSize: 13, fontWeight: 600,
-              background: T.accent, color: "#fff", textDecoration: "none",
-              fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", transition: "all 0.25s ease",
-              boxShadow: "0 2px 8px rgba(196,112,75,0.2)",
-            }}
-            onMouseEnter={e => { e.target.style.transform = "translateY(-2px)"; e.target.style.boxShadow = "0 6px 20px rgba(196,112,75,0.3)"; }}
-            onMouseLeave={e => { e.target.style.transform = "translateY(0)"; e.target.style.boxShadow = "0 2px 8px rgba(196,112,75,0.2)"; }}
-            >Book a time to talk</a>
-          </div>
-          <p style={{ fontSize: 11, color: T.textFaint, marginTop: 20, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>A template built by <a href="https://www.linkedin.com/in/jamiejaylyons/" target="_blank" rel="noopener noreferrer" style={{ color: T.textFaint, textDecoration: 'underline' }}>Jamie Lyons</a></p>
-        </footer>
         </div>
       </div>
+      {/* FOOTER — outside card, on raw background */}
+      <footer style={{ padding: "40px 0 48px", textAlign: "center", maxWidth: 960, margin: "0 auto" }}>
+        <p style={{ fontSize: 18, fontWeight: 400, color: T.text, marginBottom: 24, letterSpacing: "-0.3px" }}>
+          Built by a recruiter, for recruiters, because we deserve better than a Word doc.
+        </p>
+        <div style={{ display: "inline-flex", gap: 10, flexWrap: "wrap", justifyContent: "center" }}>
+          <a href="https://calendly.com/" target="_blank" rel="noopener noreferrer" style={{
+            padding: "11px 24px", borderRadius: 10, fontSize: 13, fontWeight: 600,
+            background: T.accent, color: "#fff", textDecoration: "none",
+            fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", transition: "all 0.25s ease",
+            boxShadow: "0 2px 8px rgba(196,112,75,0.2)",
+          }}
+          onMouseEnter={e => { e.target.style.transform = "translateY(-2px)"; e.target.style.boxShadow = "0 6px 20px rgba(196,112,75,0.3)"; }}
+          onMouseLeave={e => { e.target.style.transform = "translateY(0)"; e.target.style.boxShadow = "0 2px 8px rgba(196,112,75,0.2)"; }}
+          >Book a time to talk</a>
+        </div>
+        <p style={{ fontSize: 11, color: T.textFaint, marginTop: 20, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>A template built by <a href="https://www.linkedin.com/in/jamiejaylyons/" target="_blank" rel="noopener noreferrer" style={{ color: T.textFaint, textDecoration: 'underline' }}>Jamie Lyons</a></p>
+      </footer>
       <style>{`
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes shimmer { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
