@@ -754,14 +754,14 @@ export default function RecruiterCV() {
             </p>
             {/* Tab bar */}
             <div style={{ display: "flex", justifyContent: "center", margin: "12px 0 22px" }}>
-              <div style={{ display: "inline-flex", gap: 3, background: T.tagBg, borderRadius: 12, padding: 4, position: "relative" }}>
+              <div style={{ display: "flex", gap: 3, background: T.tagBg, borderRadius: 12, padding: 4, position: "relative", width: isMobile ? "100%" : 420 }}>
                 {/* Sliding pill background */}
                 <div style={{
                   position: "absolute", top: 4, bottom: 4, borderRadius: 10,
                   background: T.card, boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
                   width: `calc((100% - ${4 * 2 + (TABS.length - 1) * 3}px) / ${TABS.length})`,
                   left: `calc(4px + ${tab} * (100% - ${2 * 4 - 3}px) / ${TABS.length})`,
-                  transition: "left 0.35s cubic-bezier(0.25, 0.1, 0.25, 1)",
+                  transition: "left 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), width 0.35s cubic-bezier(0.25, 0.1, 0.25, 1)",
                   zIndex: 0,
                 }} />
                 {TABS.map((t, i) => (
@@ -769,13 +769,14 @@ export default function RecruiterCV() {
                   onMouseEnter={e => { if (tab !== i) { e.currentTarget.style.color = T.text; e.currentTarget.style.fontWeight = "700"; } }}
                   onMouseLeave={e => { if (tab !== i) { e.currentTarget.style.color = T.textLight; e.currentTarget.style.fontWeight = "500"; } }}
                   style={{
-                    padding: isMobile ? "8px 14px" : "8px 20px", borderRadius: 10, border: "none",
+                    flex: "1 1 0", padding: isMobile ? "8px 6px" : "8px 20px", borderRadius: 10, border: "none",
                     background: "transparent",
                     color: tab === i ? T.accent : T.textLight,
                     fontSize: isMobile ? 12 : 13, fontWeight: tab === i ? 700 : 500,
                     fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", cursor: "pointer",
                     transition: "color 0.2s ease, font-weight 0.2s ease",
                     position: "relative", zIndex: 1,
+                    whiteSpace: "nowrap",
                   }}>{t}</button>
                 ))}
               </div>
