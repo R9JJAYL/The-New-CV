@@ -708,35 +708,8 @@ export default function RecruiterCV() {
           opacity: loaded ? 1 : 0, transform: loaded ? "translateY(0)" : "translateY(20px)",
           transition: "all 0.7s ease", position: "relative",
         }}>
-          {/* Tabs - flush at top of card */}
-          <div style={{ display: "flex", gap: 3, background: T.tagBg, borderRadius: "15px 15px 0 0", padding: 4, margin: isMobile ? "0 -16px" : "0 -40px", position: "relative" }}>
-            {/* Sliding pill background */}
-            <div style={{
-              position: "absolute", top: 4, bottom: 4, borderRadius: 10,
-              background: T.card, boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
-              width: `calc((100% - ${4 * 2 + (TABS.length - 1) * 3}px) / ${TABS.length})`,
-              left: `calc(4px + ${tab} * (100% - ${2 * 4 - 3}px) / ${TABS.length})`,
-              transition: "left 0.35s cubic-bezier(0.25, 0.1, 0.25, 1)",
-              zIndex: 0,
-            }} />
-            {TABS.map((t, i) => (
-              <button key={t} onClick={() => { setTab(i); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-              onMouseEnter={e => { if (tab !== i) { e.currentTarget.style.color = T.text; e.currentTarget.style.fontWeight = "700"; e.currentTarget.style.letterSpacing = "0.3px"; } }}
-              onMouseLeave={e => { if (tab !== i) { e.currentTarget.style.color = T.textLight; e.currentTarget.style.fontWeight = "500"; e.currentTarget.style.letterSpacing = "0px"; } }}
-              style={{
-                flex: 1, padding: isMobile ? "9px 6px" : "10px 14px", borderRadius: 10, border: "none",
-                background: "transparent",
-                color: tab === i ? T.accent : T.textLight,
-                fontSize: isMobile ? 12 : 13, fontWeight: tab === i ? 700 : 500,
-                fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", cursor: "pointer",
-                transition: "color 0.2s ease, font-weight 0.2s ease, letter-spacing 0.2s ease",
-                position: "relative", zIndex: 1,
-                letterSpacing: "0px",
-              }}>{t}</button>
-            ))}
-          </div>
           {/* Name + Title + Icons */}
-          <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", justifyContent: isMobile ? "center" : "space-between", alignItems: "center", marginTop: isMobile ? 16 : 20, marginBottom: 14, gap: isMobile ? 8 : 0 }}>
+          <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", justifyContent: isMobile ? "center" : "space-between", alignItems: "center", marginTop: isMobile ? 16 : 24, marginBottom: 14, gap: isMobile ? 8 : 0 }}>
             <h1 style={{ fontSize: isMobile ? 20 : 24, fontWeight: 800, margin: 0, lineHeight: 1, letterSpacing: "-1px", color: T.text, flex: "0 0 auto" }}>Phil Role</h1>
             <p style={{ fontSize: isMobile ? 16 : 24, fontWeight: 800, margin: 0, lineHeight: 1, letterSpacing: "-1px", color: T.accent, textAlign: "center", flex: isMobile ? "0 0 auto" : "1 1 auto" }}>Head of Talent Acquisition</p>
             <div style={{ display: "flex", gap: 8, flex: "0 0 auto" }}>
@@ -779,24 +752,33 @@ export default function RecruiterCV() {
             <p style={{ fontSize: 14, color: T.textMid, lineHeight: 1.75, margin: "0 0 8px" }}>
               Looking for my next role as first or early TA hire at a Series A/B company. Own the hiring plan, shape how the team scales.
             </p>
-            {/* Stats */}
-            <div style={{ display: "grid", gridTemplateColumns: isMobile ? "repeat(2, 1fr)" : "repeat(4, 1fr)", gap: 8, marginBottom: 22 }}>
-              {STATS.map((s, i) => (
-                <div key={s.label} className="stat-hover" style={{
-                  textAlign: "center", padding: "14px 6px 12px",
-                  background: T.card, borderRadius: 10,
-                  border: `1px solid ${T.cardBorder}`,
-                  boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
-                  transition: `all 0.3s ease, opacity 0.5s ease ${i * 100}ms, transform 0.5s ease ${i * 100}ms`,
-                  opacity: loaded ? 1 : 0, transform: loaded ? "translateY(0)" : "translateY(12px)",
-                  cursor: "default",
-                }}>
-                  <div style={{ fontSize: 20, fontWeight: 800, color: T.accent, letterSpacing: "-0.5px", fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
-                    {s.isText ? <SeriesAnim value={s.value} delay={i * 100} /> : <AnimNum {...s} delay={i * 100} />}
-                  </div>
-                  <div style={{ fontSize: 9, color: T.textLight, marginTop: 3, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", textTransform: "uppercase", letterSpacing: "0.3px" }}>{s.label}</div>
-                </div>
-              ))}
+            {/* Tab bar */}
+            <div style={{ display: "flex", justifyContent: "center", margin: "12px 0 22px" }}>
+              <div style={{ display: "inline-flex", gap: 3, background: T.tagBg, borderRadius: 12, padding: 4, position: "relative" }}>
+                {/* Sliding pill background */}
+                <div style={{
+                  position: "absolute", top: 4, bottom: 4, borderRadius: 10,
+                  background: T.card, boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
+                  width: `calc((100% - ${4 * 2 + (TABS.length - 1) * 3}px) / ${TABS.length})`,
+                  left: `calc(4px + ${tab} * (100% - ${2 * 4 - 3}px) / ${TABS.length})`,
+                  transition: "left 0.35s cubic-bezier(0.25, 0.1, 0.25, 1)",
+                  zIndex: 0,
+                }} />
+                {TABS.map((t, i) => (
+                  <button key={t} onClick={() => { setTab(i); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                  onMouseEnter={e => { if (tab !== i) { e.currentTarget.style.color = T.text; e.currentTarget.style.fontWeight = "700"; } }}
+                  onMouseLeave={e => { if (tab !== i) { e.currentTarget.style.color = T.textLight; e.currentTarget.style.fontWeight = "500"; } }}
+                  style={{
+                    padding: isMobile ? "8px 14px" : "8px 20px", borderRadius: 10, border: "none",
+                    background: "transparent",
+                    color: tab === i ? T.accent : T.textLight,
+                    fontSize: isMobile ? 12 : 13, fontWeight: tab === i ? 700 : 500,
+                    fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", cursor: "pointer",
+                    transition: "color 0.2s ease, font-weight 0.2s ease",
+                    position: "relative", zIndex: 1,
+                  }}>{t}</button>
+                ))}
+              </div>
             </div>
             <p style={{ fontSize: 12, fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", color: T.accent + "CC", letterSpacing: "0.3px", margin: "0 0 10px 2px", fontWeight: 700 }}>Work experience</p>
             {ROLES.map((role, i) => <RoleCard key={i} role={role} index={i} isLast={i === ROLES.length - 1} isMobile={isMobile} />)}
