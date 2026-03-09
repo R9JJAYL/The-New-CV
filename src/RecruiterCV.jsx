@@ -994,7 +994,7 @@ export default function RecruiterCV() {
       <style>{`
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes shimmer { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-        .stat-hover:hover { transform: translateY(-3px) !important; box-shadow: 0 6px 16px rgba(0,0,0,0.08) !important; }
+        .stat-hover:hover { transform: translateY(-6px) scale(1.05) !important; box-shadow: 0 12px 28px rgba(196,112,75,0.18) !important; border-color: rgba(196,112,75,0.35) !important; background: linear-gradient(135deg, #FFFAF6, #FFF5EE) !important; }
         * { box-sizing: border-box; margin: 0; }
         html { scroll-behavior: smooth; }
         body { background: #E8E4DE; }
