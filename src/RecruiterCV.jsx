@@ -782,13 +782,14 @@ export default function RecruiterCV() {
             {/* Stats */}
             <div style={{ display: "grid", gridTemplateColumns: isMobile ? "repeat(2, 1fr)" : "repeat(4, 1fr)", gap: 8, marginBottom: 22 }}>
               {STATS.map((s, i) => (
-                <div key={s.label} style={{
+                <div key={s.label} className="stat-hover" style={{
                   textAlign: "center", padding: "14px 6px 12px",
                   background: T.card, borderRadius: 10,
                   border: `1px solid ${T.cardBorder}`,
                   boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
-                  transition: `all 0.5s ease ${i * 100}ms`,
+                  transition: `all 0.3s ease, opacity 0.5s ease ${i * 100}ms, transform 0.5s ease ${i * 100}ms`,
                   opacity: loaded ? 1 : 0, transform: loaded ? "translateY(0)" : "translateY(12px)",
+                  cursor: "default",
                 }}>
                   <div style={{ fontSize: 20, fontWeight: 800, color: T.accent, letterSpacing: "-0.5px", fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
                     {s.isText ? <SeriesAnim value={s.value} delay={i * 100} /> : <AnimNum {...s} delay={i * 100} />}
@@ -993,6 +994,7 @@ export default function RecruiterCV() {
       <style>{`
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes shimmer { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        .stat-hover:hover { transform: translateY(-3px) !important; box-shadow: 0 6px 16px rgba(0,0,0,0.08) !important; }
         * { box-sizing: border-box; margin: 0; }
         html { scroll-behavior: smooth; }
         body { background: #E8E4DE; }
